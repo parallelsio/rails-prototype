@@ -5,6 +5,7 @@ ruby '1.9.3'
 gem 'rails', '3.2.11'
 
 gem 'haml'
+gem 'haml-rails'					# auto generate haml templates instead of erb
 gem 'sass-rails',   '~> 3.2.4'
 gem 'paperclip', '~> 3.4.0'
 gem 'aws-sdk', '~> 1.6.0'

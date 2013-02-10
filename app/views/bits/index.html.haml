@@ -1,0 +1,29 @@
+%h1 Listing bits
+
+%table
+  %tr
+    %th Content
+    %th Color
+    %th Type
+    %th Location x
+    %th Location y
+    %th Image
+    %th
+    %th
+    %th
+
+  - @bits.each do |bit|
+    %tr
+      %td= bit.content
+      %td= bit.color
+      %td= bit.type
+      %td= bit.location_x
+      %td= bit.location_y
+      %td= bit.image
+      %td= link_to 'Show', bit
+      %td= link_to 'Edit', edit_bit_path(bit)
+      %td= link_to 'Destroy', bit, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Bit', new_bit_path

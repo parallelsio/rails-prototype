@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  content: MyText
+  color: MyString
+  type: 
+  location_x: 1
+  location_y: 1
+  image: MyString
+
+two:
+  content: MyText
+  color: MyString
+  type: 
+  location_x: 1
+  location_y: 1
+  image: MyString
