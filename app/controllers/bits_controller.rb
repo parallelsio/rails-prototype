@@ -1,6 +1,6 @@
 class BitsController < ApplicationController
-  # GET /bits
-  # GET /bits.json
+
+
   def index
     @bits = Bit.all
 
@@ -10,8 +10,7 @@ class BitsController < ApplicationController
     end
   end
 
-  # GET /bits/1
-  # GET /bits/1.json
+
   def show
     @bit = Bit.find(params[:id])
 
@@ -21,26 +20,31 @@ class BitsController < ApplicationController
     end
   end
 
-  # GET /bits/new
-  # GET /bits/new.json
+
   def new
     @bit = Bit.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bit }
     end
   end
 
-  # GET /bits/1/edit
+
   def edit
     @bit = Bit.find(params[:id])
   end
 
-  # POST /bits
-  # POST /bits.json
+
   def create
     @bit = Bit.new(params[:bit])
+
+    if params[:type] == "Image"
+      @bit = Image.new
+    elsif params[:type] == "Text"
+      @bit = Text.new
+    end
+
 
     respond_to do |format|
       if @bit.save
@@ -53,8 +57,7 @@ class BitsController < ApplicationController
     end
   end
 
-  # PUT /bits/1
-  # PUT /bits/1.json
+
   def update
     @bit = Bit.find(params[:id])
 
@@ -69,8 +72,7 @@ class BitsController < ApplicationController
     end
   end
 
-  # DELETE /bits/1
-  # DELETE /bits/1.json
+
   def destroy
     @bit = Bit.find(params[:id])
     @bit.destroy

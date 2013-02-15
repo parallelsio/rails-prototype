@@ -1,5 +1,10 @@
 Parallels::Application.routes.draw do
+  
+  resources :maps
+  resources :clusters
   resources :bits
+
+  root to: "maps#index"
 
 
   # The priority is based upon order of creation:
