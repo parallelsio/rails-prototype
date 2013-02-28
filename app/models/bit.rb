@@ -5,8 +5,4 @@ class Bit < ActiveRecord::Base
 
 	attr_accessible :color, :content, :image, :location_x, :location_y, :type
 
-	def initialize 
-		raise "Bit cannot be instantiated directly, use concrete subclasses Image and Text." if self.class == Bit   
-  	end
-
 end
