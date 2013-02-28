@@ -3,30 +3,93 @@
 	.content hello world!
 
 .bit._2
-	.content I'm a bit. 
+	.content i'm a bit. 
 
 .bit._3
-	.content I can be anything: like the letter
+	.content 
+		i can be a piece of
+		%strong text 
+		of any size, small as a fancy letter
 
 .bit._4
 	.content A
 
 .bit._5
-	.content or a 
+	.content word
 
 .bit._6
-	.content word.
+	.content or a phrase, 
 
 .bit._7
-	.content I can be a phrase
+	.content 
+		or a whole paragraph (which I will spare you of reading, cause you know what they say
+
+.bit._7-1
+	.content 
+		= link_to 'tl;dr', "http://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read", :target => '_blank'
 
 .bit._8
-	.content a paragraph (record skipping). a paragraph (record skipping). a paragraph (record skipping). a paragraph (record skipping). a paragraph (record skipping). a paragraph (record skipping). a paragraph (record skipping). a paragraph (record skipping). a paragraph (record skipping). 
+	.content i can also be a
 
 .bit._9
-	.content a sound
+	.content
+		%a{ :href => "/images/fish.jpg", :rel => "zoom-width:400px;zoom-height:400px;", :class => "MagicZoom" }
+			= image_tag "/images/fish_small.jpg", :height => 140
 
 .bit._10
-	.content or a video
+	.content 
+		No.. no.. not a fish.
+
+
+.bit._10-1
+	.content 
+		(gotta say tho, sushi's faaannttassttic)
+
+
+.bit._10-2
+	.content
+		= image_tag '/images/mark-wahlberg-shocked-gif.gif', :height => 200 
+
+
+.bit._10-5
+	.content 
+		what???! c'mon, don't hate!		
+
+.bit._10-6
+	.content 
+		or get all flaky on me now
+
+
+.bit._11
+	.content
+		anyway, i can be all sorts of things, an
+		%strong image,
+
+.bit._12
+	.content
+		a 
+		%strong sound,
+
+.bit._13
+	.content
+		a 
+		%strong video
+
+.bit._14
+	.content 
+		The point is, you can mix
+		%strong bits
+		of any type easily
+
+.bit._15
+	.content  to make bigger things
+
+.bit._16
+	.content It's like digital
+
+.bit._17
+	.content= image_tag '/images/lego.png'
+
+
 
 = partial("partials/footer") 

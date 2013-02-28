@@ -1,7 +1,8 @@
 TODO::Demo
 
 - refactor: how do i set up a display:inline-block that clears, without a container?
-
+- scale shadow for different size bits
+- image magick to create small / big versions of images? is there a way to use one image in magiczoom?
 
 
 
@@ -9,3 +10,4 @@ TODO::Demo
 
 
 TODO::Main
+- wire up amazon s3

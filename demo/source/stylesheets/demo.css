@@ -1,22 +1,33 @@
 ._1 	{   } 
 ._2 	{ float:left;  } 
 ._3 	{  float:left; } 
-._4 	{ font-family: 'Meddon';   } 
+._4 	{ font-family: 'Meddon';  float:left;  } 
 ._4 .content { height:20px; width:30px; padding: 10px 13px 20px 16px;}
-._5 	{   } 
-._6 	{   } 
-._7 	{   } 
-._8 	{   } 
-._9 	{   } 
-._10 	{   } 
+._5 	{  } 
+._6 	{  float:none; clear:both;  } 
+._7 	{  float:left; } 
+._8 	{  margin:60px 0 0 0;  } 
+._9 .content	{  padding:0; height:140px; } 
+._10 	{ float:left;   } 
+._10-1 	{ font-family:'ChaparralPro-LightIt';  } 
 
-._11 	{   } 
+._10-2 	{ margin:150px 0 0 0; } 
+
+._10-2 .content	{ padding:0; background-color:none;  height:200px;} 
+
+
+
+._10-5 	{ font-family:'ChaparralPro-LightIt';  float:left; } 
+._10-6 	{ font-family:'ChaparralPro-LightIt';   } 
+
+
+._11 	{ margin:50px 0 0 0; } 
 ._12 	{   } 
 ._13 	{   } 
 ._14 	{   } 
 ._15	{   } 
-._16	{   } 
-._17 	{   } 
+._16	{ float:left;  } 
+._17 .content 	{  padding:0; } 
 ._18 	{   } 
 ._19 	{   } 
 ._20 	{   } 
