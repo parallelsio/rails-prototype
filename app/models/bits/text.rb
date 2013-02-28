@@ -1,0 +1,4 @@
+class Text < Bit
+	
+
+end

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Location x:
+  = @cluster.location_x
+%p
+  %b Location y:
+  = @cluster.location_y
+
+= link_to 'Edit', edit_cluster_path(@cluster)
+\|
+= link_to 'Back', clusters_path
