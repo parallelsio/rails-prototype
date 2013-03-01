@@ -8,6 +8,7 @@ TODO::Demo
 - get access to selected bit, pass to flip function    
 - http://www.schillmania.com/projects/soundmanager2/doc/download/
 - video link
+- get sound manager working
 - refactor drag to container, not content of a bit
 
 
