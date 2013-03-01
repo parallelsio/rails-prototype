@@ -58,6 +58,10 @@ body {
 .bit { display:block;}
 
 
+.bit .content .ui-widget-header { display:none; height:8px; cursor:move; background-color:#ccc; position:absolute; top:-23px; left:0;}
+
+.bit .content:hover .ui-widget-header{ display:block; height:8px; width:100%;}
+
 .content { 
 
   position: relative;

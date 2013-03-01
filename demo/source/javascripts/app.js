@@ -3,19 +3,34 @@
 
 $(document).ready(function()
 {
+
+	$( ".content" ).draggable({ handle: "p" });
+
 	/*
-	$(".example img").hover(
-		   function() {
-		      	$(this).animate({"marginBottom": "0px"}, "fast");
-				$(this).attr('class', 'example');
-		   },
-		   function() {
-		      	$(this).animate({"marginBottom": "16px"}, "fast");
-		  		$(this).attr('class', 'example');
-		   }
-		);
-	*/
 	
+	$(".content").mouseover(function(){
+
+			
+			Mousetrap.bind('tab', function(e, element){
+			    console.log(e);
+			    
+
+			    // This is not working
+			    // $(this).attr('id').effect("highlight", {}, 3000);
+			    
+			    return false;
+				});
+
+
+    	// $(this).removeClass().addClass("hover");
+    }).mouseout(function(){
+
+    	// $(this).removeClass().addClass("hover");		
+    	Mousetrap.reset();
+    });
+
+	*/
+
 });
 
 
