@@ -6,7 +6,11 @@ strong { font-family:'ChaparralPro-Semibold';}
 body {
   background: #e7e4e4; color: #333; 
   font-family: 'ChaparralPro-Regular', sans-serif;
-  color:gray; }
+  color:gray;
+  position:relative;
+  left:300px;
+  width:900px;
+   }
 
 
 

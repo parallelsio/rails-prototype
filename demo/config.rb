@@ -1,3 +1,5 @@
+set :haml, :layout_engine => :erb
+
 ###
 # Compass
 ###

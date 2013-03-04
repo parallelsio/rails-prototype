@@ -14,11 +14,11 @@ TODO::Demo
 - flip cards : http://css3playground.com/flip-card.php
 - focus : http://css3playground.com/blur-filter.php
 - get access to selected bit, pass to flip function    
-- http://www.schillmania.com/projects/soundmanager2/doc/download/
 - video link
 - get sound manager working
 - refactor drag to container, not content of a bit
-
+- contact artist of mj collage
+- shatter image script?
 
 
 
@@ -29,3 +29,17 @@ TODO::Main
 
 OPEN QUESTIONS:
 - how to differentiate a drag, versus an edit?
+- must be able to switch back and forth fluidly. CORE. then it becomes, if i open 20 tabs, where do these temp spaces lie on the map? they only exist in time, not in space (yet)
+
+thus, the system has 2 primary modes? time. space.
+as opposed to metaphors like paper, desktop, windows, doors, i think much more inspiring, useful, and appropriate to our lives are time. space.
+
+right now i want to add that snipet, that i wrote whil coding, into my pitch. its great and belongs there.
+
+how do i do ?
+
+[select Kickstarter Pitch Script bit] << [select that bit I just wrote above]
+
+
+I want to change the world of interaction. This is preposterous, presumptious and crazy, but I know we can do it. 
+Who wants to join me?
