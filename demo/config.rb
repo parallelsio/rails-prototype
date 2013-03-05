@@ -1,4 +1,8 @@
+# require for post build hook
+require 'lib/post_build'
+
 set :haml, :layout_engine => :erb
+
 
 ###
 # Compass
@@ -9,9 +13,10 @@ set :haml, :layout_engine => :erb
 # require 'susy'
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+   config.output_style = :compact
+end
+
 
 ###
 # Page options, layouts, aliases and proxies
@@ -50,10 +55,6 @@ helpers do
     "Helping"
   end
 
-  def id
-    
-  end
-
 end
 
 set :css_dir, 'stylesheets'
@@ -74,7 +75,7 @@ configure :build do
   # activate :cache_buster
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
@@ -83,5 +84,10 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+
+  activate :livereload
+
+  activate :post_build
 end
+
 

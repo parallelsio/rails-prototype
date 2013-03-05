@@ -15,12 +15,10 @@ TODO::Demo
 - focus : http://css3playground.com/blur-filter.php
 - get access to selected bit, pass to flip function    
 - video link
-- get sound manager working
 - refactor drag to container, not content of a bit
 - contact artist of mj collage
 - shatter image script?
-
-
+- live reload working
 
 TODO::Main
 - wire up amazon s3

@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+#soundmanager-debug {
+ /* SM2 debug container (optional, use or customize this as you like - makes in-browser debug output more useable) */
+ position:fixed;_position:absolute;right:1em;bottom:1em;width:50em;height:18em;overflow:auto;background:#fff;margin:1em;padding:1em;border:1px solid #999;font-family:monaco,"lucida console",verdana,tahoma,"sans serif";font-size:x-small;line-height:1.5em;opacity:0.9;filter:alpha(opacity=90);z-index: 1000;
+}
 
 strong { font-family:'ChaparralPro-Semibold';}
 
@@ -152,16 +156,6 @@ p.end         { padding:0 0 15px 0;}
 .footnote p.end   { padding:0 0 20px 0;}
 
 
-
-
-
-
-.ui360,
-.sm2-360ui {
-  /* size of the container for the circle, etc. */
-  width:50px;
-  height:50px;
-}
 
 
 
