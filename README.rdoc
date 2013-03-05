@@ -10,7 +10,7 @@ TODO::Demo
 - fix middleman build, absolute -> relative
 - refactor: how do i set up a display:inline-block that clears, without a container?
 - scale shadow for different size bits
-- image magick to create small / big versions of images? is there a way to use one image in magiczoom?
+- is there a way to use one image in magiczoom?
 - flip cards : http://css3playground.com/flip-card.php
 - focus : http://css3playground.com/blur-filter.php
 - get access to selected bit, pass to flip function    
@@ -24,7 +24,7 @@ TODO::Demo
 
 TODO::Main
 - wire up amazon s3
-
+- image magick to create small / big versions of images? 
 
 
 OPEN QUESTIONS:
@@ -33,13 +33,3 @@ OPEN QUESTIONS:
 
 thus, the system has 2 primary modes? time. space.
 as opposed to metaphors like paper, desktop, windows, doors, i think much more inspiring, useful, and appropriate to our lives are time. space.
-
-right now i want to add that snipet, that i wrote whil coding, into my pitch. its great and belongs there.
-
-how do i do ?
-
-[select Kickstarter Pitch Script bit] << [select that bit I just wrote above]
-
-
-I want to change the world of interaction. This is preposterous, presumptious and crazy, but I know we can do it. 
-Who wants to join me?
