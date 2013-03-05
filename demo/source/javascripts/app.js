@@ -3,7 +3,8 @@
 
 $(document).ready(function()
 {
-
+	alert('loading');
+	
     soundManager.setup({
       url: '/swf/',
       flashVersion: 9, // optional: shiny features (default = 8)
@@ -61,7 +62,7 @@ $(document).ready(function()
 		
 		var soundObject = soundManager.createSound({
 		 id:'opening',
-		 url:'http://localhost:4567/sounds/opening-v1.mp3'
+		 url:'/sounds/opening-v1.mp3'
 		});
 
 		soundObject.play();

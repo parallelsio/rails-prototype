@@ -4,8 +4,9 @@ module PostBuild
       app.after_build do |builder|
         # TODO: not working for some reason. move these commands to dedicated .sh
         # builder.run "copy_to_public.sh" 
-        `cp -R build/ ../public/demo`
-
+        # `rm -rf ../public/demo`
+        # `cp -R build/ ../public/demo`
+        # `rm -rf build`
       end
     end
     alias :included :registered
