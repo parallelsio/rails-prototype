@@ -1,24 +1,4 @@
-to see quick demo, clone and open static html file:
 
-/demo/build/index.html
-
-
-
-
-TODO::Demo
-
-- fix middleman build, absolute -> relative
-- refactor: how do i set up a display:inline-block that clears, without a container?
-- scale shadow for different size bits
-- is there a way to use one ;simage in magiczoom?
-- flip cards : http://css3playground.com/flip-card.php
-- focus : http://css3playground.com/blur-filter.php
-- get access to selected bit, pass to flip function    
-- video link
-- refactor drag to container, not content of a bit
-- contact artist of mj collage
-- shatter image script?
-- live reload working
 
 TODO::Main
 - wire up amazon s3
