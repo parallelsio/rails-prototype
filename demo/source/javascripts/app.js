@@ -88,18 +88,71 @@ $(document).ready(function()
 
 
     $('._23').click(function(){
-        $(this).find('.card').addClass('flipped').mouseleave(function(){
+
+    	
+
+
+        var add = $(this).find('.card').addClass('flipped')
+
+        var soundObject = soundManager.createSound({
+		 id:'flip_in',
+		 url:'/sounds/aim_buddy_logging_in.mp3'
+		
+		});
+		soundObject.play();
+
+		add.mouseleave(function(){
             $(this).removeClass('flipped');
+
+           	var soundObject = soundManager.createSound({
+			 id:'flip_out',
+			 url:'/sounds/aim_buddy_logging_out.mp3'
+			
+			});
+			soundObject.play();
+
+
         });
         return false;
     });
 
-	// $('._23').hover(function(){
-	// 			$(this).addClass('flip');
-	// 		},function(){
-	// 			$(this).removeClass('flip');
-	// 		});
+	$('._25 .content').hover(function(){
+				$(this).removeClass('before');
+
+				var soundObject = soundManager.createSound({
+				 id:'cut',
+				 url:'/sounds/cut.mp3'
+				
+				});
+				soundObject.play();
+
+			},function(){
+						  $(this).unbind('hover'); 
+						
+
+			});
 			
+
+
+
+	$('._29 .content').hover(function(){
+				$(this).addClass('after');
+
+				var soundObject = soundManager.createSound({
+				 id:'glue',
+				 url:'/sounds/glue.mp3'
+				
+				});
+				soundObject.play();
+
+			},function(){
+						  $(this).unbind('hover'); 
+						
+
+			});
+
+
+
 
 			
 
