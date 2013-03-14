@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
 	
+	/* d3 test */
 	// d3.select("#sm2-container").insert("svg", ":first-child")
  //           .attr("width", 500)
  //           .attr("height", 50);
@@ -15,6 +16,7 @@ $(document).ready(function()
 
 
 
+    /* UI config for sound bit */
 	threeSixtyPlayer.config = {
 	  playNext: false, // stop after one sound, or play through list until end
 	  autoPlay: false, // start playing the first sound right away
@@ -32,7 +34,7 @@ $(document).ready(function()
 
 
 
-
+	/* play sound bit */
 	$('#play_opening').click(function(){
 		
 		var soundObject = soundManager.createSound({
@@ -50,7 +52,7 @@ $(document).ready(function()
 	$( ".content" ).draggable({ handle: "p" });
 
 	/*
-	
+	keycommands 
 	$(".content").mouseover(function(){
 
 			
@@ -75,6 +77,7 @@ $(document).ready(function()
 	*/
 
 
+	/*  drag bit  */
 	$("._21").click(function(){
   		$("._21 .content").animate({	
   				top: 	'-=20px',
@@ -87,10 +90,9 @@ $(document).ready(function()
 	}); 
 
 
+
+	/* flip bit, sounds */
     $('._23').click(function(){
-
-    	
-
 
         var add = $(this).find('.card').addClass('flipped')
 
@@ -116,6 +118,7 @@ $(document).ready(function()
         return false;
     });
 
+    /* cut sound for split bit */
 	$('._25 .content').hover(function(){
 				$(this).removeClass('before');
 
@@ -134,7 +137,7 @@ $(document).ready(function()
 			
 
 
-
+	/* sound on glue bits */
 	$('._29 .content').hover(function(){
 				$(this).addClass('after');
 
@@ -152,9 +155,27 @@ $(document).ready(function()
 			});
 
 
+	/* show slider * /
+	$('._37 .content').click(function(){
+				$('#header').css('display', "block");
+
+				
+			});
+	*/
+	
+
+    $('#zelda_large').imgAreaSelect({
+        handles: true,
+        autoHide: true,
+        onSelectEnd: function(){
+               $('#zelda_large').css('display', "none");
+               $('#zelda_cropped').css('display', "block");
+                 }
+	});
+
+	 $('img#bird2').imgAreaSelect({ handles: false, autoHide: true });
 
 
-			
 
 
 });

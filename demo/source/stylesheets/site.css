@@ -7,10 +7,11 @@ body {
   font-family: 'ChaparralPro-Regular', sans-serif;
   color:gray;
   position:relative;
-  left:300px;
+ 
   width:900px;
    }
 
+#center { position:relative; left:300px;}
 
 
   @font-face {
@@ -57,6 +58,10 @@ body {
         font-weight: normal;
         font-style: normal;
     }
+
+
+div#header { display:none; position:fixed; top:0px; margin:auto; z-index:100000; width:100%;}
+div#my-menus  {background:#000; height:50px; opacity:0.8}
 
 
 strong { font-family:'ChaparralPro-Semibold', sans-serif;}
@@ -148,6 +153,9 @@ strong { font-family:'ChaparralPro-Semibold', sans-serif;}
 p.start       { padding: 15px 0 0 0;}
 p.end         { padding:0 0 15px 0;}
 .footnote p.end   { padding:0 0 20px 0;}
+
+/* hide vimeo junk */
+iframe html body div div.a div.at  { display:none;}
 
 
 
