@@ -155,7 +155,7 @@ $(document).ready(function()
 			});
 
 
-	/* show slider * /
+	/* show slider header * /
 	$('._37 .content').click(function(){
 				$('#header').css('display', "block");
 
@@ -166,6 +166,7 @@ $(document).ready(function()
 
     $('#zelda_large').imgAreaSelect({
         handles: true,
+        parent: '#center',
         autoHide: true,
         onSelectEnd: function(){
                $('#zelda_large').css('display', "none");
@@ -173,7 +174,26 @@ $(document).ready(function()
                  }
 	});
 
-	 $('img#bird2').imgAreaSelect({ handles: false, autoHide: true });
+
+	/* sound on glue bits */
+	$('._38-1').click(function(){
+			
+				$('._38-6').css('display', "block");
+						
+
+			});
+
+
+	/* sound on glue bits */
+	$('._91 #search_wave').sketch (function(e){
+
+		stopPainting()
+	})
+			
+				
+						
+
+
 
 
 

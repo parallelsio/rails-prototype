@@ -1,13 +1,75 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
  *= require_tree .
  */
+
+
+body {
+  background: #e7e4e4; color: #333; 
+  font-family: 'ChaparralPro-Regular', sans-serif;
+  color:gray;
+  position:relative;
+  width:900px;
+
+}
+
+
+
+
+#center { position:relative; left:300px;}
+
+
+  @font-face {
+      font-family: 'ChaparralPro-Light';
+      src: url('/typefaces/chaparralprolight.eot');
+      src: url('/typefaces/chaparralprolight.eot?#iefix') format('embedded-opentype'),
+           url('/typefaces/chaparralprolight.woff') format('woff'),
+           url('/typefaces/chaparralprolight.ttf') format('truetype'),
+           url('/typefaces/chaparralprolight.svg#chaparralprolight') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+@font-face {
+      font-family: 'ChaparralPro-LightIt';
+      src: url('/typefaces/chaparralprolightit.eot');
+      src: url('/typefaces/chaparralprolightit.eot?#iefix') format('embedded-opentype'),
+           url('/typefaces/chaparralprolightit.woff') format('woff'),
+           url('/typefaces//typefaces/chaparralprolightit.ttf') format('truetype'),
+           url('/typefaces/chaparralprolightit.svg#chaparralprolightit') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+
+  @font-face {
+      font-family: 'ChaparralPro-Regular';
+      src: url('/typefaces/chaparralproregular.eot');
+      src: url('/typefaces/chaparralproregular.eot?#iefix') format('embedded-opentype'),
+           url('/typefaces/chaparralproregular.woff') format('woff'),
+           url('/typefaces/chaparralproregular.ttf') format('truetype'),
+           url('/typefaces/chaparralproregular.svg#chaparralproregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+@font-face {
+        font-family: 'ChaparralPro-Semibold';
+        src: url('/typefaces/chaparralprosemibold.eot');
+        src: url('/typefaces/chaparralprosemibold.eot?#iefix') format('embedded-opentype'),
+             url('/typefaces/chaparralprosemibold.woff') format('woff'),
+             url('/typefaces/chaparralprosemibold.ttf') format('truetype'),
+             url('/typefaces/chaparralprosemibold.svg#chaparralprosemibold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+div#header { display:none; position:fixed; top:0px; margin:auto; z-index:100000; width:100%;}
+div#my-menus  {background:#000; height:50px; opacity:0.8}
+
+
+strong { font-family:'ChaparralPro-Semibold', sans-serif;}
+
+
+
+
