@@ -1,28 +1,34 @@
 
-TODO::Demo
 
-- fix middleman build, absolute -> relative
+
+
+TODO: 
+
+- create bit form, option to attach to a cluster.
+- assign bit color to view
+
+
+
+
+
+- wire up amazon s3
+- image magick to create small / big versions of images? 
+- scale shadow for different size bits
+
 - refactor: how do i set up a display:inline-block that clears, without a container?
 - is there a way to use one image in magiczoom?
-- flip cards : http://css3playground.com/flip-card.php
 - focus : http://css3playground.com/blur-filter.php
 - get access to selected bit, pass to flip function    
 - refactor drag to container, not content of a bit
 - contact artist of mj collage
 - shatter image script?
 - soundmanager UI not working
+- fix drag handle
 
 
-
-TODO::Main
-- wire up amazon s3
-- image magick to create small / big versions of images? 
-- scale shadow for different size bits
 
 
 OPEN QUESTIONS:
 - how to differentiate a drag, versus an edit?
-- must be able to switch back and forth fluidly. CORE. then it becomes, if i open 20 tabs, where do these temp spaces lie on the map? they only exist in time, not in space (yet)
-
-thus, the system has 2 primary modes? time. space.
-as opposed to metaphors like paper, desktop, windows, doors, i think much more inspiring, useful, and appropriate to our lives are time. space.
+- what are the bounds of a cluster?
+- 

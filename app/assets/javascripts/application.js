@@ -11,4 +11,34 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+
+
+$(document).ready(function()
+{
+
+	$( ".content" ).draggable({ handle: "p" });
+
+
+
+
+	/* flip bit, sounds */
+    $('.bit').click(function(){
+
+    	alert('flip that shit');
+        var add = $(this).find('.card').addClass('flipped')
+
+   
+		add.mouseleave(function(){
+            $(this).removeClass('flipped');
+
+           
+
+        });
+        return false;
+    });
+
+
+
+});

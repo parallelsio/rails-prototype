@@ -1,9 +1,6 @@
-// Place all the styles related to the Bits controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.bit { display:block; position: relative;}
+.bit { display:block; position: absolute;}
 .bit .content .ui-widget-header { display:none; height:8px; cursor:move; background-color:#ccc; position:absolute; top:-23px; left:0;}
 .bit .content:hover .ui-widget-header{ display:block; height:8px; width:100%;}
 
@@ -14,11 +11,8 @@
   margin: 5px;
   background-color: #fff;
  color: #666;
-  /* cursor: se-resize; */
-    display:inline-block;
- 
+ display:inline-block;
  font-size: 16px;
-
 }
 
 
@@ -53,7 +47,7 @@
   -o-transform: skew(5deg) rotate(5deg);
   transform: skew(5deg) rotate(5deg);
 }
-
+/* end bit shadows */
 
 
 .bit .image 		{ padding:0 !important; background:none !important; }
@@ -62,28 +56,21 @@
 
 
 
-.flip {
+.bit {
   -webkit-perspective: 400;
-   
     position: relative;
-    height:100px;
-    width:200px;
-    
-}
 
-.flip .card.flipped {
-  -webkit-transform: rotatex(-180deg);
-}
-.flip .card {
-	
-  width: 100%;
-  height: 100%;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: 0.2s;
  
 }
 
-.flip .card .face {
+.bit.flipped {
+  -webkit-transform: rotatex(-180deg);
+}
+
+
+.bit .face {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -91,7 +78,7 @@
   z-index: 2;
     
 }
-.flip .card .front {
+.bit .front {
   position: absolute;
   z-index: 1;
   background:white;
@@ -99,14 +86,14 @@
      padding: 15px;
 }
 
-.flip .card .back {
+.bit .back {
   -webkit-transform: rotatex(-180deg);
-   
+    display: none;
     background: #bababa;
      color: white;
-    
     cursor: pointer;
      padding: 15px;
-
 }
+
+
 

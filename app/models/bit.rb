@@ -1,7 +1,7 @@
 class Bit < ActiveRecord::Base
 
-	 has_many :parallels
-  	 has_many :clusters, through: :parallels
+	belongs_to :map
+  	belongs_to :parallels
 
 	attr_accessible :color, :content, :image, :location_x, :location_y, :type
 
