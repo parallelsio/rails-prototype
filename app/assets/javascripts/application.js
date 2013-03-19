@@ -18,7 +18,7 @@
 $(document).ready(function()
 {
 
-	$( ".content" ).draggable({ handle: "p" });
+	$( ".bit " ).draggable({ handle: "p" });
 
 
 

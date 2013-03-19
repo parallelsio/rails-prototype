@@ -6,7 +6,7 @@ TODO:
 
 - create bit form, option to attach to a cluster.
 - assign bit color to view
-
+- favicon : ActiveRecord::RecordNotFound (Couldn't find Bit with id=favicon): error on secondary
 
 
 

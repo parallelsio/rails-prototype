@@ -19,7 +19,10 @@
     /[if IE] <script type="text/javascript" src="script/excanvas.js"></script>
   
     %link{ :rel => "shortcut icon", :href => "favicon.ico"}
-    %link{ :rel => "icon", :type => "image/gif", :href => "animated_favicon1.gif" }
+    
+    / TODO: causing error:
+    / ActiveRecord::RecordNotFound (Couldn't find Bit with id=favicon):
+    / %link{ :rel => "icon", :type => "image/gif", :href => "animated_favicon1.gif" }
 
 #center
   #header
