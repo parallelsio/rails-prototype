@@ -22,22 +22,21 @@ $(document).ready(function()
 
 
 
+	// /* flip bit, sounds */
+ //    $('.bit').click(function(){
 
-	/* flip bit, sounds */
-    $('.bit').click(function(){
-
-    	alert('flip that shit');
-        var add = $(this).find('.card').addClass('flipped')
+ //    	alert('flip that shit');
+ //        var add = $(this).find('.card').addClass('flipped')
 
    
-		add.mouseleave(function(){
-            $(this).removeClass('flipped');
+	// 	add.mouseleave(function(){
+ //            $(this).removeClass('flipped');
 
            
 
-        });
-        return false;
-    });
+ //        });
+ //        return false;
+ //    });
 
 
 

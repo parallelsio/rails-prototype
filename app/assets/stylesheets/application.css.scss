@@ -65,9 +65,14 @@ body {
     }
 
 
-div#header { display:none; position:fixed; top:0px; margin:auto; z-index:100000; width:100%;}
-div#my-menus  {background:#000; height:50px; opacity:0.8}
+div#header { position:fixed; top:0px; margin:auto; z-index:100000; width:100%;}
+div#my-menus  {
+ opacity:1; background:#ccc; padding:10px;
+  /*background: url("demo/odyssey-slider-ui-design.jpg") top left no-repeat;*/
+}
 
+div#my-menus a { margin: 0 20px; padding:10px;} 
+div#my-menus a:hover { background:white; color:#aaa;}
 
 strong { font-family:'ChaparralPro-Semibold', sans-serif;}
 

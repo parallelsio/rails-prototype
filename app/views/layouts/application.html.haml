@@ -21,5 +21,14 @@
     %link{ :rel => "shortcut icon", :href => "favicon.ico"}
     %link{ :rel => "icon", :type => "image/gif", :href => "animated_favicon1.gif" }
 
+#center
+  #header
+    #my-menus
+      = link_to 'map:1', map_path(1)
+      = link_to 'bit:4', bit_path(4)
+
+
   %body
     = yield
+
+

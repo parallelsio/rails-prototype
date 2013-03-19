@@ -1,6 +1,6 @@
 class Parallel < ActiveRecord::Base
 	
 	belongs_to :cluster
-	has_many :bits
+	belongs_to :bit
 
 end
