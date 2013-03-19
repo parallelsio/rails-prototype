@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215033942) do
+ActiveRecord::Schema.define(:version => 20130319091955) do
 
   create_table "bits", :force => true do |t|
     t.text     "content"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130215033942) do
     t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "map_id"
   end
 
   create_table "clusters", :force => true do |t|
