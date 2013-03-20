@@ -18,26 +18,85 @@
 $(document).ready(function()
 {
 
+
+ //    soundManager.setup({
+ //      url: '/swf/',
+ //      flashVersion: 8, // optional: shiny features (default = 8)
+ //      useFlashBlock: false
+ //    });
+
+
+
+ //    /* UI config for sound bit */
+	// threeSixtyPlayer.config = {
+	//   playNext: false, // stop after one sound, or play through list until end
+	//   autoPlay: false, // start playing the first sound right away
+	//   allowMultiple: true, // let many sounds play at once (false = one at a time)
+	//   loadRingColor: '#ccc',// amount of sound which has loaded
+	//   playRingColor: '#000', // amount of sound which has played
+	//   showHMSTime: true,
+	//   useEQData: true,
+	//   useWaveformData: true,
+	//   backgroundRingColor: '#eee', // "default" color shown underneath everything else
+	//   animDuration: 500,
+	//   animTransition: Animator.tx.bouncy// http://www.berniecode.com/writing/animator.html
+	// }
+
+	// global place in header to show notices, errors and messages
+	function tell(message) {
+		$('#header .message').text(message)
+	}
+
+	// wire drag and drop to each bit's handle, which only shows on hover
 	$( ".bit " ).draggable({ handle: "p" });
 
 
+	// flip bit, add sounds
+	// BF: 
 
-	// /* flip bit, sounds */
- //    $('.bit').click(function(){
 
- //    	alert('flip that shit');
- //        var add = $(this).find('.card').addClass('flipped')
+	/* flip bit, sounds */
+    $('.bit').click(function(){
 
-   
-	// 	add.mouseleave(function(){
- //            $(this).removeClass('flipped');
+        var add = $(this).find('.content').addClass('flipped')
 
-           
+        // display back
+        $(this).find('.content .back').css('display', 'block');
 
- //        });
- //        return false;
- //    });
+        // remove from from flow
+        $(this).find('.content .front').css('display', 'none');
 
+
+  //       var soundObject = soundManager.createSound({
+		//  id:'flip_in',
+		//  url:'/sounds/aim_buddy_logging_in.mp3'
+		
+		// });
+		// soundObject.play();
+
+		add.mouseleave(function(){
+            $(this).removeClass('flipped');
+
+            // display back
+	        $(this).find('.back').css('display', 'none');
+
+	        // remove from from flow
+	        $(this).find('.front').css('display', '');
+
+
+            // $('.content').css('positon', 'relative');
+
+   //         	var soundObject = soundManager.createSound({
+			//  id:'flip_out',
+			//  url:'/sounds/aim_buddy_logging_out.mp3'
+			
+			// });
+			// soundObject.play();
+
+
+        });
+        return false;
+    });
 
 
 });

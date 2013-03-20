@@ -1,26 +1,77 @@
-.bit                                    { display:block; position: absolute;}
-.bit .content .ui-widget-header         { display:none;  cursor:move; background-color:#ccc; position:absolute; 
-top: -7px;
-left: 0;
-margin: 0;
-padding: 0;}
+.bit                                    
+{ 
+  position: absolute;   
 
-.bit .content:hover .ui-widget-header   { display:block; height:8px; width:100%;}
+  /* for flip 
+  http://24ways.org/2010/intro-to-css-3d-transforms/
+  */
+  -webkit-perspective: 800px;
+}
 
 .bit .content { 
 
-  position: relative;
-  padding:15px;
-  
-  background-color: #fff;
+
  color: #666;
  display:inline-block;
  font-size: 16px;
+
+  /* for flip 
+  http://24ways.org/2010/intro-to-css-3d-transforms/
+  */
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .1s;  
+}
+
+.bit .content .ui-widget-header         { 
+  display:none;  
+  cursor:move; 
+  background-color:#ccc; 
+  position:absolute; 
+top: -7px;
+left: 0;
+margin: 0;
+padding: 0;
+}
+
+.bit .content:hover .ui-widget-header   { display:block; height:8px; width:100%;}
+
+
+.bit .face { 
+  display: block;
+
+  padding:15px;
+
+/*  width: 100%;
+  height: 100%;*/
+  -webkit-backface-visibility: hidden;
+}
+
+.bit .content .face.front { 
+   
+     background-color: #fff;
+
 }
 
 
-/* bit shadows */
-.bit .content:before, .bit .content:after
+  /* for flip 
+  http://24ways.org/2010/intro-to-css-3d-transforms/
+  */
+.bit .content .face.back { 
+  display:none;
+  background: #ccc;
+  -webkit-transform: rotateY(180deg);
+}
+
+.bit .content.flipped {
+  -webkit-transform: rotateY(180deg);
+}
+
+/* bit shadows 
+BF: http://www.sitepoint.com/pure-css3-paper-curls
+*/
+.bit:before, .bit:after
 {
   position: absolute;
   width: 20%;
@@ -37,10 +88,11 @@ padding: 0;}
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
   z-index: -1;
 }
 
-.bit .content:after
+.bit:after
 {
   left: auto;
   right: 5px;
@@ -55,48 +107,5 @@ padding: 0;}
 
 .bit .image 		{ padding:0 !important; background:none !important; }
 .bit .aside	 	{ font-family:'ChaparralPro-LightIt';  } 
-
-
-
-/*
-.bit {
-  -webkit-perspective: 400;
-    position: relative;
-
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: 0.2s;
- 
-}
-
-.bit.flipped {
-  -webkit-transform: rotatex(-180deg);
-}
-
-
-.bit .face {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  -webkit-backface-visibility: hidden ;
-  z-index: 2;
-    
-}
-.bit .front {
-  position: absolute;
-  z-index: 1;
-  background:white;
-    cursor: pointer;
-     padding: 15px;
-}
-
-.bit .back {
-  -webkit-transform: rotatex(-180deg);
-    display: none;
-    background: #bababa;
-     color: white;
-    cursor: pointer;
-     padding: 15px;
-}
-*/
 
 
