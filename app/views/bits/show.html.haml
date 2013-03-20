@@ -1,21 +1,21 @@
-.bit{ :id => "_#{ @bit.id}", :style => "left: #{ @bit.location_x}px; top: #{ @bit.location_y}px;" } 
+.bit{ :id => "_#{ bit.id}", :style => "left: #{ bit.location_x}px; top: #{ bit.location_y}px;" } 
   .content 
-    = @bit.content
+    = bit.content
 
     %p.ui-widget-header
 
     / .face.front
-    /   = @bit.content
+    /   = bit.content
       
     / .face.back
     /   %p
-    /     %b x: y: = @bit.type
-    /     = "#{ @bit.location_x } : #{ @bit.location_y} "
+    /     %b x: y: = bit.type
+    /     = "#{ bit.location_x } : #{ bit.location_y} "
 
-    /   - if @bit.image.present?
-    /     %p= image_tag @bit.image
+    /   - if bit.image.present?
+    /     %p= image_tag bit.image
 
-    /   = link_to 'Edit', edit_bit_path(@bit)
+    /   = link_to 'Edit', edit_bit_path(bit)
     /   \|
     /   = link_to 'Back', bits_path
 

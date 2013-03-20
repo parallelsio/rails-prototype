@@ -7,6 +7,7 @@ class MapsController < ApplicationController
   def show
     @map = Map.find(params[:id])
     @clusters = @map.clusters
+    @solo_bits = @map.bits
   end
 
   def new

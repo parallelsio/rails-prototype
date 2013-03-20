@@ -1,6 +1,5 @@
 class Bit < ActiveRecord::Base
 
-	# belongs_to :map 
   	has_many :parallels
   	has_many :clusters, :through => :parallels
 

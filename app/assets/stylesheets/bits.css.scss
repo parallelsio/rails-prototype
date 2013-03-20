@@ -1,11 +1,10 @@
-
-
 .bit                                    { display:block; position: absolute;}
 .bit .content .ui-widget-header         { display:none;  cursor:move; background-color:#ccc; position:absolute; 
 top: -7px;
 left: 0;
 margin: 0;
 padding: 0;}
+
 .bit .content:hover .ui-widget-header   { display:block; height:8px; width:100%;}
 
 .bit .content { 

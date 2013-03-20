@@ -1,34 +1,33 @@
+CORE IDEAS:
+
+Parallels is a system for gathering, connecting your ideas.
+There are no boundaries, no file or folder heirarchy. 
+Instead, everything is connected.
+
+
+The smallest unit is a bit.
+It can be of any type. (text, image, video, sound) TIVS
+It can be of any size
+Bits can be glued to creater larger bits. Sliced to split them up.
+Bits can also be grouped into clusters.
+The arrangements of clusters are views.
+You can order views by many attributes: color, dimensions, patterns
+Your views are like apps.
+
+
+
+WHY
 
 
 
 
-TODO: 
 
-- create bit form, option to attach to a cluster.
-- assign bit color to view
-- favicon : ActiveRecord::RecordNotFound (Couldn't find Bit with id=favicon): error on secondary
+POTENTIAL APPLICATIONS
 
-
-
-
-- wire up amazon s3
-- image magick to create small / big versions of images? 
-- scale shadow for different size bits
-
-- refactor: how do i set up a display:inline-block that clears, without a container?
-- is there a way to use one image in magiczoom?
-- focus : http://css3playground.com/blur-filter.php
-- get access to selected bit, pass to flip function    
-- refactor drag to container, not content of a bit
-- contact artist of mj collage
-- shatter image script?
-- soundmanager UI not working
-- fix drag handle
 
 
 
 
 OPEN QUESTIONS:
-- how to differentiate a drag, versus an edit?
 - what are the bounds of a cluster?
-- 
+ 
