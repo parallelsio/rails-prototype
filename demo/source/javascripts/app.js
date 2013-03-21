@@ -187,7 +187,7 @@ $(document).ready(function()
 	/* sound on glue bits */
 	$('._91 #search_wave').sketch (function(e){
 
-		stopPainting()
+		stopPainting();
 	})
 			
 				
