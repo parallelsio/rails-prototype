@@ -64,7 +64,8 @@ div#header { display:none; position:fixed; top:0px; margin:auto; z-index:100000;
 div#my-menus  {background:#000; height:50px; opacity:0.8}
 
 
-strong { font-family:'ChaparralPro-Semibold', sans-serif;}
+/*strong { font-family:'ChaparralPro-Semibold', sans-serif;}
+*/
 
 .bit { display:block; position: relative;}
 .bit .content .ui-widget-header { display:none; height:8px; cursor:move; background-color:#ccc; position:absolute; top:-23px; left:0;}

@@ -1,0 +1,1238 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- needed to ensure that the browser can parse D3’s functions and data properly. -->
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    
+    <link href='http://fonts.googleapis.com/css?family=Meddon' rel='stylesheet' type='text/css'>
+    
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>New Project</title>
+
+    <link href="stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/demo.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/magiczoom.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/360/360player.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/360/360player-visualization.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/crop/imgareaselect-default.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+    <script src="javascripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="javascripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="javascripts/jquery.simplemodal.1.4.2.min.js" type="text/javascript"></script>
+<script src="javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="javascripts/modernizr.js" type="text/javascript"></script>
+<script src="javascripts/d3.v3.min.js" type="text/javascript"></script>
+<script src="javascripts/magiczoom.cstreams.registered.js" type="text/javascript"></script>
+<script src="javascripts/mousetrap.min.js" type="text/javascript"></script>
+<script src="javascripts/berniecode-animator.js" type="text/javascript"></script>
+<script src="javascripts/soundmanager2-nodebug-jsmin.js" type="text/javascript"></script>
+<script src="javascripts/360player.js" type="text/javascript"></script>
+<script src="javascripts/raphael-min.js" type="text/javascript"></script>
+<script src="javascripts/jquery.imgareaselect.pack.js" type="text/javascript"></script>
+<script src="javascripts/sketch.min.js" type="text/javascript"></script>
+<script src="javascripts/app.js" type="text/javascript"></script>
+
+    <!-- special IE-only canvas fix -->
+    <!--[if IE]><script type="text/javascript" src="script/excanvas.js"></script><![endif]-->
+
+
+  </head>
+
+
+  <body class="index">
+
+    <!-- #sm2-container{ :style => 'height: 1px !important;'} -->
+<div id='center'>
+  <div id='header'>
+    <div id='my-menus'></div>
+  </div>
+  <!-- .bit._1-00 -->
+  <!-- .content -->
+  <!-- %span box 1.2.3 -->
+  <!-- %svg{ :width => "100px", :height => "100px", "xmlns:svg" => "http://www.w3.org/2000/svg", :xmlns => "http://www.w3.org/2000/svg" } -->
+  <!-- %polygon{ :x => '50', :y => '50', :width => '22', :fill => "blue", :stroke => "gray", :"stroke-width" => "2"} -->
+  <!-- %p.ui-widget-header -->
+  <div class='bit _1'>
+    <div class='content'>
+      hello world!
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _1-5'>
+    <div class='content'>
+      this is Parallels
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _1-6'>
+    <div class='content'>
+      a world to help you design, connect and share the evolution of your ideas.
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _2'>
+    <div class='content'>
+      i'm a bit of
+      <strong>text</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _3'>
+    <div class='content'>
+      i can be
+      of any size,
+      small as one letter, like a
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _4'>
+    <div class='content'>
+      Y
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _5-0'>
+    <div class='content'>
+      or as big as a
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _5'>
+    <div class='content'>
+      word
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _6'>
+    <div class='content'>
+      i can be a phrase,
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _7'>
+    <div class='content'>
+      a paragraph (of which I'll spare you)
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _7-2'>
+    <div class='content'>
+      a page
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _7-25'>
+    <div class='content'>
+      or even an entire book
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _7-3'>
+    <div class='content'>
+      the point is, there are no rules
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _7-4'>
+    <div class='content'>
+      i can be of any size, defined only by how you use me
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _8'>
+    <div class='content'>
+      i can also be a
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _9'>
+    <div class='content image'>
+      <a class='MagicZoom' href='images/fish.jpg' rel='zoom-width:400px;zoom-height:400px;'>
+        <img height="140" src="images/fish_small.jpg" />
+      </a>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _10'>
+    <div class='content'>
+      No.. no.. not a fish
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _10'>
+    <div class='content'>
+      i mean i can be an
+      <strong>image</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _11'>
+    <div class='content'>
+      i can also be other things, like
+      a
+      <strong>sound,</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _12-1'>
+    <div class='content'>
+      <div class='ui360'>
+        <a id="play_opening" class="sm2_link" href="#">play</a>
+      </div>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _13'>
+    <div class='content'>
+      or a
+      <strong>video</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _13-1'>
+    <div class='content image'>
+      <iframe allowfullscreen='true' frameborder='0' height='220' mozallowfullscreen='true' src='http://player.vimeo.com/video/7469697?title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;amp;color=ffffff' webkitAllowFullScreen='true' width='370'></iframe>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _20'>
+    <div class='content'>
+      you can
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _21'>
+    <div class='content'>
+      drag me
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _23 flip'>
+    <div class='card'>
+      <div class='face front'>flip me</div>
+      <div class='face back image'>
+        <img height="180" src="images/6795772928.gif" />
+      </div>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _24'>
+    <div class='content'>
+      cut me
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _25'>
+    <div class='content before'>
+      into pieces
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _28'>
+    <div class='content'>
+      glue me into bigger
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _29'>
+    <div class='content'>
+      ones
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _25-1'>
+    <div class='content'>
+      crop me
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _26'>
+    <div class='content image'>
+      <img width="500" id="zelda_large" src="images/zelda.png" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _26-1'>
+    <div class='content image'>
+      <img id="zelda_cropped" src="images/zelda_small.png" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _32'>
+    <div class='content'>
+      you can even shatter me into a million pieces.
+    </div>
+    <p class='ui-widget-header'></p>
+  </div>
+  <div class='bit _32-1'>
+    <div class='content'>
+      What would be the equivalent of this:
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _32-1'>
+    <div class='content image'>
+      <iframe allowfullscreen='true' frameborder='0' height='169' src='http://www.youtube.com/embed/FIPu9_OGFgc?rel=0&amp;start=14' width='300'></iframe>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _32-2'>
+    <div class='content'>
+      but for a bit of text
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='sliced_text'>
+    <div class='bit _32-2-1'>
+      <div class='content'>
+        but
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _32-2-2'>
+      <div class='content'>
+        for
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _32-2-3'>
+      <div class='content'>
+        a
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _32-2-4'>
+      <div class='content'>
+        bit
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _32-2-5'>
+      <div class='content'>
+        of
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _32-2-6'>
+      <div class='content'>
+        text
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+  </div>
+  <div class='bit _32-3'>
+    <div class='content'>
+      and for an image?
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _32-4'>
+    <div class='content image'>
+      <img src="images/mark_webster_umberto_ode.png" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='umberto'>
+    <div class='row'>
+      <div class='bit _1001'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_01.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1002'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_02.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1003'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_03.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1004'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_04.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1005'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_05.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1006'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_06.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='bit _1007'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_07.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1008'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_08.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1009'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_09.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1010'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_10.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1011'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_11.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1012'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_12.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='bit _1013'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_13.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1014'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_14.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1015'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_15.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1016'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_16.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1017'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_17.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1018'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_18.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='bit _1019'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_19.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1020'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_20-1.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1021'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_22.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1022'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_20.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1023'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_24-1.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1024'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_24.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='bit _1025'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_25.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1026'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_26.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1027'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_27.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1028'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_28.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1029'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_29.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _1030'>
+        <div class='content image'>
+          <img src="images/umberto_parts/mark_webster_umberto_ode_30.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='bit _14-4'>
+    <div class='content'>
+      You can also group me with your other bits, to make
+      <strong>clusters</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _33-0'>
+    <div class='content'>
+      here's a re-enactment of one of artist Christian Marclay's
+      <a href="https://www.google.com/search?q=christian+marclay+collage&hl=en&authuser=0&tbm=isch&tbo=u&source=univ&sa=X&ei=IfAzUbm3M-jC0AGK9oDoBQ&ved=0CDMQsAQ&biw=1476&bih=761">CD cover collages</a>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='mj'>
+    <div class='bit _33-1'>
+      <div class='content image'>
+        <img width="200" src="images/michael_jackson_thriller.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _34'>
+      <div class='content image'>
+        <img width="220" src="images/sidney_barnes_michael_jackson.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _35'>
+      <div class='content image'>
+        <img width="230" src="images/roxy_music.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+  </div>
+  <div class='bit _16'>
+    <div class='content'>
+      it's just like digital
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _17'>
+    <div class='content image'>
+      <img src="images/lego.png" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _80'>
+    <div class='content'>
+      now say you were part of a team
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _81-1'>
+    <div class='content'>
+      of artists, designers, engineers and scientists
+      collaborating on complex project.
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='weightless_topic'>
+    <div class='bit _56'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/arn.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _73'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/theplayer.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _57'>
+      <div class='content image'>
+        <iframe allowfullscreen='true' frameborder='0' height='90' src='http://www.youtube.com/embed/CulOp0uaYic' width='150'></iframe>
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _55'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/Allegretto.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _57-1'>
+      <div class='content image'>
+        <iframe allowfullscreen='true' frameborder='0' src='http://www.youtube.com/embed/GF0-wGbRqEs' width='200'></iframe>
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _13-11'>
+      <div class='content image'>
+        <iframe allowFullScreen='true' allowfullscreen='true' frameborder='0' height='95' mozallowfullscreen='true' src='http://player.vimeo.com/video/7469697?byline=0&amp;amp;portrait=0&amp;amp;color=ffffff&amp;amp;loop=1' webkitAllowFullScreen='true' width='160'></iframe>
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _68'>
+      <div class='content image'>
+        <iframe allowFullScreen='true' allowfullscreen='true' frameborder='0' height='95' mozallowfullscreen='true' src='http://player.vimeo.com/video/6284199?byline=0&amp;amp;portrait=0&amp;amp;color=ffffff&amp;amp;loop=1' webkitAllowFullScreen='true' width='160'></iframe>
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _68-1'>
+      <div class='content image'>
+        <img src="images/weightless/boccioni.png" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _60'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/Fetal_Position_by_Pixel_Sage.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _51'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/095_1.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _67'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/1.png" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _58'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/d695fcef4f9ed591889df0831538c2f51ccb0a63_m.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _61'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/fix_002b.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _65'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/Regal_Incidence_76x58_op_769x569.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _63'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/kemurit.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _63-1'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/007.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _62'>
+      <div class='content image'>
+        <img width="140" src="images/weightless/hood.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _66'>
+      <div class='content image'>
+        <img width="200" src="images/weightless/rocketeer.gif" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _59'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/es-omhulsel-escher.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _74'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/waves-2.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _64'>
+      <div class='content image'>
+        <img width="130" src="images/weightless/randi.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _54'>
+      <div class='content image'>
+        <img width="170" src="images/weightless/Abstractobv.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _77'>
+      <div class='content image'>
+        <img width="140" src="images/weightless/Spiral_dive_with_instruction_diagram.jpeg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _78'>
+      <div class='content image'>
+        <img width="140" src="images/weightless/IMG_0749.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _71'>
+      <div class='content image'>
+        <img width="100" src="images/weightless/5.png" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+    <div class='bit _79'>
+      <div class='content image'>
+        <img width="170" src="images/weightless/IMG_0528.jpg" />
+        <p class='ui-widget-header'></p>
+      </div>
+    </div>
+  </div>
+  <div class='bit _47'>
+    <div class='content'>
+      what if you could re-arrange your cluster
+      into new configurations, or
+      <strong>views</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _47-6'>
+    <div class='content'>
+      in the way these dots morph?
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _81'>
+    <div class='content image'>
+      <iframe allowfullscreen='true' frameborder='0' height='225' src='http://www.youtube.com/embed/ReB-RgRSKWM?rel=0' width='400'></iframe>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _48 left'>
+    <div class='content'>
+      you could re-arrange
+      <strong>by color</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _48-0 left'>
+    <div class='content'>
+      by
+      <strong>shape</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _48-1 left'>
+    <div class='content'>
+      by
+      <strong>size</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _48-3'>
+    <div class='content'>
+      by
+      <strong>origin (where you found it)</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _48-2'>
+    <div class='content'>
+      and many other attributes you could define
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _49'>
+    <div class='content'>
+      and some the best ideas and connections
+      <a target="_blank" href="http://portal.acs.org/portal/acs/corg/content?_nfpb=true&_pageLabel=PP_SUPERARTICLE&node_id=520&use_sec=false&sec_url_var=region1&__uuid=76958ea8-9aaf-45ec-b374-c65418686e22#P24_1424">happen by chance</a>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _49-43'>
+    <div class='content'>
+      so how about experimenting with ordering
+      <strong>by random?</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _36'>
+    <div class='content'>
+      As you can imagine, things can get hectic quickly.
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _36-1'>
+    <div class='content'>
+      To manage this, you can always undo anything:
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='_36-3'>
+    <div class='image'>
+      <img src="images/slider1.jpg" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _36-2'>
+    <div class='content'>
+      by sliding back and forth in time
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _37-32'>
+    <div class='content'>
+      you can also play time, to see the evolution of your ideas
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _81-4'>
+    <div class='content image'>
+      <iframe allowfullscreen='true' frameborder='0' height='300' src='http://www.youtube.com/embed/xiWpZ5jhvx4?rel=0' width='400'></iframe>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _38'>
+    <div class='content'>
+      thank this guy for that idea
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _38-1'>
+    <div class='content image'>
+      <img width="300" src="images/1878_Darwin_photo_by_Leonard_from_Woodall_1884.jpg" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _38-6'>
+    <div class='content aside'>
+      charles darwin, in case ya didn't know
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _51'>
+    <div class='content'>
+      Things really come to life
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _51-1'>
+    <div class='content'>
+      when you create connections or relationships
+      <strong>between</strong>
+      me and other bits.
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _51-3 left'>
+    <div class='content'>
+      These are called
+      <strong>parallels.</strong>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _52'>
+    <div class='content'>
+      For example:
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='_199 parallel'>
+    <div class='left'>
+      <div class='bit _53-2'>
+        <div class='content image'>
+          <img width="200" src="images/mark_webster_umberto_ode.png" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _53-1'>
+        <div class='content'>
+          this image of a Mark Webster painting (2010)
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='middle'>
+      <div class='bit _53-3'>
+        <div class='content'>
+          was
+          <strong>born from</strong>
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='right'>
+      <div class='bit _53-5'>
+        <div class='content image'>
+          <img width="200" src="images/weightless/2029811645_a945abaacf.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _53-4'>
+        <div class='content'>
+          Umbero Bioccioni's sculpture (1913)
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='_200 parallel'>
+    <div class='left'>
+      <div class='bit _110-1'>
+        <div class='content image'>
+          <img width="175" src="images/weightless/1.png" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _110-2'>
+        <div class='content'>
+          this image
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='middle'>
+      <div class='bit _110-3'>
+        <div class='content'>
+          is
+          <strong>visually similiar</strong>
+          to
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='right two'>
+      <div class='bit _110-6'>
+        <div class='content image'>
+          <img width="200" src="images/weightless/IMG_0749.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _110-7'>
+        <div class='content'>
+          after a bit of a twist
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='right one'>
+      <div class='bit _110-4'>
+        <div class='content image'>
+          <img width="200" src="images/weightless/IMG_0749.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _110-5'>
+        <div class='content'>
+          to this one
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='bit _115'>
+    <div class='content'>
+      you can create conceptual parallels too, not just visual ones
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _116'>
+    <div class='content'>
+      imagine you were reading a web page
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _145'>
+    <div class='content image'>
+      <img width="450" src="images/manning.png" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='_201 parallel'>
+    <div class='left'>
+      <div class='bit _111-1'>
+        <div class='content'>
+          "One of the better times of the Cambridge Physical Laboratories was when they had practically shacks - they did some of the best physics ever
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _111-2'>
+        <div class='content'>
+          Richard Hamming, transcript of a speech "You & Your Research"
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='middle'>
+      <div class='bit _111-3'>
+        <div class='content'>
+          is
+          <strong>analogus to</strong>
+          to
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='right'>
+      <div class='bit _111-4'>
+        <div class='content'>
+          In the early music publishing houses, there might as many as ten pianos going aonce, and you had to write a lead sheet under those circumstances. If I were making a lead sheet to get an advance I couldnt afford to let all those noises interfere with the nose I was trying to put down on one sheet of paper.
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _111-5'>
+        <div class='content'>
+          Duke Ellington, Music is My muse
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='_202 parallel'>
+    <div class='left'>
+      <div class='bit _112-1'>
+        <div class='content'>
+          "Men are born ignorant, not stupid. They are made stupid by education."
+          Bertrand Russell
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _112-2'>
+        <div class='content'>
+          this quote, regarding education
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='middle'>
+      <div class='bit _112-3'>
+        <div class='content'>
+          <strong>is the opposite</strong>
+          of
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='right'>
+      <div class='bit _112-4'>
+        <div class='content'>
+          "Education is the most powerful weapon which you can use to change the world."
+          Nelson Mandela
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+      <div class='bit _112-5'>
+        <div class='content'>
+          of this one
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+    <div class='right'>
+      <div class='bit _112-6 left'>
+        <div class='content'>
+          <img width="150" src="images/tt0084503.jpg" />
+          <p class='ui-widget-header'></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='bit _91'>
+    <div class='content'>
+      As opposed to files, that can only belong in one folder
+      any bit or cluster can exist in many areas of this world.
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _54'>
+    <div class='content'>
+      you'll be able
+      to define your own
+      <strong>types</strong>
+      of parallels too
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _130'>
+    <div class='content'>
+      You can also search visually
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _131 left'>
+    <div class='content'>
+      <img width="150" src="images/search_11.jpg" />
+      <!-- %canvas{ :id => "search_wave", :width => "200", :height => "200"} -->
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='_132 left'>
+    <img width="20" id="search_spinner" src="images/spinner.gif" />
+  </div>
+  <div class='bit _133 left'>
+    <div class='content image'>
+      <img width="150" src="images/weightless/1.png" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _134'>
+    <div class='content image'>
+      <img width="200" src="images/weightless/IMG_0749.jpg" />
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _54'>
+    <div class='content'>
+      and the parallels linking your bits
+      will let you find things associatevely
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _92'>
+    <div class='content'>
+      Accessing one, will always show you were else it is used or referenced,
+      in this way showing you how your ideas relate and connect.
+      any bit or cluster can exist in many areas of this world.
+      <canvas height='200' id='search_wave' width='200'></canvas>
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <!-- .bit._56 -->
+  <!-- .content -->
+  <!-- for now though, these details are unimportant: -->
+  <!-- Just know that parallels are -->
+  <!-- %strong not -->
+  <!-- visual connections -->
+  <!-- %p.ui-widget-header -->
+  <!-- .bit._56-1 -->
+  <!-- .content -->
+  <!-- (as that would just make a fantastic visual mess, like) -->
+  <!-- %p.ui-widget-header -->
+  <!-- .bit._57 -->
+  <!-- .content.image -->
+  <!-- %a{ :href => "/images/obama_care_chart_excerpt_large.png", :rel => "zoom-width:500px;zoom-height:350x;", :class => "MagicZoom" } -->
+  <!-- = image_tag "/images/obama_care_chart.png", :height => 140 -->
+  <!-- %p.ui-widget-header -->
+  <div class='bit _93'>
+    <div class='content'>
+      discover by visual search.
+      The power of a system like this comes from central idea
+      that whenever we create, it is almost always a combination
+      of things that already exist, and that connections between things are important to instantly trace.
+      <p class='ui-widget-header'></p>
+    </div>
+  </div>
+  <div class='bit _94'>
+    <div class='content'>
+      For example, if this were my map, and I was curious:
+      Where
+      <canvas height='200' id='search_wave' width='200'></canvas>
+    </div>
+  </div>
+  <div class='bit _95'>
+    <div class='content'>
+      And the end result, a 'document' is just one moment in time, a snapshot of where you are with this idea, today.
+    </div>
+  </div>
+  <div class='bit _96'>
+    <div class='content'>
+      These documents are never static
+    </div>
+  </div>
+  <div class='bit _97'>
+    <div class='content'>
+      They dont have to be linear, though you can create one
+    </div>
+  </div>
+  <div class='bit _98'>
+    <div class='content'>
+      If you're a story, you can build a narrative, you can keep track of a
+      rapidly growing universe that includes characters, plot points, places and connections
+    </div>
+  </div>
+  <div class='bit _99'>
+    <div class='content'>
+      If you are a filmmaker, you can combine a layout of inspiration, sound inspiration,
+      video inspiration, and create different configurations of this information to represent what's important, per scene
+    </div>
+  </div>
+  <div class='bit _100'>
+    <div class='content'>
+      If you are a detective, this is your case file.
+    </div>
+  </div>
+  <div class='bit _101'>
+    <div class='content'>
+      If you are a lawyer, you can design an argument and link passages from different sources.
+    </div>
+  </div>
+  <div class='bit _102'>
+    <div class='content'>
+      The more you use, and share your ideas as single bits
+      clusters, the more useful it will be,
+      not just for you, but for assembling an interconnected knowledge base,
+      through a variety of perspectives.
+    </div>
+  </div>
+  
+</div>
+
+  </body>
+</html>
