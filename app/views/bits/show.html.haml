@@ -6,9 +6,8 @@
       
     .face.back
       %p
-        %b x: y: = @bit.type
-        = "#{ @bit.location_x } : #{ @bit.location_y} "
-
+        = @bit.type
+        
       - if @bit.image.present?
         %p= image_tag @bit.image
 

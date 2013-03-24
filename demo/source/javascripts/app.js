@@ -78,16 +78,16 @@ $(document).ready(function()
 
 
 	/*  drag bit  */
-	$("._21").click(function(){
-  		$("._21 .content").animate({	
-  				top: 	'-=20px',
-  			 	left: 	'+=183px'  },
-  			 "slow",
-  			 function(){
-               //$(this).html("Animation Completed");
-               $(this).unbind('click');  }
-  		);
-	}); 
+	// $("._21").click(function(){
+ //  		$("._21 .content").animate({	
+ //  				top: 	'-=20px',
+ //  			 	left: 	'+=183px'  },
+ //  			 "slow",
+ //  			 function(){
+ //               //$(this).html("Animation Completed");
+ //               $(this).unbind('click');  }
+ //  		);
+	// }); 
 
 
 
@@ -155,14 +155,6 @@ $(document).ready(function()
 			});
 
 
-	/* show slider header * /
-	$('._37 .content').click(function(){
-				$('#header').css('display', "block");
-
-				
-			});
-	*/
-	
 
     $('#zelda_large').imgAreaSelect({
         handles: true,
@@ -184,14 +176,145 @@ $(document).ready(function()
 			});
 
 
-	/* sound on glue bits */
-	$('._91 #search_wave').sketch (function(e){
 
-		stopPainting();
-	})
+
+	
 			
+
+	$('._32-2 .content').click(function(){
+
+         $('.bit._32-2').css('display', "none");
+         $('.sliced_text').css('display', "block");
+	});						
+
 				
-						
+	$('._32-4 .content').click(function(){
+
+         $('.bit._32-4').css('display', "none");
+         $('.umberto').css('display', "block");
+	});						
+
+
+
+
+	$('.weightless_topic ._68-1').click(function(){
+
+         $(this).css('left', '-270px');
+         $(this).css('top', '-1420px');
+         
+
+         
+	});		
+
+
+				
+	$('._36-3 img').click(function(){
+		$(this).attr('src', '/images/slider2.jpg');
+		 $('.bit._32-4').css('display', "block");
+         $('.umberto').css('display', "none");
+         $('._32-4 .content').unbind('click');  
+	});						
+
+	$('._38-1 .content').click(function(){
+		 $('._38-6').css('display', "block");
+         
+	});	
+
+
+
+
+	$('._131 .content img').click(function(){
+		$(this).hide();
+		$(this).attr('src', '/images/search_1.png').slideDown("fast");
+
+		  $("._132 img").show();
+		  $("._133").fadeIn(1000, function showNext() 
+		  {
+		    $("._134").fadeIn(1000);
+		  	$("._132 img").hide();
+		  });
+		
+
+	});	
+
+
+
+
+
+
+    $('._145 img').imgAreaSelect({
+        handles: true,
+        parent: '#center',
+        autoHide: true,
+        onSelectEnd: function(){
+	               $('._145').animate({	
+		  			 	left: 	'-=464px'  },
+		  			 "slow",
+		  			 function(){
+		               //$(this).html("Animation Completed");
+		               $(this).unbind('click');  
+		           });
+
+
+               		$('._111-1').show().fadeIn(1000);
+                 }
+	});
+
+
+
+
+
+
+
+	/* flip bit, sounds */
+    $('._111-1').click(function(){
+
+        var add = $(this).find('.card').addClass('flipped')
+
+        var soundObject = soundManager.createSound({
+		 id:'flip_in',
+		 url:'/sounds/aim_buddy_logging_in.mp3'
+		
+		});
+		soundObject.play();
+
+		add.mouseleave(function(){
+            $(this).removeClass('flipped');
+
+           	var soundObject = soundManager.createSound({
+			 id:'flip_out',
+			 url:'/sounds/aim_buddy_logging_out.mp3'
+			
+			});
+			soundObject.play();
+
+
+        });
+        return false;
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

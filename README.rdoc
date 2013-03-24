@@ -1,22 +1,11 @@
 CORE IDEAS:
 
-Parallels is a system for gathering, connecting your ideas.
-There are no boundaries, no file or folder heirarchy. 
-Instead, everything is connected.
-
-
-The smallest unit is a bit.
-It can be of any type. (text, image, video, sound) TIVS
-It can be of any size
-Bits can be glued to creater larger bits. Sliced to split them up.
-Bits can also be grouped into clusters.
-The arrangements of clusters are views.
-You can order views by many attributes: color, dimensions, patterns
-Your views are like apps.
-
+See demo/build/index.html for narrative presentation of core ideas
+read aloud : vimeo/
 
 
 WHY
+
 
 
 
@@ -30,4 +19,5 @@ POTENTIAL APPLICATIONS
 
 OPEN QUESTIONS:
 - what are the bounds of a cluster?
- 
+- how is performance going to stay sharp and fast, as this scales? 
+  Hunch: dynamic loading of divs, like tiles in Google Maps
