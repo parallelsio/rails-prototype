@@ -211,9 +211,10 @@ $(document).ready(function()
 
 
 
-	$('._131 .content img').click(function(){
-		$(this).hide();
-		$(this).attr('src', '/images/search_1.png').slideDown("fast");
+	$('.row_search').click(function(){
+
+		$('._131 img').hide();
+		$('._131 img').attr('src', '/images/search_1.png').slideDown("fast");
 
 		  $("._132 img").show();
 		  $("._133").fadeIn(1000, function showNext() 
@@ -253,18 +254,6 @@ $(document).ready(function()
 						  	});	
 						  });
 						
-
-
-
-
-
-
-
-
-
-
-
-
 
 		           });
 
@@ -314,21 +303,23 @@ $(document).ready(function()
 
 
 
+    $('._112-1').click(function(){
+
+		
+		  $("._202 .middle").fadeIn(500, function showNext() 
+		  {
+		    $("._202 .two").fadeIn(500);
+		  });
+	});
 
 
+    $('._202 .two').click(function(){
 
-
-
-
-
-
-
-
-
-
-
-
-
+		  $("._112-7").fadeIn(500); 
+		
+		  $("._202 .one").fadeIn(500); 
+	
+	});
 
 
 

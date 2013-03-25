@@ -27,6 +27,38 @@ font-size:11px;
 } 
 
 
+
+
+    blockquote {
+     font-family:'ChaparralPro-LightIt';  
+      margin: 0.25em 0;
+      padding: 0.25em 40px;
+      line-height: 1.25;
+    }
+
+    blockquote:before {
+      display: block;
+      content: "\201C";
+      font-size: 50px;
+      position: absolute;
+      left: 30px;
+      top: 20px;
+      color: #adadad;
+    }
+
+    blockquote cite {
+      color: #999999;
+      font-size: 14px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    blockquote cite:before {
+      content: "\2014 \2009";
+    }
+
+
+
 /*http://desandro.github.com/3dtransforms/docs/card-flip.html*/
 .bit.flip {
 
@@ -136,6 +168,10 @@ width: 334px;
 
 ._25-1 	{ margin:60px 0 0 0;}
 
+._26 .content:before,
+._26 .content:after { bottom:10px;}
+
+
 ._26-1 { position: relative;
 left: 264px;}
 
@@ -151,11 +187,16 @@ display:none;}
 
 ._32-1  { margin:0 0 60px 0;}
 
+._32-2-1  { z-index:15;}
+
+
 ._32-3  { margin:100px 0 0 0 ;}
 
 
 
-.mj		{ left:-50px; position:relative; height:340px; }
+.mj		{ left:-50px; position:relative; height:340px;
+top: 30px;
+ }
 
 
 .mj ._33-1 	{ position : absolute; left:408px;  }
@@ -175,9 +216,68 @@ display:none;}
 
 
 .mj ._35 	{ 
+left: 90px;
+position: relative;
+height: 340px;
+top: 71px;
+} 
+
+
+
+
+.doors   { 
+  left:70px;
+  position: relative;
+height: 560px; }
+
+
+.doors ._333-1  { position: absolute;
+left: -80px;
+top: 90px;  }
+
+
+.doors ._333-2  { 
+ position: absolute;
+left: 170px;
+top: 50px;
+
+
+}
+
+
+.doors ._333-3  { 
 position: absolute;
 left: 80px;
-top: 76px;
+top: 60px;
+} 
+
+.doors ._333-4  { 
+
+    position: absolute; 
+    left: 110px; 
+    top: 310px;
+
+  -webkit-transform: rotate(90deg); 
+  -moz-transform: rotate(90deg); 
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg); 
+ z-index:10;
+} 
+
+
+
+.doors ._333-5  { 
+
+    position: absolute; 
+   
+
+  -webkit-transform: rotate(180deg); 
+  -moz-transform: rotate(180deg); 
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg); 
+ left: 260px;
+top: 210px;
+
 } 
 
 
@@ -300,7 +400,7 @@ top: -20px;
 
 ._199 { margin:90px 0 0 0;}
 
-._200  { left:-40px; margin:100px 0 0 -30px;}
+._200  { left:-40px; margin:100px 0 50px -30px;}
 ._200 .right.one  { margin:0 0 0 31px;}
 
 
@@ -363,7 +463,14 @@ left: 300px;
 }
 
 
+.row_search{
+height:200px;
+width:800px;
+clear:both;
 
+}
+
+._131 
 ._131 .content { 
   height: 193px;
 width: 135px;
@@ -382,9 +489,9 @@ width: 135px;
   -moz-transform: rotate(-90deg); 
   -o-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg); 
+left: 70px;
+top: 121px;
 
-left: 0px;
-top: 58px;
 
 }
 
@@ -436,6 +543,65 @@ top: -70px;}
 ._145 { position:absolute;}
 
 
+._201 { margin: 0 0 200px 0; height:530px;}
+
 ._201 .left,
 ._201 .middle,
 ._201 .right { display:none;}
+
+
+
+._112-1  {  
+width: 300px;
+
+} 
+._112-3 {  
+
+top: 40px;
+left: 40px;
+}
+ 
+._112-4 {  
+width:290px;
+top: -168px;
+left: 529px;
+}
+
+._202 { }
+
+
+._112-6 {  
+
+left: -210px; top: 344px;
+}
+
+._112-7 {  
+display:none;
+left: 604px;
+top: -146px;
+
+}
+
+
+._112-8 {  left: -20px;
+top: 30px;
+}
+
+
+._202 .one { position: absolute;
+left: 600px;
+margin: -30px 0 0 0;
+}
+
+._202 .middle,
+._202 .two,
+._202 .one { display:none;}
+
+
+
+._91 { margin:390px 0 0 0;}
+
+
+._300 { clear: both;
+margin: 180px 0 0 0;
+};
