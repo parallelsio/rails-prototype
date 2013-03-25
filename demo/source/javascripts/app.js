@@ -1,6 +1,52 @@
 $(document).ready(function()
 {
+
+
+
+
+
+
+	Mousetrap.bind('1', function() { 
+
+	//	highlight(2); 
+	  $("._700-1").fadeIn(500, function showNext() 
+	  {
+	    $("._701-1").fadeIn(500, function showNext() 
+	    {
+	  		$(".search_trigger .one").fadeIn(500);
+	  	});	
+	  });
+
+
+	});
+
+
+
 	
+	// keycommands 
+	// $(".content").mouseover(function(){
+
+			
+	// 		Mousetrap.bind('tab', function(e, element){
+	// 		    console.log(e);
+			    
+
+	// 		    // This is not working
+	// 		    // $(this).attr('id').effect("highlight", {}, 3000);
+			    
+	// 		    return false;
+	// 			});
+
+
+ //    	// $(this).removeClass().addClass("hover");
+ //    }).mouseout(function(){
+
+ //    	// $(this).removeClass().addClass("hover");		
+ //    	Mousetrap.reset();
+ //    });
+
+
+
 	/* d3 test */
 	// d3.select("#sm2-container").insert("svg", ":first-child")
  //           .attr("width", 500)
@@ -51,31 +97,10 @@ $(document).ready(function()
 
 	$( ".content" ).draggable({ handle: "p" });
 
-	/*
-	keycommands 
-	$(".content").mouseover(function(){
+	/* buggy, snap */
+	// $( ".content" ).draggable({ handle: "p" , snap: ".content" });
 
-			
-			Mousetrap.bind('tab', function(e, element){
-			    console.log(e);
-			    
-
-			    // This is not working
-			    // $(this).attr('id').effect("highlight", {}, 3000);
-			    
-			    return false;
-				});
-
-
-    	// $(this).removeClass().addClass("hover");
-    }).mouseout(function(){
-
-    	// $(this).removeClass().addClass("hover");		
-    	Mousetrap.reset();
-    });
-
-	*/
-
+	
 
 
 
@@ -320,6 +345,49 @@ $(document).ready(function()
 		  $("._202 .one").fadeIn(500); 
 	
 	});
+
+
+
+     $('.search_trigger').click(function(){
+
+
+
+		  $(".search").fadeIn(100);
+		  $("._900").fadeIn(100);
+	});
+
+
+
+
+
+
+
+
+    /* cut sound for split bit */
+	$('.search_trigger .one').click(function(){
+				
+				  $('.search_trigger ._120').animate({left:'-=180', top:'+=120'},200);
+				  $('.search_trigger ._122').animate({left:'+=0', top:'+=110'},200);
+				  $('.search_trigger ._123').animate({left:'+=20', top:'+=260'},200);
+
+			});
+			
+
+
+
+	Mousetrap.bind('2', function() { 
+
+	  $('.search_trigger ._120').animate({left:'+=180', top:'-=120'},200);
+	  $('.search_trigger ._122').animate({left:'-=0', top:'-=110'},200);
+	  $('.search_trigger ._123').animate({left:'-=20', top:'-=260'},200);
+
+	});
+
+
+
+			
+
+
 
 
 

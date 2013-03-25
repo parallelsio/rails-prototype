@@ -788,8 +788,8 @@
 
   .bit._49-43
     .content 
-      and ordering 
-      %strong by random?
+      and generate new ideas with ordering 
+      %strong by random
       %p.ui-widget-header     
 
 
@@ -1152,7 +1152,7 @@
 
   .bit._91
     .content 
-      With these examples in mind, let's look at ways you'd search:
+      By linking bits with parallels, you can search associatively:
       %p.ui-widget-header 
 
 
@@ -1181,51 +1181,103 @@
 
 
 
-    .bit._300
+
+  .search_trigger
+    .bit._900
+      .content
+        .search
+
+          / %label a
+          %input#query{ :type => "text", :role => "search", :placeholder => "Search", :value => "", :autocomplete => "off"}
+          %searchplaceholder
+            / %span#placeholderduplicate search
+ 
+
+    .bit._700-1
       .content 
-        the more you use Parallels, the better it gets
+        = "... stupid by"
+        .highlight education.
+        = " -- Bertrand ..."
+        %p.ui-widget-header 
 
 
-
-
-    .bit._301
+    .bit._701-1
       .content 
-        there are tons of other features to tell you about,
-        like 
+        .highlight Education
+        is the most powerful weapon... 
+        %p.ui-widget-header 
 
 
-    .bit._302
-      .content 
-        %strong desktop 
-        and
-        %strong browser 
-        integration
+    .one
 
-    .bit._302-1
-      .content 
-        %strong touch 
-        support
+      .bit._120
+        .content.image
+          = image_tag '/images/tt0084503.jpg', :width => 150
+          %p.ui-widget-header 
+
+      .bit._121
+        .content.image
+          = image_tag '/images/wall-1.jpg', :width => 150
+          %p.ui-widget-header 
+
+      .bit._122
+        .content.image
+          = image_tag '/images/wall-2.jpg', :width => 150
+          %p.ui-widget-header 
+
+      .bit._123
+        .content.image
+          %iframe{ :width => "300", :height => "169", :src => "http://www.youtube.com/embed/YR5ApYxkU-U?rel=0&start=1060", :frameborder => "0", :allowfullscreen => "true"  }
+          %p.ui-widget-header 
 
 
 
-    .bit._302-2
-      .content 
-        easy 
-        %strong Google docs 
-        import/export
+
+  .bit._300
+    .content 
+      the more you use Parallels, the better it gets
 
 
 
-    .bit._303
-      .content 
-        simple sharing, via 
-        %strong twitter
-        %strong facebook
-        %strong dropbox
 
-    .bit._304
-      .content 
-        which I'll tell you about in the next episode
+  .bit._301
+    .content 
+      there are tons of other features to tell you about,
+      like 
+
+
+  .bit._302
+    .content 
+      %strong desktop 
+      and
+      %strong browser 
+      integration
+
+  .bit._302-1
+    .content 
+      %strong touch 
+      support
+
+
+
+  .bit._302-2
+    .content 
+      easy 
+      %strong Google docs 
+      import/export
+
+
+
+  .bit._303
+    .content 
+      simple sharing, via 
+      %strong twitter
+      %strong facebook
+      %strong dropbox
+
+  .bit._304
+    .content 
+      which I'll tell you about in the next episode
 
 
   = partial("partials/footer")
