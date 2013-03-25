@@ -171,13 +171,12 @@
 
 
 
-
-  .bit._23.flip
-    .card
-      .face.front flip me
-      .face.back.image
-        = image_tag "/images/6795772928.gif", :height => 180
-      %p.ui-widget-header 
+  / .bit._23.flip
+  /   .card
+  /     .face.front flip me
+  /     .face.back.image
+  /       = image_tag "/images/6795772928.gif", :height => 180
+  /     %p.ui-widget-header 
 
       
   .bit._24
@@ -519,7 +518,7 @@
     .content 
       
       of artists, designers, engineers and scientists 
-      collaborating on complex project.
+      collaborating on a complex project.
       %p.ui-widget-header 
 
 
@@ -703,7 +702,7 @@
 
 
 
-  .bit._81
+  .bit._811
     .content.image
       %iframe{ :width => "400", :height => "225", :src => "http://www.youtube.com/embed/ReB-RgRSKWM?rel=0", :frameborder => "0", :allowfullscreen => "true"  }
 
@@ -739,17 +738,17 @@
       %strong origin (where you found it)
       %p.ui-widget-header  
 
-  .bit._48-2
-    .content 
-      and many other attributes you could define
-      %p.ui-widget-header  
+  / .bit._48-2
+  /   .content 
+  /     and many other attributes you could define
+  /     %p.ui-widget-header  
 
 
-  .bit._49
-    .content 
-      and some the best ideas and connections 
-      = link_to 'happen by chance', 'http://portal.acs.org/portal/acs/corg/content?_nfpb=true&_pageLabel=PP_SUPERARTICLE&node_id=520&use_sec=false&sec_url_var=region1&__uuid=76958ea8-9aaf-45ec-b374-c65418686e22#P24_1424', :target => '_blank' 
-      %p.ui-widget-header     
+  / .bit._49
+  /   .content 
+  /     and some the best ideas and connections 
+  /     = link_to 'happen by chance', 'http://portal.acs.org/portal/acs/corg/content?_nfpb=true&_pageLabel=PP_SUPERARTICLE&node_id=520&use_sec=false&sec_url_var=region1&__uuid=76958ea8-9aaf-45ec-b374-c65418686e22#P24_1424', :target => '_blank' 
+  /     %p.ui-widget-header     
 
 
 
@@ -781,10 +780,18 @@
 
   .bit._36-1
     .content 
-      To manage this, you can always undo anything:
+      A few things will help to manage this
       %p.ui-widget-header 
 
       
+  .bit._36-1
+    .content 
+      First, you can always undo anything:
+      %p.ui-widget-header 
+
+
+
+
   ._36-3
     .image
       = image_tag '/images/slider1.jpg'
@@ -792,15 +799,11 @@
 
 
 
-  .bit._36-2
-    .content 
-      by sliding back and forth in time
-      %p.ui-widget-header 
 
 
   .bit._37-32
     .content
-      you can also play time, to see the evolution of your ideas
+      and play time, to see the evolution of your ideas
       %p.ui-widget-header 
     
 
@@ -883,7 +886,7 @@
 
     .middle
       .bit._53-3
-        .content 
+        .content.caps 
           was 
           %strong born from
           %p.ui-widget-header 
@@ -897,7 +900,7 @@
 
       .bit._53-4
         .content 
-          Umbero Bioccioni's sculpture (1913)
+          Umberto Bioccioni's sculpture (1913)
           %p.ui-widget-header 
 
 
@@ -925,9 +928,9 @@
 
     .middle
       .bit._110-3
-        .content 
+        .content.caps
           is 
-          %strong visually similiar
+          %strong visually similar
           to
           %p.ui-widget-header 
 
@@ -968,7 +971,8 @@
 
   .bit._116
     .content 
-      imagine you were reading a web page 
+      imagine reading a web page, clipping a bit of text, seamlessly 
+      saving, connecting and annotating it
       %p.ui-widget-header 
 
       
@@ -991,146 +995,161 @@
 
       .bit._111-2
         .content 
-          Richard Hamming, transcript of a speech "You & Your Research"
+          Richard Hamming,
+          = link_to 'You & Your Research', 'http://www.paulgraham.com/hamming.html', :target => '_blank'
+
+          %p.ui-widget-header 
+
+
+      .bit._111-3
+        .content.image
+          = image_tag '/images/hamming.jpg'
 
           %p.ui-widget-header 
 
 
     .middle
-      .bit._111-3
-        .content 
-          is 
-          %strong analogus to 
+      .bit._111-4
+        .content.caps
+
+          is a
+          %strong parallel
           to
           %p.ui-widget-header 
 
     .right
 
-      .bit._111-4
-        .content
-          In the early music publishing houses, there might as many as ten pianos going aonce, and you had to write a lead sheet under those circumstances. If I were making a lead sheet to get an advance I couldnt afford to let all those noises interfere with the nose I was trying to put down on one sheet of paper.
-          %p.ui-widget-header
+      .bit._111-50
+        .content.image
+          = image_tag '/images/duke_ellington_music_mistress.jpg', :width => 110
+
+          %p.ui-widget-header 
+
 
       .bit._111-5
         .content
-          Duke Ellington, Music is My muse
-          %p.ui-widget-header 
-
-
-
-
-  ._202.parallel
-    .left
-
-      .bit._112-1
-        .content
-          "Men are born ignorant, not stupid. They are made stupid by education."
-          Bertrand Russell 
-
+          In the early music publishing houses, there might as many as ten pianos going at once, and you had to write a lead sheet under those circumstances. If I were making a lead sheet to get an advance I couldnt afford to let all those noises interfere with the nose I was trying to put down on one sheet of paper.
           %p.ui-widget-header
 
-      .bit._112-2
-        .content 
-          this quote, regarding education
+      .bit._111-6
+        .content
+          Duke Ellington, Music is My Muse
           %p.ui-widget-header 
 
 
-    .middle
-      .bit._112-3
-        .content 
+
+  / ._202.parallel
+  /   .left
+
+  /     .bit._112-1
+  /       .content
+  /         "Men are born ignorant, not stupid. They are made stupid by education."
+  /         Bertrand Russell 
+
+  /         %p.ui-widget-header
+
+  /     .bit._112-2
+  /       .content 
+  /         this quote, regarding education
+  /         %p.ui-widget-header 
+
+
+  /   .middle
+  /     .bit._112-3
+  /       .content 
           
-          %strong is the opposite
-          of
-          %p.ui-widget-header 
+  /         %strong is the opposite
+  /         of
+  /         %p.ui-widget-header 
 
-    .right
+  /   .right
 
-      .bit._112-4
-        .content
-          "Education is the most powerful weapon which you can use to change the world."
-          Nelson Mandela
-          %p.ui-widget-header
+  /     .bit._112-4
+  /       .content
+  /         "Education is the most powerful weapon which you can use to change the world."
+  /         Nelson Mandela
+  /         %p.ui-widget-header
 
-      .bit._112-5
-        .content 
-          of this one
-          %p.ui-widget-header 
-
-
-
-    .right
-
-      .bit._112-6.left
-        .content
-          = image_tag '/images/tt0084503.jpg', :width => 150
-          %p.ui-widget-header 
+  /     .bit._112-5
+  /       .content 
+  /         of this one
+  /         %p.ui-widget-header 
 
 
-  .bit._91
-    .content 
-      As opposed to files, that can only belong in one folder
-      any bit or cluster can exist in many areas of this world.
-      %p.ui-widget-header 
+
+  /   .right
+
+  /     .bit._112-6.left
+  /       .content
+  /         = image_tag '/images/tt0084503.jpg', :width => 150
+  /         %p.ui-widget-header 
 
 
+  / .bit._91
+  /   .content 
+  /     As opposed to files, that can only belong in one folder
+  /     any bit or cluster can exist in many areas of this world.
+  /     %p.ui-widget-header 
 
 
 
 
-  .bit._54
-    .content 
-      you'll be able 
-      to define your own 
-      %strong types 
-      of parallels too
+
+
+  / .bit._54
+  /   .content 
+  /     you'll be able 
+  /     to define your own 
+  /     %strong types 
+  /     of parallels too
       
-      %p.ui-widget-header 
+  /     %p.ui-widget-header 
 
 
 
 
 
-  .bit._130
-    .content 
-      You can also search visually
-      %p.ui-widget-header 
+  / .bit._130
+  /   .content 
+  /     You can also search visually
+  /     %p.ui-widget-header 
 
 
-  .bit._131.left
-    .content
-      = image_tag '/images/search_11.jpg', :width => 150
-      /%canvas{ :id => "search_wave", :width => "200", :height => "200"}      
-      %p.ui-widget-header 
+  / .bit._131.left
+  /   .content
+  /     = image_tag '/images/search_11.jpg', :width => 150
+  /     /%canvas{ :id => "search_wave", :width => "200", :height => "200"}      
+  /     %p.ui-widget-header 
 
-  ._132.left
-    = image_tag '/images/spinner.gif', :width => 20, :id => 'search_spinner'
+  / ._132.left
+  /   = image_tag '/images/spinner.gif', :width => 20, :id => 'search_spinner'
      
 
-  .bit._133.left
-    .content.image
-      = image_tag '/images/weightless/1.png', :width => 150
-      %p.ui-widget-header 
+  / .bit._133.left
+  /   .content.image
+  /     = image_tag '/images/weightless/1.png', :width => 150
+  /     %p.ui-widget-header 
 
-  .bit._134
-    .content.image
-      = image_tag '/images/weightless/IMG_0749.jpg', :width => 200
-      %p.ui-widget-header 
+  / .bit._134
+  /   .content.image
+  /     = image_tag '/images/weightless/IMG_0749.jpg', :width => 200
+  /     %p.ui-widget-header 
 
 
 
-  .bit._54
-    .content
-      and the parallels linking your bits
-      will let you find things associatevely      
-      %p.ui-widget-header 
+  / .bit._54
+  /   .content
+  /     and the parallels linking your bits
+  /     will let you find things associatevely      
+  /     %p.ui-widget-header 
 
-  .bit._92
-    .content 
-      Accessing one, will always show you were else it is used or referenced,
-      in this way showing you how your ideas relate and connect.
-      any bit or cluster can exist in many areas of this world.
-      %canvas{ :id => "search_wave", :width => "200", :height => "200"}
-      %p.ui-widget-header 
+  / .bit._92
+  /   .content 
+  /     Accessing one, will always show you were else it is used or referenced,
+  /     in this way showing you how your ideas relate and connect.
+  /     any bit or cluster can exist in many areas of this world.
+  /     %canvas{ :id => "search_wave", :width => "200", :height => "200"}
+  /     %p.ui-widget-header 
 
 
   
@@ -1138,100 +1157,100 @@
 
 
 
-  / .bit._56
+  / / .bit._56
+  / /   .content 
+  / /     for now though, these details are unimportant:
+  / /     Just know that parallels are 
+  / /     %strong not 
+  / /     visual connections 
+  / /     %p.ui-widget-header 
+
+
+  / / .bit._56-1
+  / /   .content
+  / /     (as that would just make a fantastic visual mess, like)
+  / /     %p.ui-widget-header 
+
+
+  / / .bit._57
+  / /   .content.image
+  / /     %a{ :href => "/images/obama_care_chart_excerpt_large.png", :rel => "zoom-width:500px;zoom-height:350x;", :class => "MagicZoom" }
+  / /       = image_tag "/images/obama_care_chart.png", :height => 140
+  / /     %p.ui-widget-header 
+
+
+
+
+
+
+
+
+  / .bit._93
   /   .content 
-  /     for now though, these details are unimportant:
-  /     Just know that parallels are 
-  /     %strong not 
-  /     visual connections 
-  /     %p.ui-widget-header 
-
-
-  / .bit._56-1
-  /   .content
-  /     (as that would just make a fantastic visual mess, like)
-  /     %p.ui-widget-header 
-
-
-  / .bit._57
-  /   .content.image
-  /     %a{ :href => "/images/obama_care_chart_excerpt_large.png", :rel => "zoom-width:500px;zoom-height:350x;", :class => "MagicZoom" }
-  /       = image_tag "/images/obama_care_chart.png", :height => 140
-  /     %p.ui-widget-header 
-
-
-
-
-
-
-
-
-  .bit._93
-    .content 
-      discover by visual search. 
+  /     discover by visual search. 
       
-      The power of a system like this comes from central idea
-      that whenever we create, it is almost always a combination
-      of things that already exist, and that connections between things are important to instantly trace.
-      %p.ui-widget-header 
+  /     The power of a system like this comes from central idea
+  /     that whenever we create, it is almost always a combination
+  /     of things that already exist, and that connections between things are important to instantly trace.
+  /     %p.ui-widget-header 
 
 
-  .bit._94
-    .content 
-      For example, if this were my map, and I was curious:
+  / .bit._94
+  /   .content 
+  /     For example, if this were my map, and I was curious:
 
 
-      Where 
+  /     Where 
 
-      %canvas{ :id => "search_wave", :width => "200", :height => "200"}
-
-
-
-  .bit._95
-    .content 
-      And the end result, a 'document' is just one moment in time, a snapshot of where you are with this idea, today. 
-
-  .bit._96
-    .content 
-      These documents are never static
-
-  .bit._97
-    .content 
-      They dont have to be linear, though you can create one
+  /     %canvas{ :id => "search_wave", :width => "200", :height => "200"}
 
 
 
-  .bit._98
-    .content 
-      If you're a story, you can build a narrative, you can keep track of a 
-      rapidly growing universe that includes characters, plot points, places and connections
+  / .bit._95
+  /   .content 
+  /     And the end result, a 'document' is just one moment in time, a snapshot of where you are with this idea, today. 
+
+  / .bit._96
+  /   .content 
+  /     These documents are never static
+
+  / .bit._97
+  /   .content 
+  /     They dont have to be linear, though you can create one
+
+
+
+  / .bit._98
+  /   .content 
+  /     If you're a story, you can build a narrative, you can keep track of a 
+  /     rapidly growing universe that includes characters, plot points, places and connections
      
 
-  .bit._99
-    .content 
-      If you are a filmmaker, you can combine a layout of inspiration, sound inspiration, 
-      video inspiration, and create different configurations of this information to represent what's important, per scene
+  / .bit._99
+  /   .content 
+  /     If you are a filmmaker, you can combine a layout of inspiration, sound inspiration, 
+  /     video inspiration, and create different configurations of this information to represent what's important, per scene
  
 
 
-  .bit._100
-    .content 
-      If you are a detective, this is your case file. 
+  / .bit._100
+  /   .content 
+  /     If you are a detective, this is your case file. 
 
 
 
-  .bit._101
-    .content 
-      If you are a lawyer, you can design an argument and link passages from different sources.
+  / .bit._101
+  /   .content 
+  /     If you are a lawyer, you can design an argument and link passages from different sources.
 
 
 
 
-  .bit._102
-    .content 
-      The more you use, and share your ideas as single bits
-      clusters, the more useful it will be,
-      not just for you, but for assembling an interconnected knowledge base,
-      through a variety of perspectives.
+  / .bit._102
+  /   .content 
+  /     The more you use, and share your ideas as single bits
+  /     clusters, the more useful it will be,
+  /     not just for you, but for assembling an interconnected knowledge base,
+  /     through a variety of perspectives.
 
   = partial("partials/footer")

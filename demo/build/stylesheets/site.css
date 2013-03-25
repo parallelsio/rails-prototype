@@ -16,22 +16,22 @@ body {
 
   @font-face {
       font-family: 'ChaparralPro-Light';
-      src: url('typefaces/chaparralprolight.eot');
-      src: url('typefaces/chaparralprolight.eot?#iefix') format('embedded-opentype'),
-           url('typefaces/chaparralprolight.woff') format('woff'),
-           url('typefaces/chaparralprolight.ttf') format('truetype'),
-           url('typefaces/chaparralprolight.svg#chaparralprolight') format('svg');
+      src: url('/typefaces/chaparralprolight.eot');
+      src: url('/typefaces/chaparralprolight.eot?#iefix') format('embedded-opentype'),
+           url('/typefaces/chaparralprolight.woff') format('woff'),
+           url('/typefaces/chaparralprolight.ttf') format('truetype'),
+           url('/typefaces/chaparralprolight.svg#chaparralprolight') format('svg');
       font-weight: normal;
       font-style: normal;
   }
 
 @font-face {
       font-family: 'ChaparralPro-LightIt';
-      src: url('typefaces/chaparralprolightit.eot');
-      src: url('typefaces/chaparralprolightit.eot?#iefix') format('embedded-opentype'),
-           url('typefaces/chaparralprolightit.woff') format('woff'),
-           url('typefaces//typefaces/chaparralprolightit.ttf') format('truetype'),
-           url('typefaces/chaparralprolightit.svg#chaparralprolightit') format('svg');
+      src: url('/typefaces/chaparralprolightit.eot');
+      src: url('/typefaces/chaparralprolightit.eot?#iefix') format('embedded-opentype'),
+           url('/typefaces/chaparralprolightit.woff') format('woff'),
+           url('/typefaces//typefaces/chaparralprolightit.ttf') format('truetype'),
+           url('/typefaces/chaparralprolightit.svg#chaparralprolightit') format('svg');
       font-weight: normal;
       font-style: normal;
   }
@@ -39,22 +39,22 @@ body {
 
   @font-face {
       font-family: 'ChaparralPro-Regular';
-      src: url('typefaces/chaparralproregular.eot');
-      src: url('typefaces/chaparralproregular.eot?#iefix') format('embedded-opentype'),
-           url('typefaces/chaparralproregular.woff') format('woff'),
-           url('typefaces/chaparralproregular.ttf') format('truetype'),
-           url('typefaces/chaparralproregular.svg#chaparralproregular') format('svg');
+      src: url('/typefaces/chaparralproregular.eot');
+      src: url('/typefaces/chaparralproregular.eot?#iefix') format('embedded-opentype'),
+           url('/typefaces/chaparralproregular.woff') format('woff'),
+           url('/typefaces/chaparralproregular.ttf') format('truetype'),
+           url('/typefaces/chaparralproregular.svg#chaparralproregular') format('svg');
       font-weight: normal;
       font-style: normal;
   }
 
 @font-face {
         font-family: 'ChaparralPro-Semibold';
-        src: url('typefaces/chaparralprosemibold.eot');
-        src: url('typefaces/chaparralprosemibold.eot?#iefix') format('embedded-opentype'),
-             url('typefaces/chaparralprosemibold.woff') format('woff'),
-             url('typefaces/chaparralprosemibold.ttf') format('truetype'),
-             url('typefaces/chaparralprosemibold.svg#chaparralprosemibold') format('svg');
+        src: url('/typefaces/chaparralprosemibold.eot');
+        src: url('/typefaces/chaparralprosemibold.eot?#iefix') format('embedded-opentype'),
+             url('/typefaces/chaparralprosemibold.woff') format('woff'),
+             url('/typefaces/chaparralprosemibold.ttf') format('truetype'),
+             url('/typefaces/chaparralprosemibold.svg#chaparralprosemibold') format('svg');
         font-weight: normal;
         font-style: normal;
     }
@@ -62,6 +62,7 @@ body {
 
 div#header { display:none; position:fixed; top:0px; margin:auto; z-index:100000; width:100%;}
 div#my-menus  {background:#000; height:50px; opacity:0.8}
+
 
 
 .bit { display:block; position: relative;}
@@ -114,48 +115,5 @@ div#my-menus  {background:#000; height:50px; opacity:0.8}
   -o-transform: skew(5deg) rotate(5deg);
   transform: skew(5deg) rotate(5deg);
 }
-
-
-
-
-.quote  { padding-left: 20px; padding-top:20px; font-style:italic; font-family:georgia; font-size:15px;}  
-.quote b {  font-style:italic; font-family:georgia; font-size:15px; font-weight:bold;}  
-
-
-
-
-
-.label
-
-{
-  font-size:17px; 
-  padding:8px 20px 8px 0; 
-  background:#ffffff; 
-  min-width:100px;
-  width:100px;
-
-}
-.label.blue { background: #ebf7fb }
-
-
-
-.bit .footnote           { padding:0 20px 0 20px;}
-.bit .footnote .number       { font-size:12px; position:relative;  display:inline-block; color:gray; width:30px; float:left;}
-.bit .footnote .content      { position: relative; top: -11px; color:gray; line-height:20px;}
-
-
-.bit.label     { padding:0 0 0 20px; margin-bottom:5px;}
-
-
-
-p.start       { padding: 15px 0 0 0;}
-p.end         { padding:0 0 15px 0;}
-.footnote p.end   { padding:0 0 20px 0;}
-
-/* hide vimeo junk */
-iframe html body div div.a div.at  { display:none;}
-
-
-
 
 

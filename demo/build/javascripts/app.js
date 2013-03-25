@@ -77,18 +77,6 @@ $(document).ready(function()
 	*/
 
 
-	/*  drag bit  */
-	// $("._21").click(function(){
- //  		$("._21 .content").animate({	
- //  				top: 	'-=20px',
- //  			 	left: 	'+=183px'  },
- //  			 "slow",
- //  			 function(){
- //               //$(this).html("Animation Completed");
- //               $(this).unbind('click');  }
- //  		);
-	// }); 
-
 
 
 	/* flip bit, sounds */
@@ -96,22 +84,22 @@ $(document).ready(function()
 
         var add = $(this).find('.card').addClass('flipped')
 
-        var soundObject = soundManager.createSound({
-		 id:'flip_in',
-		 url:'/sounds/aim_buddy_logging_in.mp3'
+  //       var soundObject = soundManager.createSound({
+		//  id:'flip_in',
+		//  url:'/sounds/aim_buddy_logging_in.mp3'
 		
-		});
-		soundObject.play();
+		// });
+		// soundObject.play();
 
 		add.mouseleave(function(){
             $(this).removeClass('flipped');
 
-           	var soundObject = soundManager.createSound({
-			 id:'flip_out',
-			 url:'/sounds/aim_buddy_logging_out.mp3'
+   //         	var soundObject = soundManager.createSound({
+			//  id:'flip_out',
+			//  url:'/sounds/aim_buddy_logging_out.mp3'
 			
-			});
-			soundObject.play();
+			// });
+			// soundObject.play();
 
 
         });
