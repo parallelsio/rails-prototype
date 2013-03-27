@@ -3,9 +3,6 @@ $(document).ready(function()
 
 
 
-
-
-
 	Mousetrap.bind('1', function() { 
 
 	//	highlight(2); 
@@ -382,13 +379,7 @@ $(document).ready(function()
 	  $('.search_trigger ._123').animate({left:'-=20', top:'-=260'},200);
 
 	});
-
-
-
-			
-
-
-
+	
 
 
 

@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+
+
+body {
+
+  width:auto !important;
+   }
+
+
+
+#placeholder { width:1000px; margin: 0 auto; height:3000px; }
+
+
+#placeholder h3 { margin:30px;}
+
+#placeholder .vimeo {  overflow:hidden; width:997px;}
+
+
+#placeholder .info { margin: 60px 0 0 0; }
+#placeholder h2 { font-size:39px; }
+
+#placeholder #twitter { margin: 70px 0 20px 0; }
+
+
+#placeholder #twitter span { 
+margin: 0 20px 0 0;
+position: relative;
+top: -8px;
+}
+    

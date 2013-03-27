@@ -117,3 +117,11 @@ div#my-menus  {background:#000; height:50px; opacity:0.8}
 }
 
 
+
+input { 
+outline: none;
+border: 2px #EAE9E9 solid;
+
+color: gray;
+padding-left: 10px !important;}
+

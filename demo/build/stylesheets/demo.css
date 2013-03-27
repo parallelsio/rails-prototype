@@ -2,6 +2,64 @@
 .aside	 	{ font-family:'ChaparralPro-LightIt';  } 
 
 .left { float:left;}
+.gradient {
+background: #05abe0; /* Old browsers */
+background: -moz-linear-gradient(left,  #05abe0 0%, #53cbf1 28%, #87e0fd 94%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#05abe0), color-stop(28%,#53cbf1), color-stop(94%,#87e0fd)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #05abe0 0%,#53cbf1 28%,#87e0fd 94%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #05abe0 0%,#53cbf1 28%,#87e0fd 94%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #05abe0 0%,#53cbf1 28%,#87e0fd 94%); /* IE10+ */
+background: linear-gradient(to right,  #05abe0 0%,#53cbf1 28%,#87e0fd 94%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#87e0fd',GradientType=1 ); /* IE6-9 */
+}
+
+
+
+
+.caps
+{ 
+font-family:'ChaparralPro-LightIt'; 
+background:#f0f0fa;}
+
+.caps strong
+{
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+font-size:11px; 
+} 
+
+
+
+
+    blockquote {
+     font-family:'ChaparralPro-LightIt';  
+      margin: 0.25em 0;
+      padding: 0.25em 40px;
+      line-height: 1.25;
+    }
+
+    blockquote:before {
+      display: block;
+      content: "\201C";
+      font-size: 50px;
+      position: absolute;
+      left: 30px;
+      top: 20px;
+      color: #adadad;
+    }
+
+    blockquote cite {
+      color: #999999;
+      font-size: 14px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    blockquote cite:before {
+      content: "\2014 \2009";
+    }
+
 
 
 /*http://desandro.github.com/3dtransforms/docs/card-flip.html*/
@@ -113,6 +171,10 @@ width: 334px;
 
 ._25-1 	{ margin:60px 0 0 0;}
 
+._26 .content:before,
+._26 .content:after { bottom:10px;}
+
+
 ._26-1 { position: relative;
 left: 264px;}
 
@@ -126,11 +188,18 @@ display:none;}
 ._29 .content.after 	{ padding-left:0; left:-20px; }
 
 
+._32-1  { margin:0 0 60px 0;}
+
+._32-2-1  { z-index:15;}
+
+
 ._32-3  { margin:100px 0 0 0 ;}
 
 
 
-.mj		{ left:-50px; position:relative; height:340px; }
+.mj		{ left:-50px; position:relative; height:340px;
+top: 30px;
+ }
 
 
 .mj ._33-1 	{ position : absolute; left:408px;  }
@@ -150,9 +219,68 @@ display:none;}
 
 
 .mj ._35 	{ 
+left: 90px;
+position: relative;
+height: 340px;
+top: 71px;
+} 
+
+
+
+
+.doors   { 
+  left:70px;
+  position: relative;
+height: 560px; }
+
+
+.doors ._333-1  { position: absolute;
+left: -80px;
+top: 90px;  }
+
+
+.doors ._333-2  { 
+ position: absolute;
+left: 170px;
+top: 50px;
+
+
+}
+
+
+.doors ._333-3  { 
 position: absolute;
 left: 80px;
-top: 76px;
+top: 60px;
+} 
+
+.doors ._333-4  { 
+
+    position: absolute; 
+    left: 110px; 
+    top: 310px;
+
+  -webkit-transform: rotate(90deg); 
+  -moz-transform: rotate(90deg); 
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg); 
+ z-index:10;
+} 
+
+
+
+.doors ._333-5  { 
+
+    position: absolute; 
+   
+
+  -webkit-transform: rotate(180deg); 
+  -moz-transform: rotate(180deg); 
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg); 
+ left: 260px;
+top: 210px;
+
 } 
 
 
@@ -275,7 +403,7 @@ top: -20px;
 
 ._199 { margin:90px 0 0 0;}
 
-._200  { left:-40px; margin:100px 0 0 -30px;}
+._200  { left:-40px; margin:100px 0 50px -30px;}
 ._200 .right.one  { margin:0 0 0 31px;}
 
 
@@ -338,11 +466,21 @@ left: 300px;
 }
 
 
+.row_search{
+height: 340px;
+width: 800px;
+clear: both;
+display: block;
+float: none;
+
+}
+
 
 ._131 .content { 
-  height: 193px;
+  height: 200px;
 width: 135px;
-}
+  }
+
 ._132 {height:30px; width:30px; display:block;}
 
 ._132 img { display:none;}
@@ -357,91 +495,281 @@ width: 135px;
   -moz-transform: rotate(-90deg); 
   -o-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg); 
+left: 70px;
+top: 121px;
 
-left: 0px;
-top: 58px;
 
 }
 
 
-._111-1  { width:360px;}
+._111-1  { width:360px; top:130px;
+left:128px;
+
+
+}
+
+
 ._111-2  { 
-
-left: -19px;
-top: 57px;
+left:128px;
+top:127px;;
 }
 
-._111-3  { left: -74px; top: 34px;}
+._111-3  { 
+   top: -46px;
+}
 
-._111-4  {  width:360px; left: 25px; top: -61px;} 
+._111-4
+
+{
+top: 200px;
+left: 140px;
+}
+
+
+._111-4 .content  { 
+}
+
+
+._111-5  {  
+width: 360px;
+left: 288px;
+top: -65px;
+} 
+._111-5 .content  {  } 
  
-._116  {  top:-20px; }
+._111-50  { left: 165px;
+top: 129px;
+} 
+
+
+._111-6  {  top:-20px; 
+left: 288px;
+top: -70px;}
 
 ._145 { position:absolute;}
 
 
+._201 { margin: 0 0 200px 0; height:530px;}
+
+._201 .left,
+._201 .middle,
+._201 .right { display:none;}
+
+
+
+._112-1  {  
+width: 300px;
+
+} 
+._112-3 {  
+
+top: 40px;
+left: 40px;
+}
+ 
+._112-4 {  
+width:290px;
+top: -168px;
+left: 529px;
+}
+
+._202 { }
+
+
+._112-6 {  
+
+left: -210px; top: 344px;
+}
+
+._112-7 {  
+display:none;
+left: 604px;
+top: -146px;
+
+}
+
+
+._112-8 {  left: -20px;
+top: 30px;
+}
+
+
+._202 .one { position: absolute;
+left: 600px;
+margin: -30px 0 0 0;
+}
+
+._202 .middle,
+._202 .two,
+._202 .one { display:none;}
+
+
+
+._91 { margin:390px 0 0 0;}
+
+
+._300 { clear: both;
+margin: 180px 0 0 0;
+}
+
+.row_search { 
+height:200px;
+}
+
+
+._302 { 
+margin: 50px 0 0 0;}
+
+
+._304 { 
+margin: 40px 0 300px 0;}
+
+
+.search_trigger {
+  width:800px;
+  height:500px;
+  margin:140px 0 0 0;
+  position: relative;
+
 /*
+background: #d0c8c8; /* Old browsers * /
+background: -moz-linear-gradient(top,  #d0c8c8 0%, #e7e4e4 100%); /* FF3.6+ * /
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0c8c8), color-stop(100%,#e7e4e4)); /* Chrome,Safari4+ * /
+background: -webkit-linear-gradient(top,  #d0c8c8 0%,#e7e4e4 100%); /* Chrome10+,Safari5.1+ * /
+background: -o-linear-gradient(top,  #d0c8c8 0%,#e7e4e4 100%); /* Opera 11.10+  * /
+background: -ms-linear-gradient(top,  #d0c8c8 0%,#e7e4e4 100%); /* IE10+  * /
+background: linear-gradient(to bottom,  #d0c8c8 0%,#e7e4e4 100%); /* W3C  * /
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0c8c8', endColorstr='#e7e4e4',GradientType=0 ); /* IE6-9 * /
+ */
 
-http://desandro.github.com/3dtransforms/docs/card-flip.html
-    .container {
-      width: 200px;
-      height: 260px;
-      position: relative;
-      margin: 0 auto 40px;
-      border: 1px solid #CCC;
-      -webkit-perspective: 800px;
-         -moz-perspective: 800px;
-           -o-perspective: 800px;
-              perspective: 800px;
-    }
+}
 
-    #card {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      -webkit-transition: -webkit-transform 1s;
-         -moz-transition: -moz-transform 1s;
-           -o-transition: -o-transform 1s;
-              transition: transform 1s;
-      -webkit-transform-style: preserve-3d;
-         -moz-transform-style: preserve-3d;
-           -o-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-    }
 
-    #card.flipped {
-      -webkit-transform: rotateY( 180deg );
-         -moz-transform: rotateY( 180deg );
-           -o-transform: rotateY( 180deg );
-              transform: rotateY( 180deg );
-    }
+.search {
+padding: 0;
+opacity:.7;
+}
 
-    #card figure {
-      display: block;
-      height: 100%;
-      width: 100%;
-      line-height: 260px;
-      color: white;
-      text-align: center;
-      font-weight: bold;
-      font-size: 140px;
-      position: absolute;
-      -webkit-backface-visibility: hidden;
-         -moz-backface-visibility: hidden;
-           -o-backface-visibility: hidden;
-              backface-visibility: hidden;
-    }
 
-    #card .front {
-      background: red;
-    }
 
-    #card .back {
-      background: blue;
-      -webkit-transform: rotateY( 180deg );
-         -moz-transform: rotateY( 180deg );
-           -o-transform: rotateY( 180deg );
-              transform: rotateY( 180deg );
-    }
+.search #query {
+  background-image: url('/images/search.jpg');
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  border:0;
+  padding: 7px 0 0 0;
+  width: 180px;
+  padding-left: 50px !important;
+  font-size: 23px;
+  font-family: 'ChaparralPro-Light';
+  
+}
+
+.search_trigger .bit {
+margin: 0 0 50px 0;
+padding: 0;
+}
+
+.search_trigger .bit .content { 
+
+width: auto;
+height: auto;
+display: inline-block;
+
+}
+
+.search {
+  
+  
+  opacity:.7;
+  /*-webkit-filter: blur(64px);*/
+  display:none;
+
+}
+
+
+
+.search_trigger .one { 
+position: absolute;
+left: 406px;
+top: 98px;
+display:none;
+
+}
+
+
+
+._120 {
+  position:absolute;
+left: 0px;
+top: 53px;
+z-index: 20;
+}
+
+
+
+._121 {  
+
+left: -210px; 
+top: 344px;
+
+position: absolute;
+left: -10px;
+top: 40px;
+z-index: 10;
+}
+
+._122 {  
+display:block;
+
+
+position: absolute;
+z-index: 30;
+left: 10px;
+top: 64px;
+
+}
+
+
+._123 {  
+  left: -20px;
+top: 30px;
+}
+
+
+
+
+/* .search #image_holder { position:absolute;left:20px; top:20px; }
+
+.search #canvas_holder { :style ="width: 500px; height: 375px;" }
+
+.search #canvas_holder canvas  {
+  position:absolute;left:20px; top:20px;text-align:center;font-size:10px;
+}
 
 */
+._900 { display:none;}
+
+.search_trigger .bit .highlight { background:#f7fdd0; padding: 0 4px 0 4px;}
+
+
+._700-1 { position: absolute;
+display:none;
+
+}
+
+
+._700-2 { position: absolute;
+left: 100px;
+
+}
+
+._701-1 { position: absolute;
+left: 140px;
+display:none;
+}
+
+._701-2 { position: absolute;
+left: 300px;
+
+}

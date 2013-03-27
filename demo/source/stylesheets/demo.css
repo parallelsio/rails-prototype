@@ -617,13 +617,17 @@ height:200px;
 }
 
 
+._302 { 
+margin: 50px 0 0 0;}
+
+
 ._304 { 
-margin: 0 0 300px 0;}
+margin: 40px 0 300px 0;}
 
 
 .search_trigger {
   width:800px;
-  height:600px;
+  height:500px;
   margin:140px 0 0 0;
   position: relative;
 
