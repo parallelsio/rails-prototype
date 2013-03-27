@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
   <head>
     <title>Parallels, an open source platform for creating, connecting and sharing your ideas</title>
 
@@ -67,7 +67,17 @@ display: inline-block;
 
   <body class="placeholder">
 
-    <body>
+    
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=332881700073150";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
   <div id='placeholder'>
     <div class='info'>
       <h2>
@@ -81,12 +91,15 @@ display: inline-block;
       <a href="https://twitter.com/makeparallels" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @makeparallels</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       <!-- = partial("partials/twitter_feed") -->
+
+      <fb:like href="http://www.makeparallels.org" send="false" width="450" show_faces="false"></fb:like>
+
     </div>
 
     <span>More info shortly.</span>
     <div class='vimeo'><iframe src="http://player.vimeo.com/video/62762438?title=0&amp;byline=0&amp;portrait=0&amp;color=e7e4e4" width="1000" height="636" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
   </div>
-</body>
+
 
 
     <script>
@@ -99,5 +112,6 @@ display: inline-block;
   ga('send', 'pageview');
 
 </script>
+
   </body>
 </html>
