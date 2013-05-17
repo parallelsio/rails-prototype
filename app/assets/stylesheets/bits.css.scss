@@ -67,7 +67,7 @@ padding: 0;
 /* bit shadows 
 BF: http://www.sitepoint.com/pure-css3-paper-curls
 */
-.bit:before, .bit:after
+/*.bit:before, .bit:after
 {
   position: absolute;
   width: 20%;
@@ -86,9 +86,9 @@ BF: http://www.sitepoint.com/pure-css3-paper-curls
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 
   z-index: -1;
-}
+}*/
 
-.bit:after
+/*.bit:after
 {
   left: auto;
   right: 5px;
@@ -97,7 +97,7 @@ BF: http://www.sitepoint.com/pure-css3-paper-curls
   -ms-transform: skew(5deg) rotate(5deg);
   -o-transform: skew(5deg) rotate(5deg);
   transform: skew(5deg) rotate(5deg);
-}
+}*/
 /* end bit shadows */
 
 
