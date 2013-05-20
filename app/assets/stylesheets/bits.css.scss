@@ -18,7 +18,7 @@
   /* for flip 
   http://24ways.org/2010/intro-to-css-3d-transforms/
   */
-  width: 100%;
+  max-width: 500px;
   height: 100%;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform .1s;  

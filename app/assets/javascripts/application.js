@@ -18,7 +18,6 @@
 $(document).ready(function()
 {
 
-
  //    soundManager.setup({
  //      url: '/swf/',
  //      flashVersion: 8, // optional: shiny features (default = 8)
