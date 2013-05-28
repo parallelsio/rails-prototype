@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-
+//= require bits
 
 $(document).ready(function()
 {
@@ -41,61 +41,8 @@ $(document).ready(function()
 	//   animTransition: Animator.tx.bouncy// http://www.berniecode.com/writing/animator.html
 	// }
 
-	// global place in header to show notices, errors and messages
-	function tell(message) {
-		$('#header .message').text(message)
-	}
-
-	// wire drag and drop to each bit's handle, which only shows on hover
-	$( ".bit " ).draggable({ handle: "p" });
 
 
-	// flip bit, add sounds
-	// BF: 
-
-
-	/* flip bit, sounds */
-    $('.bit').click(function(){
-
-        var add = $(this).find('.content').addClass('flipped')
-
-        // display back
-        $(this).find('.content .back').css('display', 'block');
-
-        // remove from from flow
-        $(this).find('.content .front').css('display', 'none');
-
-
-  //       var soundObject = soundManager.createSound({
-		//  id:'flip_in',
-		//  url:'/sounds/aim_buddy_logging_in.mp3'
-		
-		// });
-		// soundObject.play();
-
-		add.mouseleave(function(){
-            $(this).removeClass('flipped');
-
-            // display back
-	        $(this).find('.back').css('display', 'none');
-
-	        // remove from from flow
-	        $(this).find('.front').css('display', '');
-
-
-            // $('.content').css('positon', 'relative');
-
-   //         	var soundObject = soundManager.createSound({
-			//  id:'flip_out',
-			//  url:'/sounds/aim_buddy_logging_out.mp3'
-			
-			// });
-			// soundObject.play();
-
-
-        });
-        return false;
-    });
 
 
 });

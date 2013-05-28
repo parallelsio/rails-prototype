@@ -1,7 +1,11 @@
 class MapsController < ApplicationController
 
+  respond_to :html, :json
+
   def index
     @maps = Map.all
+
+    respond_with(@maps)
   end
 
   def show
