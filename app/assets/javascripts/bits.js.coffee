@@ -17,20 +17,22 @@ $(document).ready ->
 	  handle: "p"
 	  # axis: 'y'
 	  stop: (event, ui) ->
-	  	alert("Bit position saved: T: " + Math.round(ui.position.top) + " L: " + Math.round(ui.position.left))
-	  	request = $.ajax 
-	    	url: '/bits/4'
+	  	# alert("Bit position saved: T: " + Math.round(ui.position.top) + " L: " + Math.round(ui.position.left))
+	  	request = $.ajax( 
+	    	url: '/bits/4/position'
 	    	type: 'PUT'
 	    	data: {
 	    		x: ui.position.top
 	    		y: ui.position.left
 	    	}
+	    )
 
-	    request.done(data) -> console.log(data)	
+	    request.done (data) -> console.log(data)	
 	    #.done(data) -> $('#my-menus').append "Bit position saved: T: " + ui.position.top + "L:" + ui.position.left + "!"
 
 	    request.fail -> $('my-menus').show()
 
+	   	return false
 
 
 	# # flip bit, sounds
