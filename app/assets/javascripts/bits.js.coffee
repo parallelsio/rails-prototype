@@ -15,9 +15,9 @@ $(document).ready ->
 
 	$(".bit").draggable
 	  handle: "p"
-	  # axis: 'y'
 	  stop: (event, ui) ->
-	  	# alert("Bit position saved: T: " + Math.round(ui.position.top) + " L: " + Math.round(ui.position.left))
+	  	#alert("Bit position saved: T: " + ui.position.top + "L:" + ui.position.left + "!")
+
 	  	request = $.ajax( 
 	    	url: '/bits/4/position'
 	    	type: 'PUT'
@@ -29,9 +29,10 @@ $(document).ready ->
 
 	    request.done (data) -> 
 	    	console.log(data)
+	    	console.log("Bit position saved: T: " + Math.round(data.x) + " L: " + Math.round(data.y))
+	    	$('#my-menus').append "Bit position saved: T: " + data.x + "L:" + data.y + "!"
 	    	true
 
-	    #.done(data) -> $('#my-menus').append "Bit position saved: T: " + ui.position.top + "L:" + ui.position.left + "!"
 
 	    request.fail -> $('my-menus').show()
 
