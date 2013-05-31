@@ -2,9 +2,12 @@ Parallels::Application.routes.draw do
   
   resources :maps
   resources :clusters
-  resources :bits
 
   root to: "maps#index"
+
+  resources :bits do
+    get 'position', :on => :member
+  end
 
 
   # The priority is based upon order of creation:

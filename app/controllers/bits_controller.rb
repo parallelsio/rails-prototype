@@ -62,7 +62,7 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
     
     respond_to do |format|
-      if @bit.update_attributes(params)
+      if @bit.update_attributes(params[:x], :y => params[:y])
         format.html { redirect_to @bit, notice: 'Bit was successfully updated.' }
         format.json { head :no_content }
         format.js
@@ -86,7 +86,7 @@ class BitsController < ApplicationController
 
   def update_position
       
-      render_text("YO")
+      render nothing: true
 
       # @bit = Bit.find(params[:id])
 

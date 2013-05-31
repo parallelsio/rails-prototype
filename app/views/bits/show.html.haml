@@ -5,7 +5,7 @@
     .face.front
       = @bit.content
       
-      /= link_to "save", bit_path(@bit), :id => "save_#{ @bit.id}",  :remote => true, :action => :update_position
+      = link_to "save", bit_path(@bit), :id => "save_#{ @bit.id}",  :remote => true, :action => :update_position, :method => :post
       
       = link_to 'Update', edit_bit_path(@bit)
 

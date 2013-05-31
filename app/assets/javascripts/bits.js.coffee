@@ -6,14 +6,30 @@ $(document).ready ->
 
 
 
-	# wire drag and drop to each bit's handle, which only shows on hover
+
+	# submit ajax post to save position on drag and drop
+	# wire drag to handle only
+
+
+	# TODO: concat the ID into the url
+
 	$(".bit").draggable
 	  handle: "p"
+	  # axis: 'y'
 	  stop: (event, ui) ->
-	    # alert ui.position.top
+	  	alert("Bit position saved: T: " + Math.round(ui.position.top) + " L: " + Math.round(ui.position.left))
+	  	request = $.ajax 
+	    	url: '/bits/4'
+	    	type: 'PUT'
+	    	data: {
+	    		x: ui.position.top
+	    		y: ui.position.left
+	    	}
 
+	    request.done(data) -> console.log(data)	
+	    #.done(data) -> $('#my-menus').append "Bit position saved: T: " + ui.position.top + "L:" + ui.position.left + "!"
 
-
+	    request.fail -> $('my-menus').show()
 
 
 
