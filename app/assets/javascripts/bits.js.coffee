@@ -27,13 +27,15 @@ $(document).ready ->
 	    	}
 	    )
 
-	    request.done (data) -> console.log(data)	
+	    request.done (data) -> 
+	    	console.log(data)
+	    	true
+
 	    #.done(data) -> $('#my-menus').append "Bit position saved: T: " + ui.position.top + "L:" + ui.position.left + "!"
 
 	    request.fail -> $('my-menus').show()
 
-	   	return false
-
+	    true
 
 	# # flip bit, sounds
 	# $(".bit").click ->

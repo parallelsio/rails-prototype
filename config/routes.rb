@@ -6,7 +6,7 @@ Parallels::Application.routes.draw do
   root to: "maps#index"
 
   resources :bits do
-    get 'position', :on => :member
+    put 'position', :on => :member
   end
 
 

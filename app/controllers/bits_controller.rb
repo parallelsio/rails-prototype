@@ -84,7 +84,7 @@ class BitsController < ApplicationController
     end
   end
 
-  def update_position
+  def position
       
       render nothing: true
 
