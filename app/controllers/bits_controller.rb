@@ -86,12 +86,14 @@ class BitsController < ApplicationController
   end
 
   def position
-      
+
+      # debugger
+
+      @bit = Bit.find(params[:id])
+      @bit.update_attributes(:location_x => params[:x], :location_y => params[:y])
+
       render nothing: true
 
-      # @bit = Bit.find(params[:id])
-
-      # @bit.update_attributes(:x => params[:x], :y => params[:y])
   end
 
 

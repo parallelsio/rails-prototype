@@ -22,19 +22,18 @@ $(document).ready ->
 	    	url: '/bits/' + $(this).data('bit-id') + '/position'
 	    	type: 'PUT'
 	    	data: {
-	    		x: ui.position.top
-	    		y: ui.position.left
+	    		x: Math.round(ui.position.top)
+	    		y: Math.round(ui.position.left)
 	    	}
 	    )
 
 	    request.done (data) -> 
-	    	console.log(data)
-	    	console.log("Bit position saved: T: " + Math.round(data.x) + " L: " + Math.round(data.y))
-	    	$('#notice').text "Bit position saved: T: " + data.x + "L:" + data.y + "!"
+	    	console.log("Bit position saved: T: " + data.x + " L: ")
+	    	$('#notice').text "bit position saved: T: " + data.x + "L:" + data.y + "!"
 	    	true
 
 
-	    request.fail -> $('my-menus').show()
+	    request.fail (data) -> $('#notice').text "bit " + data.id + " position save failed "
 
 	    true
 
