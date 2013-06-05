@@ -21,16 +21,6 @@
   
     %link{ :rel => "shortcut icon", :href => "favicon.ico"}
     
-    / TODO: causing error:
-    / ActiveRecord::RecordNotFound (Couldn't find Bit with id=favicon):
-    / %link{ :rel => "icon", :type => "image/gif", :href => "animated_favicon1.gif" }
-
-#center
-  #header
-    #my-menus
-      = link_to 'map:1', map_path(1)
-      .message
-
 
   %body
     = yield

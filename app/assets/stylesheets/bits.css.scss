@@ -1,72 +1,60 @@
-.bit                                    
-{ 
-  position: absolute;   
+.bit {
+    position: absolute;
+    /* for flip : ;
+    http: //24ways.org/2010/intro-to-css-3d-transforms/ */ -webkit-perspective: 800px;
+}
 
-  /* for flip 
+.bit .content {
+    color: #666;
+    display: inline-block;
+    font-size: 16px;
+    /* for flip : ;
+    http: //24ways.org/2010/intro-to-css-3d-transforms/ */ max-width: 500px;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform .1s;
+}
+
+.bit .content .ui-widget-header {
+    display: none;
+    cursor: move;
+    background-color: #ccc;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.bit .content:hover .ui-widget-header {
+    display: block;
+    height: 8px;
+    width: 100%;
+}
+
+.bit .face {
+    display: block;
+    padding: 15px;
+    -webkit-backface-visibility: hidden;
+}
+
+.bit .content .face.front { background-color: #fff }
+
+/* for flip 
   http://24ways.org/2010/intro-to-css-3d-transforms/
   */
-  -webkit-perspective: 800px;
+
+.bit .content .face.back {
+    display: none;
+    background: #ccc;
+    -webkit-transform: rotateY(180deg);
 }
 
-.bit .content { 
+.bit .content.flipped { -webkit-transform: rotateY(180deg) }
 
-
- color: #666;
- display:inline-block;
- font-size: 16px;
-
-  /* for flip 
-  http://24ways.org/2010/intro-to-css-3d-transforms/
-  */
-  max-width: 500px;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform .1s;  
+.bit .image {
+    padding: 0 !important;
+    background: none !important;
 }
 
-.bit .content .ui-widget-header         { 
-  display:none;  
-  cursor:move; 
-  background-color:#ccc; 
-  position:absolute; 
-top: -7px;
-left: 0;
-margin: 0;
-padding: 0;
-}
-
-.bit .content:hover .ui-widget-header   { display:block; height:8px; width:100%;}
-
-
-.bit .face { 
-  display: block;
-  padding:15px;
-  -webkit-backface-visibility: hidden;
-}
-
-.bit .content .face.front { 
-   
-     background-color: #fff;
-
-}
-
-
-  /* for flip 
-  http://24ways.org/2010/intro-to-css-3d-transforms/
-  */
-.bit .content .face.back { 
-  display:none;
-  background: #ccc;
-  -webkit-transform: rotateY(180deg);
-}
-
-.bit .content.flipped {
-  -webkit-transform: rotateY(180deg);
-}
-
-
-
-.bit .image 		{ padding:0 !important; background:none !important; }
-.bit .aside	 	{ font-family:'ChaparralPro-LightIt';  } 
-
-
+.bit .aside { font-family: 'ChaparralPro-LightIt' }

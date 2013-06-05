@@ -4,20 +4,7 @@
 */
 
 
-body {
-  background: #e7e4e4; color: #333; 
-  font-family: 'ChaparralPro-Regular', sans-serif;
-  color:gray;
-  position:relative;
-}
-
-
-
-
-#center { position:relative; }
-
-
-  @font-face {
+@font-face {
       font-family: 'ChaparralPro-Light';
       src: url('/typefaces/chaparralprolight.eot');
       src: url('/typefaces/chaparralprolight.eot?#iefix') format('embedded-opentype'),
@@ -63,13 +50,18 @@ body {
     }
 
 
-div#header { position:fixed; height:20px; top:0px; margin:auto; z-index:100000; width:100%; opacity:1; background:#ccc; padding:10px;}
+body {
+  background: #e7e4e4; color: #333; 
+  font-family: 'ChaparralPro-Regular', sans-serif;
+  color:gray;
+  position:relative;
+}
 
-div#header a { margin: 0 20px; padding:10px;} 
-div#header a:hover { background:white; color:#aaa;}
+
 
 strong { font-family:'ChaparralPro-Semibold', sans-serif;}
 
-
+ul#noty_topRight_layout_container { right:-20px !important;}
+ul#noty_topRight_layout_container li { margin:0 0 3px 0 !important;}
 
 

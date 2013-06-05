@@ -5,18 +5,28 @@
 $(document).ready ->
 
 
+	showNote = (data) ->
+	  n = noty(
+	    text: "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y
+	    type: "warning"
+	    layout: "topRight"
+	    closeWith: ["hover"]
+	    animation:
+	      open:
+	        height: "toggle"
+
+	      close:
+	        height: "toggle"
+
+	      easing: "swing"
+	      speed: 100 # opening & closing animation speed
+	  )
 
 
-	# submit ajax post to save position on drag and drop
-	# wire drag to handle only
-
-
-	# TODO: concat the ID into the url
-
+	# bit : drag and drop
 	$(".bit").draggable
-	  handle: "p"
+	  handle: "p"		# wire drag to handle only
 	  stop: (event, ui) ->
-	  	#alert("Bit position saved: T: " + ui.position.top + "L:" + ui.position.left + "!")
 
 	  	request = $.ajax( 
 	    	url: '/bits/' + $(this).data('bit-id') + '/position'
@@ -28,14 +38,20 @@ $(document).ready ->
 	    )
 
 	    request.done (data) -> 
-	    	# console.log("Bit position saved: T: " + data.location_x + " L: " + data.location_y)
-	    	$('#header .message').text "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y + "!"
+	    	showNote(data)
+	    	$('#header .message').text "bit " + data.id + ": position saved: T: " + data.location_x + " L:" + data.location_y + "!"
 	    	true
-
 
 	    request.fail (data) -> $('#notice').text "bit " + data.id + " position save failed "
 
 	    true
+
+
+
+
+
+
+
 
 	# # flip bit, sounds
 	# $(".bit").click ->
