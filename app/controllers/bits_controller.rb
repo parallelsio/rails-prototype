@@ -86,19 +86,14 @@ class BitsController < ApplicationController
   end
 
   def position
-
-      # debugger
-
       @bit = Bit.find(params[:id])
       @bit.update_attributes(:location_x => params[:x], :location_y => params[:y])
 
       respond_to do |format|
         if @bit.save
-
           format.json { render json: @bit }
-
         else
-
+          # TODO: handle errors gracefully
         end
       end
 

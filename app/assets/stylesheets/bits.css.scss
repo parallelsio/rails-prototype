@@ -64,41 +64,6 @@ padding: 0;
   -webkit-transform: rotateY(180deg);
 }
 
-/* bit shadows 
-BF: http://www.sitepoint.com/pure-css3-paper-curls
-*/
-/*.bit:before, .bit:after
-{
-  position: absolute;
-  width: 20%;
-  height: 12px;
-  content: ' ';
-  left: 5px;
-  bottom: 5px;
-  background: transparent;
-  -webkit-transform: skew(-5deg) rotate(-5deg);
-  -moz-transform: skew(-5deg) rotate(-5deg);
-  -ms-transform: skew(-5deg) rotate(-5deg);
-  -o-transform: skew(-5deg) rotate(-5deg);
-  transform: skew(-5deg) rotate(-5deg);
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-  z-index: -1;
-}*/
-
-/*.bit:after
-{
-  left: auto;
-  right: 5px;
-  -webkit-transform: skew(5deg) rotate(5deg);
-  -moz-transform: skew(5deg) rotate(5deg);
-  -ms-transform: skew(5deg) rotate(5deg);
-  -o-transform: skew(5deg) rotate(5deg);
-  transform: skew(5deg) rotate(5deg);
-}*/
-/* end bit shadows */
 
 
 .bit .image 		{ padding:0 !important; background:none !important; }
