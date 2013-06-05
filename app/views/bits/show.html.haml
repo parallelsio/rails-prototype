@@ -5,10 +5,6 @@
     .face.front
       = @bit.content
       
-      %p= link_to "save", bit_path(@bit), :class => "save_link", :remote => true, :action => :position, :method => :post
-      
-      / = link_to 'Update', edit_bit_path(@bit)
-
     .face.back
       %p
         = @bit.type

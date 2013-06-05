@@ -92,7 +92,15 @@ class BitsController < ApplicationController
       @bit = Bit.find(params[:id])
       @bit.update_attributes(:location_x => params[:x], :location_y => params[:y])
 
-      render nothing: true
+      respond_to do |format|
+        if @bit.save
+
+          format.json { render json: @bit }
+
+        else
+
+        end
+      end
 
   end
 

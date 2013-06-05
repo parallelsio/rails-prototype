@@ -7,11 +7,10 @@ body {
   font-family: 'ChaparralPro-Regular', sans-serif;
   color:gray;
   position:relative;
- 
-  width:900px;
+
    }
 
-#center { position:relative; left:300px;}
+#center { position:relative; }
 
 
   @font-face {

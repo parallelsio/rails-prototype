@@ -9,14 +9,12 @@ body {
   font-family: 'ChaparralPro-Regular', sans-serif;
   color:gray;
   position:relative;
-  width:900px;
-
 }
 
 
 
 
-#center { position:relative; left:300px;}
+#center { position:relative; }
 
 
   @font-face {
@@ -65,13 +63,10 @@ body {
     }
 
 
-div#header { position:fixed; top:0px; margin:auto; z-index:100000; width:100%;}
-div#my-menus  {  opacity:1; background:#ccc; padding:10px;
-  /*background: url("demo/odyssey-slider-ui-design.jpg") top left no-repeat;*/
-}
+div#header { position:fixed; height:50px; top:0px; margin:auto; z-index:100000; width:100%; opacity:1; background:#ccc; padding:10px;}
 
-div#my-menus a { margin: 0 20px; padding:10px;} 
-div#my-menus a:hover { background:white; color:#aaa;}
+div#header a { margin: 0 20px; padding:10px;} 
+div#header a:hover { background:white; color:#aaa;}
 
 strong { font-family:'ChaparralPro-Semibold', sans-serif;}
 

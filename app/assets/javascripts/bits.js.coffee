@@ -22,14 +22,14 @@ $(document).ready ->
 	    	url: '/bits/' + $(this).data('bit-id') + '/position'
 	    	type: 'PUT'
 	    	data: {
-	    		x: Math.round(ui.position.top)
-	    		y: Math.round(ui.position.left)
+	    		x: Math.round(ui.position.left)
+	    		y: Math.round(ui.position.top)
 	    	}
 	    )
 
 	    request.done (data) -> 
-	    	console.log("Bit position saved: T: " + data.x + " L: ")
-	    	$('#notice').text "bit position saved: T: " + data.x + "L:" + data.y + "!"
+	    	# console.log("Bit position saved: T: " + data.location_x + " L: " + data.location_y)
+	    	$('#header .message').text "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y + "!"
 	    	true
 
 
