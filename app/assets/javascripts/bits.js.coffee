@@ -19,7 +19,7 @@ $(document).ready ->
 	  	#alert("Bit position saved: T: " + ui.position.top + "L:" + ui.position.left + "!")
 
 	  	request = $.ajax( 
-	    	url: '/bits/4/position'
+	    	url: '/bits/' + $(this).data('bit-id') + '/position'
 	    	type: 'PUT'
 	    	data: {
 	    		x: ui.position.top
@@ -30,7 +30,7 @@ $(document).ready ->
 	    request.done (data) -> 
 	    	console.log(data)
 	    	console.log("Bit position saved: T: " + Math.round(data.x) + " L: " + Math.round(data.y))
-	    	$('#my-menus').append "Bit position saved: T: " + data.x + "L:" + data.y + "!"
+	    	$('#notice').text "Bit position saved: T: " + data.x + "L:" + data.y + "!"
 	    	true
 
 

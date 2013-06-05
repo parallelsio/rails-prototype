@@ -12,6 +12,7 @@
     / Use title if it's in the page YAML frontmatter
     %title Parallels
   
+    = csrf_meta_tag
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
 
@@ -30,6 +31,7 @@
       = link_to 'map:1', map_path(1)
       = link_to 'bit:4', bit_path(4)
       .message
+    #notice
 
 
   %body

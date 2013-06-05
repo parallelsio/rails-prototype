@@ -1,5 +1,6 @@
 class BitsController < ApplicationController
 
+  protect_from_forgery
 
   def index
     @bits = Bit.all

@@ -1,13 +1,13 @@
 -# TODO: refactor CSS assignment out of view
-= content_tag_for(:div, @bit, { :style => "left: #{ @bit.location_x}px; top: #{ @bit.location_y}px;" } ) do
+= content_tag_for(:div, @bit, { :style => "left: #{ @bit.location_x}px; top: #{ @bit.location_y}px;", :"data-bit-id" => @bit.id } ) do
   .content 
 
     .face.front
       = @bit.content
       
-      = link_to "save", bit_path(@bit), :id => "save_#{ @bit.id}",  :remote => true, :action => :update_position, :method => :post
+      %p= link_to "save", bit_path(@bit), :class => "save_link", :remote => true, :action => :position, :method => :post
       
-      = link_to 'Update', edit_bit_path(@bit)
+      / = link_to 'Update', edit_bit_path(@bit)
 
     .face.back
       %p
