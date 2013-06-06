@@ -29,7 +29,7 @@ $(document).ready ->
 	  stop: (event, ui) ->
 
 	  	request = $.ajax( 
-	    	url: '/bits/' + $(this).data('bit-id') + '/position'
+	    	url: '/bits/' + $(this).data('bit-id')
 	    	type: 'PUT'
 	    	data: {
 	    		x: Math.round(ui.position.left)

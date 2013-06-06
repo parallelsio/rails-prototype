@@ -63,10 +63,8 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
     
     respond_to do |format|
-      if @bit.update_attributes(params[:x], :y => params[:y])
-        format.html { redirect_to @bit, notice: 'Bit was successfully updated.' }
-        format.json { head :no_content }
-        format.js
+      if @bit.update_attributes(:location_x => params[:x], :location_y => params[:y])
+        format.json { render json: @bit }
       else
         format.html { render action: "edit" }
         format.json { render json: @bit.errors, status: :unprocessable_entity }
@@ -85,19 +83,7 @@ class BitsController < ApplicationController
     end
   end
 
-  def position
-      @bit = Bit.find(params[:id])
-      @bit.update_attributes(:location_x => params[:x], :location_y => params[:y])
 
-      respond_to do |format|
-        if @bit.save
-          format.json { render json: @bit }
-        else
-          # TODO: handle errors gracefully
-        end
-      end
-
-  end
 
 
 
