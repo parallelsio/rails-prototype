@@ -5,7 +5,7 @@
 $(document).ready ->
 
 
-	showNote = (data) ->
+	showNotification = (data) ->
 	  n = noty(
 	    text: "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y
 	    type: "warning"
@@ -38,7 +38,7 @@ $(document).ready ->
 	    )
 
 	    request.done (data) -> 
-	    	showNote(data)
+	    	showNotification(data)
 	    	$('#header .message').text "bit " + data.id + ": position saved: T: " + data.location_x + " L:" + data.location_y + "!"
 	    	true
 
