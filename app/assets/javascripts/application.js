@@ -14,6 +14,7 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require_tree ./noty
+//= require mousetrap.min
 //= require bits
 
 $(document).ready(function()
@@ -21,7 +22,7 @@ $(document).ready(function()
 
 
 
-
+	Mousetrap.bind('g i', function() { alert(); });
 
 
  //    soundManager.setup({

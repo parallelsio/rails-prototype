@@ -5,9 +5,10 @@
 $(document).ready ->
 
 
-	showNotification = (data) ->
+	showNotification = (data, message) ->
+
 	  n = noty(
-	    text: "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y
+	    text: message
 	    type: "warning"
 	    layout: "topRight"
 	    closeWith: ["hover"]
@@ -38,8 +39,8 @@ $(document).ready ->
 	    )
 
 	    request.done (data) -> 
-	    	showNotification(data)
-	    	$('#header .message').text "bit " + data.id + ": position saved: T: " + data.location_x + " L:" + data.location_y + "!"
+	    	message = "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y
+	    	showNotification(data, message)
 	    	true
 
 	    request.fail (data) -> $('#notice').text "bit " + data.id + " position save failed "
