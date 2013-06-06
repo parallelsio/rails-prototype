@@ -28,6 +28,9 @@
 		pageNotFound: 404
 		serverError: 500
 
+	root.showMenu = ->
+		
+
 
 	root.showNotification = (message, type) ->
 	  n = undefined
@@ -46,5 +49,30 @@
 	      easing: "swing"
 	      speed: 100
 	  )
+
+
+	Mousetrap.bind ["command+n"], (e, combo) ->
+	  showNotification "pressed : " + combo, "warning"
+	  e.preventDefault
+
+
+	Mousetrap.bind ["command"], (e, combo) ->
+	  showNotification "pressed : " + combo, "warning"
+	  showMenu
+	  e.preventDefault
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
