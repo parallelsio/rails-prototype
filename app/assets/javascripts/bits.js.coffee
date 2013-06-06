@@ -5,24 +5,6 @@
 $(document).ready ->
 
 
-	showNotification = (data, message) ->
-
-	  n = noty(
-	    text: message
-	    type: "warning"
-	    layout: "topRight"
-	    closeWith: ["hover"]
-	    animation:
-	      open:
-	        height: "toggle"
-
-	      close:
-	        height: "toggle"
-
-	      easing: "swing"
-	      speed: 100 # opening & closing animation speed
-	  )
-
 
 	# bit : drag and drop
 	$(".bit").draggable
@@ -40,7 +22,8 @@ $(document).ready ->
 
 	    request.done (data) -> 
 	    	message = "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y
-	    	showNotification(data, message)
+	    	type = "warning"
+	    	showNotification(message, type)
 	    	true
 
 	    request.fail (data) -> $('#notice').text "bit " + data.id + " position save failed "
