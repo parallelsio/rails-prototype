@@ -23,42 +23,39 @@
 	#   animTransition: Animator.tx.bouncy # http://www.berniecode.com/writing/animator.html
 
 
+
+
 	root.httpCodes =
 		movedPermanently: 301
 		pageNotFound: 404
 		serverError: 500
 
+
+
 	root.showMenu = ->
-		
+		alert
 
 
-	root.showNotification = (message, type) ->
-	  n = undefined
-	  n = noty(
-	    text: message
-	    type: type
-	    layout: "topRight"
-	    closeWith: ["hover"]
-	    animation:
-	      open:
-	        height: "toggle"
 
-	      close:
-	        height: "toggle"
+	root.showNotification = (message, type, id) ->
 
-	      easing: "swing"
-	      speed: 100
-	  )
+		$.pnotify
+		  text: message
+		  shadow: false
+		  animation: 'fade'
+		  type: 'info'
+		  hide: false
 
 
-	Mousetrap.bind ["command+n"], (e, combo) ->
-	  showNotification "pressed : " + combo, "warning"
+
+
+	Mousetrap.bind ["command+k"], (e, combo) ->
+	  m = showNotification "pressed : " + combo, "warning", e.id
 	  e.preventDefault
 
 
 	Mousetrap.bind ["command"], (e, combo) ->
-	  showNotification "pressed : " + combo, "warning"
-	  showMenu
+	  m = showNotification "pressed : " + combo, "warning", e.id
 	  e.preventDefault
 
 

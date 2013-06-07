@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require_tree ./noty
+//= require jquery.pnotify.min
 //= require mousetrap.min
 //= require root
 //= require maps
