@@ -30,6 +30,13 @@ root.httpCodes =
 	serverError: 500
 
 
+# $('body').on "mousemove", (event) ->
+# 	root.hoveredElement = $(event.target).closest('.bit')
+# 	console.log "#{ root.hoveredElement.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
+# 	$('body').off "mousemove"
+
+
+
 
 
 root.showMenu = ->
@@ -39,7 +46,7 @@ root.showMenu = ->
 # TODO: better way to get the hovered element? 
 
 
-root.showNotification = (message, type, id) ->
+root.showNotification = (message, type) ->
 
 	$.pnotify
 	  text: message
@@ -50,16 +57,12 @@ root.showNotification = (message, type, id) ->
 
 # TODO: refactor into function that handles shortcuts
 Mousetrap.bind ["command"], (e, combo) ->
-	m = showNotification "pressed : " + combo + " : modifier ... ", "warning", e.id
+	m = showNotification "pressed : " + combo + " : modifier ... ", "warning"
 	# console.log root.hoveredElement
-	$('body').on "mousemove", (event) ->
-		root.hoveredElement = $(event.target).closest('.bit')
-		console.log "#{ root.hoveredElement.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
-		$('body').off "mousemove"
 
 
 Mousetrap.bind ["n b"], (e, combo) ->
-	m = showNotification "pressed : " + combo + " : New bit", "warning", e.id
+	m = showNotification "pressed : " + combo + " : New bit", "warning"
 	e.preventDefault
 
 
