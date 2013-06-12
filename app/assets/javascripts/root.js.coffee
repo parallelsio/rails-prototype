@@ -44,21 +44,16 @@
 		  shadow: false
 		  animation: 'fade'
 		  type: 'info'
-		  hide: false
-
-
-
-
-	Mousetrap.bind ["command+k"], (e, combo) ->
-	  m = showNotification "pressed : " + combo, "warning", e.id
-	  e.preventDefault
 
 
 	Mousetrap.bind ["command"], (e, combo) ->
-	  m = showNotification "pressed : " + combo, "warning", e.id
+	  m = showNotification "pressed : " + combo + " : modifier ... ", "warning", e.id
 	  e.preventDefault
 
 
+	Mousetrap.bind ["command+n"], (e, combo) ->
+	  m = showNotification "pressed : " + combo + " : New bit", "warning", e.id
+	  e.preventDefault
 
 
 
