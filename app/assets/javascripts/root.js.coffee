@@ -68,13 +68,7 @@ Mousetrap.bind ["n b"], (e, combo) ->
 
 
 
-$("#toolbar-trigger").toolbar
-  content: "#toolbar"
-  position: "top"
-  hideOnClick: true
-
-
-
+$(document).ready ->
 
 
 

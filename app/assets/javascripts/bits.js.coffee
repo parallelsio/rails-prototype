@@ -35,8 +35,17 @@ $(document).ready ->
 
 	$(".bit").mouseenter( ->
 		m = showNotification "hover in: #{ this.id } ", "warning"
+
+		$(".bit").toolbar
+    	content: "#toolbar"
+    	hideOnClick: "true"
+
+    $(this).trigger('click')
+    true
+
 		).mouseleave ->
-			m = showNotification "hover out: #{ this.id } ", "warning"
+			# m = showNotification "hover out: #{ this.id } ", "warning"
+
 
 
 
