@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery.pnotify.min
 //= require mousetrap.min
+//= require jquery.toolbar.min
 //= require root
 //= require maps
 //= require bits

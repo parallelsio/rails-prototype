@@ -36,7 +36,6 @@ $(document).ready ->
 	$(".bit").mouseenter( ->
 		m = showNotification "hover in: #{ this.id } ", "warning"
 		).mouseleave ->
-
 			m = showNotification "hover out: #{ this.id } ", "warning"
 
 
