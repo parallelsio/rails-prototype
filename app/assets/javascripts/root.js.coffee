@@ -23,6 +23,8 @@ root = global ? window
 #   animTransition: Animator.tx.bouncy # http://www.berniecode.com/writing/animator.html
 
 
+root.pageX = 0
+root.pageY = 0
 
 root.httpCodes =
 	movedPermanently: 301
@@ -36,7 +38,8 @@ root.httpCodes =
 # 	$('body').off "mousemove"
 
 
-
+root.createNewBit = ->
+	console.log "creating bit ... "
 
 
 root.showMenu = ->
@@ -56,19 +59,35 @@ root.showNotification = (message, type) ->
 
 
 # TODO: refactor into function that handles shortcuts
+# TODO: figure out scheme to prevent overlap with OS + browser keys
+# TODO: is there a  way to get the mouse position without binding 
 Mousetrap.bind ["command"], (e, combo) ->
 	m = showNotification "pressed : " + combo + " : modifier ... ", "warning"
 	# console.log root.hoveredElement
 
 
-Mousetrap.bind ["n b"], (e, combo) ->
+Mousetrap.bind ["n b", "c b"], (e, combo) ->
 	m = showNotification "pressed : " + combo + " : New bit", "warning"
+	console.log "x: #{ root.pageX } y: #{ root.pageY }"
+	newBit = createNewBit()
 	e.preventDefault
 
 
 
 
 $(document).ready ->
+
+	map = $('#map').on "mousemove", (e) -> 
+		root.pageX = e.pageX
+		root.pageY = e.pageY
+		e.preventDefault
+
+	somethingElse = true
+
+
+
+
+
 
 
 

@@ -32,19 +32,19 @@ $(document).ready ->
 
 
 
+	# TOOLBAR : disabled for now, distracting until redesigned	    
+	# $(".bit").mouseenter( ->
+	# 	m = showNotification "hover in: #{ this.id } ", "warning"
 
-	$(".bit").mouseenter( ->
-		m = showNotification "hover in: #{ this.id } ", "warning"
+	# 	$(".bit").toolbar
+ #    	content: "#toolbar"
+ #    	hideOnClick: "true"
 
-		$(".bit").toolbar
-    	content: "#toolbar"
-    	hideOnClick: "true"
+ #    $(this).trigger('click')
+ #    true
 
-    $(this).trigger('click')
-    true
-
-		).mouseleave ->
-			# m = showNotification "hover out: #{ this.id } ", "warning"
+	# 	).mouseleave ->
+	# 		# m = showNotification "hover out: #{ this.id } ", "warning"
 
 
 
