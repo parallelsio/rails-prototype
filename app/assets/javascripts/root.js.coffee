@@ -1,4 +1,4 @@
-
+	
 root = global ? window
 
 # ############## SETUP  ***********************
@@ -23,8 +23,9 @@ root = global ? window
 #   animTransition: Animator.tx.bouncy # http://www.berniecode.com/writing/animator.html
 
 
-root.pageX = 0
-root.pageY = 0
+root.x = 0
+root.y = 0
+
 
 root.httpCodes =
 	movedPermanently: 301
@@ -33,8 +34,8 @@ root.httpCodes =
 
 
 # $('body').on "mousemove", (event) ->
-# 	root.hoveredElement = $(event.target).closest('.bit')
-# 	console.log "#{ root.hoveredElement.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
+# 	root.hoveredBit = $(event.target).closest('.bit')
+# 	console.log "#{ root.hoveredBit.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
 # 	$('body').off "mousemove"
 
 
@@ -43,10 +44,22 @@ root.createNewBit = ->
 
 
 root.showMenu = ->
-	console.log "showMenu call"
+	console.log "show menu"
+	console.log "#{ root.hoveredBit.attr('id') } : x: #{ root.x } y: #{ root.y }"
 
+	# TODO: 
+	# get size of the bit
+	# calc position for menu
+	# animate it out
+	# pulsate? wiggle?
 
-# TODO: better way to get the hovered element? 
+	#display temp toolbar
+	# $(".bit##{ root.hoveredBit.attr('id')}").menu
+	# 	content: "#toolbar"
+	# 	hideOnClick: "true"
+	
+	# $("#{ root.hoveredBit.attr('id')}").
+		
 
 
 root.showNotification = (message, type) ->
@@ -56,33 +69,65 @@ root.showNotification = (message, type) ->
 	  shadow: false
 	  animation: 'fade'
 	  type: 'info'
+	  delay: 1500
+
 
 
 # TODO: refactor into function that handles shortcuts
 # TODO: figure out scheme to prevent overlap with OS + browser keys
-# TODO: is there a  way to get the mouse position without binding 
-Mousetrap.bind ["command"], (e, combo) ->
-	m = showNotification "pressed : " + combo + " : modifier ... ", "warning"
-	# console.log root.hoveredElement
-
 
 Mousetrap.bind ["n b", "c b"], (e, combo) ->
 	m = showNotification "pressed : " + combo + " : New bit", "warning"
-	console.log "x: #{ root.pageX } y: #{ root.pageY }"
+	console.log "root: x: #{ root.x } y: #{ root.y }"
 	newBit = createNewBit()
 	e.preventDefault
+
+
+
+Mousetrap.bind ["command"], (e, combo) ->
+	
+	if root.hoveredBit
+		console.log "got a command hit inside"
+		m = showNotification "pressed #{ combo } while hover on #{ root.hoveredBit.attr('id') } ", "warning"
+		showMenu()
+
+
+	else
+		console.log "got a command hit outside"
+
+
+	e.preventDefault
+	
+
+
+
+
 
 
 
 
 $(document).ready ->
 
-	map = $('#map').on "mousemove", (e) -> 
-		root.pageX = e.pageX
-		root.pageY = e.pageY
+	# TODO: find a better way of keeping track of X/Y, without binding to mouse
+	map = $('body').on "mousemove", (e) -> 
+
+		root.x = e.pageX - this.offsetLeft
+		root.y = e.pageY - this.offsetTop
+
+		# console.log " #{root.x} #{root.y}"
 		e.preventDefault
 
-	somethingElse = true
+	# TODO: ?
+	# somethingElse = true
+
+
+
+
+
+
+
+
+
 
 
 

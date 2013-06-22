@@ -2,5 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#map {	}
+#map {	  
+
+	// required to get jquery x/y coordinates to return non 0 values
+	height:1000px;
+  	width:1000px;
+  }
+
+
 #map .data 	{ position:relative; top:100px;	}
