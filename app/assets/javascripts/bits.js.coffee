@@ -1,3 +1,7 @@
+
+root = global ? window
+
+
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
@@ -34,18 +38,17 @@ $(document).ready ->
 
 
 	$(".bit").mouseenter( ->
+		root.hoveredBit = $(this)
+		console.log root.hoveredBit
+
 		m = showNotification "hover in: #{ this.id } ", "warning"
+		
 
-		$(".bit").toolbar
-    	content: "#toolbar"
-    	hideOnClick: "true"
 
-    $(this).trigger('click')
-    true
+		return false
 
 		).mouseleave ->
-			# m = showNotification "hover out: #{ this.id } ", "warning"
-
+			root.hoveredBit = undefined
 
 
 

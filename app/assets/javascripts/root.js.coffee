@@ -1,4 +1,4 @@
-
+	
 root = global ? window
 
 # ############## SETUP  ***********************
@@ -24,6 +24,7 @@ root = global ? window
 
 
 
+
 root.httpCodes =
 	movedPermanently: 301
 	pageNotFound: 404
@@ -31,19 +32,28 @@ root.httpCodes =
 
 
 # $('body').on "mousemove", (event) ->
-# 	root.hoveredElement = $(event.target).closest('.bit')
-# 	console.log "#{ root.hoveredElement.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
+# 	root.hoveredBit = $(event.target).closest('.bit')
+# 	console.log "#{ root.hoveredBit.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
 # 	$('body').off "mousemove"
 
 
-
-
-
 root.showMenu = ->
-	console.log "showMenu call"
+	console.log "show menu"
+	console.log "#{ root.hoveredBit.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
 
+	# TODO: 
+	# get size of the bit
+	# calc position for menu
+	# animate it out
+	# pulsate? wiggle?
 
-# TODO: better way to get the hovered element? 
+	#display temp toolbar
+	# $(".bit##{ root.hoveredBit.attr('id')}").menu
+	# 	content: "#toolbar"
+	# 	hideOnClick: "true"
+	
+	# $("#{ root.hoveredBit.attr('id')}").
+		
 
 
 root.showNotification = (message, type) ->
@@ -53,22 +63,57 @@ root.showNotification = (message, type) ->
 	  shadow: false
 	  animation: 'fade'
 	  type: 'info'
+	  delay: 1500
 
 
-# TODO: refactor into function that handles shortcuts
-Mousetrap.bind ["command"], (e, combo) ->
-	m = showNotification "pressed : " + combo + " : modifier ... ", "warning"
-	# console.log root.hoveredElement
 
 
 Mousetrap.bind ["n b"], (e, combo) ->
 	m = showNotification "pressed : " + combo + " : New bit", "warning"
+
+	console.log " x: #{ event.pageX } y: #{ event.pageY }"
 	e.preventDefault
+
+
+
+Mousetrap.bind ["command"], (e, combo) ->
+	
+	
+
+	if root.hoveredBit
+		console.log "got a command hit inside"
+		m = showNotification "pressed #{ combo } while hover on #{ root.hoveredBit.attr('id') } ", "warning"
+		showMenu()
+
+
+	else
+		console.log "got a command hit outside"
+
+
+	e.preventDefault
+	
+
+
+
+
+
+
+
+
 
 
 
 
 $(document).ready ->
+
+
+
+
+
+
+
+
+
 
 
 
