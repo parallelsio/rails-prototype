@@ -1,1 +1,1 @@
-alert "updating #{ @bit}"
+console.log "updating <%= @bit.id %> : <%= @bit.content %>"

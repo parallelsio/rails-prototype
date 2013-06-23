@@ -1,4 +1,5 @@
 = form_for @bit, remote: true do |f|
+  
   - if @bit.errors.any?
     #error_explanation
       %h2= "#{pluralize(@bit.errors.count, "error")} prohibited this bit from being saved:"
@@ -9,24 +10,6 @@
   .field
     = f.label :content
     = f.text_area :content
-  .field
-    = f.label :color
-    = f.text_field :color
-  .field
-    = f.label :type
-    = f.text_field :type
-  .field
-    = f.label :location_x
-    = f.number_field :location_x
-  .field
-    = f.label :location_y
-    = f.number_field :location_y
-  .field
-    = f.label :image
-    = f.text_field :image
-
-  .field
-    = f.label :cluster
      
   .actions
     = f.submit 'Save'

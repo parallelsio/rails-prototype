@@ -1,0 +1,1 @@
+$('#bit_<%= @bit.id %> .front.face').html '<%= j(render :partial => "form" ) %>'

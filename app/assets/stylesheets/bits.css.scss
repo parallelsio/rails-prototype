@@ -4,18 +4,20 @@
     http: //24ways.org/2010/intro-to-css-3d-transforms/ */ -webkit-perspective: 800px;
 }
 
-.bit .content {
+.bit .container {
     color: #666;
     display: inline-block;
     font-size: 16px;
+    
     /* for flip : ;
     http: //24ways.org/2010/intro-to-css-3d-transforms/ */ max-width: 500px;
     height: 100%;
     -webkit-transform-style: preserve-3d;
     -webkit-transition: -webkit-transform .1s;
+    width: auto !important;  /* override bootstrap.csss */
 }
 
-.bit .content .ui-widget-header {
+.bit .container .ui-widget-header {
     display: none;
     cursor: move;
     background-color: #ccc;
@@ -26,7 +28,7 @@
     padding: 0;
 }
 
-.bit .content:hover .ui-widget-header {
+.bit .container:hover .ui-widget-header {
     display: block;
     height: 8px;
     width: 100%;
@@ -38,19 +40,19 @@
     -webkit-backface-visibility: hidden;
 }
 
-.bit .content .face.front { background-color: #fff }
+.bit .container .face.front { background-color: #fff }
 
 /* for flip 
   http://24ways.org/2010/intro-to-css-3d-transforms/
   */
 
-.bit .content .face.back {
+.bit .container .face.back {
     display: none;
     background: #ccc;
     -webkit-transform: rotateY(180deg);
 }
 
-.bit .content.flipped { -webkit-transform: rotateY(180deg) }
+.bit .container.flipped { -webkit-transform: rotateY(180deg) }
 
 .bit .image {
     padding: 0 !important;

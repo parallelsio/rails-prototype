@@ -25,7 +25,7 @@ $(document).ready ->
 	    	data: {
 	    		x: Math.round(ui.position.left)
 	    		y: Math.round(ui.position.top)
-	    		content: $(this).find('.face.front div').text().trim()
+	    		content: $(this).find('.face.front .content').text().trim()
 	    	}
 	    )
 
@@ -74,13 +74,13 @@ $(document).ready ->
 
 	# # flip bit, sounds
 	# $(".bit").click ->
-	#   add = $(this).find(".content").addClass("flipped")
+	#   add = $(this).find(".container").addClass("flipped")
 	  
 	#   # display back
-	#   $(this).find(".content .back").css "display", "block"
+	#   $(this).find(".container .back").css "display", "block"
 	  
 	#   # remove from from flow
-	#   $(this).find(".content .front").css "display", "none"
+	#   $(this).find(".container .front").css "display", "none"
 
 	# 	soundObject = soundManager.createSound(
 	# 	  id: "flip_in"
