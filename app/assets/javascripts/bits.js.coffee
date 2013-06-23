@@ -9,6 +9,10 @@ root = global ? window
 $(document).ready ->
 
 
+	$(".bit").on "dblclick", (event) ->
+		console.log "double click #{ this.id } "
+
+
 
 	# bit : drag and drop
 	$(".bit").draggable
@@ -21,6 +25,7 @@ $(document).ready ->
 	    	data: {
 	    		x: Math.round(ui.position.left)
 	    		y: Math.round(ui.position.top)
+	    		content: $(this).find('.face.front div').text().trim()
 	    	}
 	    )
 
@@ -51,15 +56,13 @@ $(document).ready ->
 	# 		# m = showNotification "hover out: #{ this.id } ", "warning"
 
 
-	$(".bit").mouseenter( ->
+	$(".bit").mouseenter( (event) ->
 		root.hoveredBit = $(this)
 		console.log root.hoveredBit
 
 		m = showNotification "hover in: #{ this.id } ", "warning"
 		
-
-
-		return false
+		event.preventDefault() # better than return false
 
 		).mouseleave ->
 			root.hoveredBit = undefined

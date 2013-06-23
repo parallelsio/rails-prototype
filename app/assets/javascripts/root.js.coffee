@@ -47,11 +47,13 @@ root.showMenu = ->
 	console.log "show menu"
 	console.log "#{ root.hoveredBit.attr('id') } : x: #{ root.x } y: #{ root.y }"
 
+
 	# TODO: 
 	# get size of the bit
 	# calc position for menu
 	# animate it out
 	# pulsate? wiggle?
+
 
 	#display temp toolbar
 	# $(".bit##{ root.hoveredBit.attr('id')}").menu
@@ -77,10 +79,10 @@ root.showNotification = (message, type) ->
 # TODO: figure out scheme to prevent overlap with OS + browser keys
 
 Mousetrap.bind ["n b", "c b"], (e, combo) ->
-	m = showNotification "pressed : " + combo + " : New bit", "warning"
-	console.log "root: x: #{ root.x } y: #{ root.y }"
+	m = showNotification "pressed : #{ combo } : new bit at x: #{ root.x } y: #{ root.y }", "warning"
+	# console.log "root: x: #{ root.x } y: #{ root.y }"
 	newBit = createNewBit()
-	e.preventDefault
+	e.preventDefault()
 
 
 
@@ -96,7 +98,7 @@ Mousetrap.bind ["command"], (e, combo) ->
 		console.log "got a command hit outside"
 
 
-	e.preventDefault
+	e.preventDefault()
 	
 
 

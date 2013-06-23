@@ -34,6 +34,7 @@ class BitsController < ApplicationController
 
   def edit
     @bit = Bit.find(params[:id])
+
   end
 
 
@@ -62,9 +63,13 @@ class BitsController < ApplicationController
   def update
     @bit = Bit.find(params[:id])
     
+
+
     respond_to do |format|
-      if @bit.update_attributes(:location_x => params[:x], :location_y => params[:y])
+      if @bit.update_attributes(:location_x => params[:x], :location_y => params[:y], :content => params[:content])
         format.json { render json: @bit }
+        format.js
+
       else
         format.html { render action: "edit" }
         format.json { render json: @bit.errors, status: :unprocessable_entity }
