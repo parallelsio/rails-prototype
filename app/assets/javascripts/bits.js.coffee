@@ -4,6 +4,10 @@ root = global ? window
 
 root.initBitBehaviors = ->
 
+	# TODO: set up a way to init all bits, vs one bit
+	# this way, when updating one bit via AJAX
+	# we can call init on just that bit vs all for performance
+
 	# bit : drag and drop
 	$(".bit").draggable
 	  handle: "p"		# wire drag to handle only
@@ -38,6 +42,7 @@ root.initBitBehaviors = ->
 	# bit : hover
 	# used to set context of which bit is moused over
 	# we'll use this to bind the show menu key command
+	# TODO: refactor: global variable for hovered state is probably not a good way
 	$(".bit").mouseenter( (event) ->
 		root.hoveredBit = $(this)
 		console.log root.hoveredBit
@@ -85,7 +90,7 @@ $(document).ready ->
 
 
 
-	# flip bit, sounds
+	# flip bit
 	$(".bit").on "click", ->
 
 	  add = $(this).find(".container").addClass("flipped")
