@@ -1,7 +1,6 @@
 
 /  %p#notice= notice
 #map
-  = render 'shared/toolbar'
   .data
     - @clusters.each do |cluster| 
       = render :template => 'clusters/show', :locals => { :cluster => @cluster = cluster}
