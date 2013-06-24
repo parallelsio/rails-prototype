@@ -1,5 +1,7 @@
 class BitsController < ApplicationController
 
+  #TODO: prevent save of bit position below 0/0
+
   protect_from_forgery
 
   def index
@@ -34,7 +36,6 @@ class BitsController < ApplicationController
 
   def edit
     @bit = Bit.find(params[:id])
-
   end
 
 
@@ -63,13 +64,23 @@ class BitsController < ApplicationController
   def update
     @bit = Bit.find(params[:id])
     
+    # what are we updating?
+    # from the form, update only the content param
+    # TODO: refactor, better way to test for form submit?
+    if params[:commit] == "Save"
+      update_hash = { :content => params[:bit][:content] } 
+
+    #  probably bit:drag, so update the position
+    elsif params[:x] && params[:y]
+      update_hash = { :location_x => params[:x], :location_y => params[:y] }
+    end    
+
     respond_to do |format|
-      if @bit.update_attributes(:location_x => params[:x], :location_y => params[:y], :content => params[:content])
+      if @bit.update_attributes(update_hash)
         format.json { render json: @bit }
         format.js
 
       else
-        format.html { render action: "edit" }
         format.json { render json: @bit.errors, status: :unprocessable_entity }
       end
     end
