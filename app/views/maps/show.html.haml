@@ -1,6 +1,6 @@
 
 /  %p#notice= notice
 #map
-  .data
+  #data
     - @clusters.each do |cluster| 
       = render :template => 'clusters/show', :locals => { :cluster => @cluster = cluster}
