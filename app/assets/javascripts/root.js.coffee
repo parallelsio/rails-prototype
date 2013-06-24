@@ -23,6 +23,8 @@ root = global ? window
 #   animTransition: Animator.tx.bouncy # http://www.berniecode.com/writing/animator.html
 
 
+
+# keep track of current mouse position
 root.x = 0
 root.y = 0
 
@@ -32,11 +34,6 @@ root.httpCodes =
 	pageNotFound: 404
 	serverError: 500
 
-
-# $('body').on "mousemove", (event) ->
-# 	root.hoveredBit = $(event.target).closest('.bit')
-# 	console.log "#{ root.hoveredBit.attr('id') } : x: #{ event.pageX } y: #{ event.pageY }"
-# 	$('body').off "mousemove"
 
 
 root.createNewBit = ->
@@ -55,7 +52,7 @@ root.showMenu = ->
 	# pulsate? wiggle?
 
 
-	#display temp toolbar
+	# display temp toolbar
 	# $(".bit##{ root.hoveredBit.attr('id')}").menu
 	# 	content: "#toolbar"
 	# 	hideOnClick: "true"
@@ -76,7 +73,7 @@ root.showNotification = (message, type) ->
 
 
 # TODO: refactor into function that handles shortcuts
-# TODO: figure out scheme to prevent overlap with OS + browser keys
+# TODO: figure out key commands to prevent overlap with OS + browser keys
 
 Mousetrap.bind ["n b", "c b"], (e, combo) ->
 	m = showNotification "pressed : #{ combo } : new bit at x: #{ root.x } y: #{ root.y }", "warning"
@@ -111,6 +108,8 @@ Mousetrap.bind ["command"], (e, combo) ->
 $(document).ready ->
 
 	# TODO: find a better way of keeping track of X/Y, without binding to mouse
+	# keep track of mouse position,
+	# when bit:new/create, use mouse position to create bit
 	map = $('body').on "mousemove", (e) -> 
 
 		root.x = e.pageX - this.offsetLeft
@@ -118,12 +117,6 @@ $(document).ready ->
 
 		# console.log " #{root.x} #{root.y}"
 		e.preventDefault
-
-	# TODO: ?
-	# somethingElse = true
-
-
-
 
 
 

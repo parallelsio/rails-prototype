@@ -16,6 +16,7 @@
         - if @bit.image.present?
           %p= image_tag @bit.image
 
-        = link_to 'Edit', edit_bit_path(@bit)
+      = link_to 'Edit', edit_bit_path(@bit), :remote => true, :class => 'edit_bit'
+        
 
     %p.ui-widget-header

@@ -1,4 +1,4 @@
-# TODO: is this correct here? only way I found to access init function here
+# TODO: is this correct here? only way I found to have root scope for calling the init function
 root = global ? window
 
 console.log 
@@ -8,4 +8,4 @@ $("#data .cluster").append "<%= j ( render :template => 'bits/show', :locals => 
 
 m = showNotification "updating bit <%= @bit.id %> : <%= @bit.content %>", "warning"
 
-root.initBitBehaviors() # TODO: after reload, need to rebind all JS behaviors
+root.initBitBehaviors() # TODO: centralize all JS rebinding behaviors
