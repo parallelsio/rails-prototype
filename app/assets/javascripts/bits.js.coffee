@@ -2,12 +2,14 @@
 root = global ? window
 
 
+# TODO: set up a way to pass a bit a parameter
+# versus updating all, for performance when needed
+# ie, updating a bit via AJAX
 root.initBitBehaviors = ->
 
-	# TODO: set up a way to init all bits, vs one bit
-	# this way, when updating one bit via AJAX
-	# we can call init on just that bit vs all for performance
 
+	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
 	# bit : drag and drop
 	$(".bit").draggable
 	  handle: "p"		# wire drag to handle only
@@ -33,10 +35,10 @@ root.initBitBehaviors = ->
 
 	    true
 
-	# TODO
-	# bit : show menu
-	$(".bit").on "dblclick", (event) ->
-		console.log "double click bit #{ this.id } "
+	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
 
 
 	# bit : hover
@@ -54,13 +56,16 @@ root.initBitBehaviors = ->
 		).mouseleave ->
 			root.hoveredBit = undefined
 
+	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
 
 
 
 
 
-# *********************************************************************************
-# *********************************************************************************
+
+	##############################################################
+	##############################################################
 
 $(document).ready ->
 
@@ -90,38 +95,38 @@ $(document).ready ->
 
 
 
-	# flip bit
-	$(".bit").on "click", ->
+	# # flip bit
+	# $(".bit").on "click", ->
 
-	  add = $(this).find(".container").addClass("flipped")
+	#   add = $(this).find(".container").addClass("flipped")
 	  
-	  # display back
-	  $(this).find(".container .back").css "display", "block"
+	#   # display back
+	#   $(this).find(".container .back").css "display", "block"
 	  
-	  # remove from flow
-	  $(this).find(".container .front").css "display", "none"
+	#   # remove from flow
+	#   $(this).find(".container .front").css "display", "none"
 
-		# soundObject = soundManager.createSound(
-		#   id: "flip_in"
-		#   url: "/sounds/aim_buddy_logging_in.mp3"
-		# )
-		# soundObject.play()
+	# 	# soundObject = soundManager.createSound(
+	# 	#   id: "flip_in"
+	# 	#   url: "/sounds/aim_buddy_logging_in.mp3"
+	# 	# )
+	# 	# soundObject.play()
 
 
-		add.on "mouseleave", ->
-		  $(this).removeClass "flipped"
+	# 	add.on "mouseleave", ->
+	# 	  $(this).removeClass "flipped"
 		  
-		  # display back
-		  $(this).find(".back").css "display", "none"
+	# 	  # display back
+	# 	  $(this).find(".back").css "display", "none"
 		  
-		  # remove from from flow
-		  $(this).find(".front").css "display", ""
+	# 	  # remove from from flow
+	# 	  $(this).find(".front").css "display", ""
 
-	  # soundObject = soundManager.createSound(
-	  #   id: "flip_out"
-	  #   url: "/sounds/aim_buddy_logging_out.mp3"
-	  # )
-	  # soundObject.play()
+	#   # soundObject = soundManager.createSound(
+	#   #   id: "flip_out"
+	#   #   url: "/sounds/aim_buddy_logging_out.mp3"
+	#   # )
+	#   # soundObject.play()
 
 
 

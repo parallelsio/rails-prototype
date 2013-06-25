@@ -91,6 +91,9 @@ Mousetrap.bind ["command"], (e, combo) ->
 		showMenu()
 
 
+  # not working 
+	$(root.hoveredBit).find('.front.face').load "/bits/#{ root.hoveredBit.attr('id').split('_')[1] }/edit"
+
 	else
 		console.log "got a command hit outside"
 

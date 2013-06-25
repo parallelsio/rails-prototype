@@ -36,6 +36,11 @@ class BitsController < ApplicationController
 
   def edit
     @bit = Bit.find(params[:id])
+
+    respond_to do |format|
+      format.js
+      format.html 
+    end
   end
 
 
