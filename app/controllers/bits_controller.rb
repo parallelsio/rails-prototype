@@ -45,21 +45,21 @@ class BitsController < ApplicationController
 
 
   def create
-    @bit = Bit.new(params[:bit])
 
-    if params[:type] == "Image"
-      @bit = Image.new
-    elsif params[:type] == "Text"
-      @bit = Text.new
+    debugger
+
+    if params[:image]
+      @bit = Image.new(params[:bit])
+    else # must be text
+      @bit = Text.new(params[:bit])
     end
 
 
     respond_to do |format|
       if @bit.save
-        format.html { redirect_to @bit, notice: 'Bit was successfully created.' }
         format.json { render json: @bit, status: :created, location: @bit }
+        format.js
       else
-        format.html { render action: "new" }
         format.json { render json: @bit.errors, status: :unprocessable_entity }
       end
     end

@@ -1,14 +1,15 @@
-= form_for @bit, remote: true do |f|
-  - if @bit.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@bit.errors.count, "error")} prohibited this bit from being saved:"
-      %ul
-        - @bit.errors.full_messages.each do |msg|
-          %li= msg
+= form_for @bit, :html => { :multipart => true }, remote: true do |f|
 
   .field
 
     = f.text_area :content, :rows => 2, :col => 2
 
+  
+  .field
+    = f.file_field :image
+
+
+
   .actions
+
     = f.submit 'Save'

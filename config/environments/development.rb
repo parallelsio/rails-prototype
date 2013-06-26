@@ -35,15 +35,8 @@ Parallels::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  # this is for *local* : set up in .bash_profile on dev machine
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_protocol => 'http',
-    :s3_credentials => {
-      :bucket => ENV['PARALLELS_AWS_BUCKET'],
-      :access_key_id => ENV['PARALLELS_AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['PARALLELS_AWS_SECRET_ACCESS_KEY']
-    }
-  }
+
+
+  
 
 end

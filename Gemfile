@@ -7,8 +7,9 @@ gem 'rails', '3.2.11'
 gem 'haml'
 gem 'haml-rails'					# auto generate haml templates instead of erb
 gem 'sass-rails',   '~> 3.2.4'
-gem 'paperclip', '~> 3.4.0'
-gem 'aws-sdk', '~> 1.6.0'
+gem 'carrierwave'
+gem 'fog'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,20 +1,18 @@
 -# TODO: refactor CSS assignment out of view
-= content_tag_for(:div, @bit, { :style => "left: #{ @bit.location_x}px; top: #{ @bit.location_y}px;", :"data-bit-id" => @bit.id } ) do
+= content_tag_for(:div, @bit, { :style => "left: #{ @bit.location_x}px; top: #{ @bit.location_y}px;", :"data-bit-id" => @bit.id, :class => 'bit' } ) do
   .container 
 
     .face.front
       .content
-        = @bit.content
-            
+      
+        - if @bit.image.present?
+          = image_tag @bit.image
+        - else
+          = @bit.content
+
     .face.back
       .content
-        %p
-          = @bit.type
-          
-        - if @bit.image.present?
-          %p= image_tag @bit.image
-
-      = link_to 'Edit', edit_bit_path(@bit), :remote => true, :class => 'edit_bit'
+        = link_to 'Edit', edit_bit_path(@bit), :remote => true, :class => 'edit_bit'
         
 
     %p.ui-widget-header

@@ -10,7 +10,10 @@ root.initBitBehaviors = ->
 
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
-	# bit : drag and drop
+
+
+
+	# BIT : DRAG + DROP
 	$(".bit").draggable
 	  handle: "p"		# wire drag to handle only
 	  stop: (event, ui) ->
@@ -39,9 +42,7 @@ root.initBitBehaviors = ->
 
 
 
-
-
-	# bit : hover
+	# BIT : HOVER
 	# used to set context of which bit is moused over
 	# we'll use this to bind the show menu key command
 	# TODO: refactor: global variable for hovered state is probably not a good way
@@ -51,10 +52,11 @@ root.initBitBehaviors = ->
 
 		m = showNotification "hover in: #{ this.id } ", "warning"
 		
-		event.preventDefault() # better than return false
+		event.preventDefault()
 
 		).mouseleave ->
 			root.hoveredBit = undefined
+			
 
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	

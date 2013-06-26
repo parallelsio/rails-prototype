@@ -38,6 +38,9 @@ root.httpCodes =
 
 root.createNewBit = ->
 	console.log "creating bit ... "
+	
+	$('#map').load "/bits/new"
+
 
 
 root.showMenu = ->
@@ -91,7 +94,6 @@ Mousetrap.bind ["command"], (e, combo) ->
 		showMenu()
 
 
-  	# not working 
 		$(root.hoveredBit).find('.front.face').load "/bits/#{ root.hoveredBit.attr('id').split('_')[1] }/edit"
 
 	else
