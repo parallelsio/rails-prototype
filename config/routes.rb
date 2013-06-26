@@ -1,6 +1,8 @@
 Parallels::Application.routes.draw do
   
   resources :bits
+
+
   resources :maps
   resources :clusters
 

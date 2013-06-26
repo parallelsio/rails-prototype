@@ -1,3 +1,4 @@
+# TODO: by using STI, should I break apart BitsController into sublass controllers?
 class BitsController < ApplicationController
 
   #TODO: prevent save of bit position below 0/0
