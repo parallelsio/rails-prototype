@@ -36,10 +36,23 @@ root.httpCodes =
 
 
 
-root.createNewBit = ->
-	console.log "creating bit ... "
-	
-	$('#map').load "/bits/new"
+root.createNewTextBit = ->
+
+  request = $.ajax( 
+  	url: '/bits/new'
+  	type: 'GET'
+  	data: {
+	    		x: root.x
+	    		y: root.y
+	    	}
+  )
+
+  request.done (data) -> 
+  	message = "showing new text bit form"
+  	type = "warning"
+  	$('#map').append($(data))
+  	return this
+
 
 
 
@@ -81,7 +94,7 @@ root.showNotification = (message, type) ->
 Mousetrap.bind ["n b", "c b"], (e, combo) ->
 	m = showNotification "pressed : #{ combo } : new bit at x: #{ root.x } y: #{ root.y }", "warning"
 	# console.log "root: x: #{ root.x } y: #{ root.y }"
-	newBit = createNewBit()
+	newTextBit = createNewTextBit()
 	e.preventDefault()
 
 

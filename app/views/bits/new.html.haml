@@ -1,1 +1,17 @@
-= render 'form'
+-# TODO: duplicate as show, refactor ment out of view
+= content_tag_for(:div, @bit, { :style => "left: #{ @bit.location_x}px; top: #{ @bit.location_y}px;", :"data-bit-id" => @bit.id, :class => 'bit' } ) do
+  .container 
+
+    .face.front
+      .content
+      
+        = render 'form'
+
+    .face.back
+      .content
+        
+
+    %p.ui-widget-header
+
+
+

@@ -18,6 +18,7 @@ root.initBitBehaviors = ->
 	  handle: "p"		# wire drag to handle only
 	  stop: (event, ui) ->
 
+	  	# TODO : dont send drag of a form to save
 	  	request = $.ajax( 
 	    	url: '/bits/' + $(this).data('bit-id')
 	    	type: 'PUT'
@@ -29,12 +30,12 @@ root.initBitBehaviors = ->
 	    )
 
 	    request.done (data) -> 
-	    	message = "bit " + data.id + " position saved: T: " + data.location_x + " L:" + data.location_y
+	    	message = "bit #{ data.id } position saved: x: #{ data.location_x } y: #{ data.location_y }"
 	    	type = "warning"
 	    	showNotification(message, type)
 	    	true
 
-	    request.fail (data) -> $('#notice').text "bit " + data.id + " position save failed "
+	    request.fail (data) -> $('#notice').text "bit #{ data.id } position save failed "
 
 	    true
 

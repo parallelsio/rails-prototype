@@ -27,6 +27,14 @@ class BitsController < ApplicationController
 
   def new
     @bit = Bit.new
+
+    # set position, if available
+    if params[:x] && params[:y]
+      @bit.location_x = params[:x]
+      @bit.location_y = params[:y]
+
+    end    
+
     
     respond_to do |format|
       format.html # new.html.erb
@@ -52,7 +60,8 @@ class BitsController < ApplicationController
     if params[:image]
       @bit = Image.new(params[:bit])
     else # must be text
-      @bit = Text.new(params[:bit])
+      @bit = Text.new
+      @bit.content = params[:bit][:content]      
     end
 
 
