@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  location_x: 1
-  location_y: 1
+  position_x: 1
+  position_y: 1
 
 two:
-  location_x: 1
-  location_y: 1
+  position_x: 1
+  position_y: 1

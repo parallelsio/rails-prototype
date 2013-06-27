@@ -18,7 +18,7 @@ class ClustersControllerTest < ActionController::TestCase
 
   test "should create cluster" do
     assert_difference('Cluster.count') do
-      post :create, cluster: { location_x: @cluster.location_x, location_y: @cluster.location_y }
+      post :create, cluster: { position_x: @cluster.position_x, position_y: @cluster.position_y }
     end
 
     assert_redirected_to cluster_path(assigns(:cluster))
@@ -35,7 +35,7 @@ class ClustersControllerTest < ActionController::TestCase
   end
 
   test "should update cluster" do
-    put :update, id: @cluster, cluster: { location_x: @cluster.location_x, location_y: @cluster.location_y }
+    put :update, id: @cluster, cluster: { position_x: @cluster.position_x, position_y: @cluster.position_y }
     assert_redirected_to cluster_path(assigns(:cluster))
   end
 

@@ -1,7 +1,7 @@
 # TODO: by using STI, should I break apart BitsController into sublass controllers?
 class BitsController < ApplicationController
 
-  #TODO: prevent save of bit position below 0/0
+  #TODO: prevent save of bit position below 0/0 until ZUI is implemented
 
   protect_from_forgery
 
@@ -25,33 +25,26 @@ class BitsController < ApplicationController
   end
 
 
+
+
+
+
+
   def new
+
     @bit = Bit.new
 
     # set position, if available
-    if params[:x] && params[:y]
-      @bit.location_x = params[:x]
-      @bit.location_y = params[:y]
-
+    if params[:position_x] && params[:position_y]
+      @bit.position_x = params[:position_x]
+      @bit.position_y = params[:position_y]
     end    
 
     
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @bit }
     end
   end
-
-
-  def edit
-    @bit = Bit.find(params[:id])
-
-    respond_to do |format|
-      format.js
-      format.html 
-    end
-  end
-
 
   def create
 
@@ -59,10 +52,14 @@ class BitsController < ApplicationController
 
     if params[:image]
       @bit = Image.new(params[:bit])
-    else # must be text
+    else
       @bit = Text.new
       @bit.content = params[:bit][:content]      
     end
+
+    @bit.position_x = params[:bit][:position_x]
+    @bit.position_y = params[:bit][:position_y]
+
 
 
     respond_to do |format|
@@ -76,7 +73,22 @@ class BitsController < ApplicationController
   end
 
 
+
+
+
+  def edit
+    @bit = Bit.find(params[:id])
+
+    respond_to do |format|
+      format.js
+      format.html 
+    end
+  end
+
+
   def update
+    
+
     @bit = Bit.find(params[:id])
     
     # what are we updating?
@@ -85,9 +97,9 @@ class BitsController < ApplicationController
     if params[:commit] == "Save"
       update_hash = { :content => params[:bit][:content] } 
 
-    #  probably bit:drag, so update the position
-    elsif params[:x] && params[:y]
-      update_hash = { :location_x => params[:x], :location_y => params[:y] }
+    #  via bit:drag, so update the position
+    elsif params[:position_x] && params[:position_y]
+      update_hash = { :position_x => params[:position_x], :position_y => params[:position_y] }
     end    
 
     respond_to do |format|
@@ -100,6 +112,10 @@ class BitsController < ApplicationController
       end
     end
   end
+
+
+
+
 
 
   def destroy

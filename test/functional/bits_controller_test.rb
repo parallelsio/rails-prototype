@@ -18,7 +18,7 @@ class BitsControllerTest < ActionController::TestCase
 
   test "should create bit" do
     assert_difference('Bit.count') do
-      post :create, bit: { color: @bit.color, content: @bit.content, image: @bit.image, location_x: @bit.location_x, location_y: @bit.location_y, type: @bit.type }
+      post :create, bit: { color: @bit.color, content: @bit.content, image: @bit.image, position_x: @bit.position_x, position_y: @bit.position_y, type: @bit.type }
     end
 
     assert_redirected_to bit_path(assigns(:bit))
@@ -35,7 +35,7 @@ class BitsControllerTest < ActionController::TestCase
   end
 
   test "should update bit" do
-    put :update, id: @bit, bit: { color: @bit.color, content: @bit.content, image: @bit.image, location_x: @bit.location_x, location_y: @bit.location_y, type: @bit.type }
+    put :update, id: @bit, bit: { color: @bit.color, content: @bit.content, image: @bit.image, position_x: @bit.position_x, position_y: @bit.position_y, type: @bit.type }
     assert_redirected_to bit_path(assigns(:bit))
   end
 

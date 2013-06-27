@@ -23,14 +23,14 @@ root.initBitBehaviors = ->
 	    	url: '/bits/' + $(this).data('bit-id')
 	    	type: 'PUT'
 	    	data: {
-	    		x: Math.round(ui.position.left)
-	    		y: Math.round(ui.position.top)
+	    		position_x: Math.round(ui.position.left)
+	    		position_y: Math.round(ui.position.top)
 	    		content: $(this).find('.face.front .content').text().trim()
 	    	}
 	    )
 
 	    request.done (data) -> 
-	    	message = "bit #{ data.id } position saved: x: #{ data.location_x } y: #{ data.location_y }"
+	    	message = "bit #{ data.id } position saved: x: #{ data.position_x } y: #{ data.position_y }"
 	    	type = "warning"
 	    	showNotification(message, type)
 	    	true

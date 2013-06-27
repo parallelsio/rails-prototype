@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319091955) do
+ActiveRecord::Schema.define(:version => 20130627205954) do
 
   create_table "bits", :force => true do |t|
     t.text     "content"
     t.string   "color"
     t.string   "type"
-    t.integer  "location_x"
-    t.integer  "location_y"
+    t.integer  "position_x"
+    t.integer  "position_y"
     t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20130319091955) do
   end
 
   create_table "clusters", :force => true do |t|
-    t.integer  "location_x"
-    t.integer  "location_y"
+    t.integer  "position_x"
+    t.integer  "position_y"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "map_id"
