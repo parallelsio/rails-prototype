@@ -64,5 +64,6 @@ module Parallels
     # Load Subfolder Models
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
 
+
   end
 end

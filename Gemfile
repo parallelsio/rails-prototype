@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '3.2.11'
-
+gem 'thin'
 gem 'haml'
 gem 'haml-rails'					# auto generate haml templates instead of erb
 gem 'sass-rails',   '~> 3.2.4'
@@ -18,10 +18,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
 group :development, :test  do
   gem 'mysql2'
   gem 'foreman'
   gem 'debugger'
+  gem 'quiet_assets'
+
 end
 
 group :production do
