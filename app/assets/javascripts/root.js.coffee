@@ -42,8 +42,8 @@ root.createNewTextBit = ->
   	url: '/bits/new'
   	type: 'GET'
   	data: {
-	    		x: root.x
-	    		y: root.y
+	    		position_x: root.x
+	    		position_y: root.y
 	    	}
   )
 
@@ -51,7 +51,8 @@ root.createNewTextBit = ->
   	message = "showing new text bit form"
   	type = "warning"
   	$('#map').append($(data))
-  	return this
+  
+  return this
 
 
 

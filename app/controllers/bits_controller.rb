@@ -5,6 +5,8 @@ class BitsController < ApplicationController
 
   protect_from_forgery
 
+
+
   def index
     @bits = Bit.all
 
@@ -13,6 +15,7 @@ class BitsController < ApplicationController
       format.json { render json: @bits }
     end
   end
+
 
 
   def show
@@ -48,8 +51,6 @@ class BitsController < ApplicationController
 
   def create
 
-    debugger
-
     if params[:image]
       @bit = Image.new(params[:bit])
     else
@@ -60,11 +61,12 @@ class BitsController < ApplicationController
     @bit.position_x = params[:bit][:position_x]
     @bit.position_y = params[:bit][:position_y]
 
-
+    @p = @bit.parallels.build
+    @p.bind_to_closest_cluster
 
     respond_to do |format|
       if @bit.save
-        format.json { render json: @bit, status: :created, location: @bit }
+        # format.json { render json: @bit, status: :created, location: @bit }
         format.js
       else
         format.json { render json: @bit.errors, status: :unprocessable_entity }
