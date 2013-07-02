@@ -100,6 +100,7 @@ Mousetrap.bind ["n b", "c b"], (e, combo) ->
 
 
 
+
 Mousetrap.bind ["command"], (e, combo) ->
 	
 	if root.hoveredBit
@@ -107,18 +108,21 @@ Mousetrap.bind ["command"], (e, combo) ->
 		m = showNotification "pressed #{ combo } while hover on #{ root.hoveredBit.attr('id') } ", "warning"
 		showMenu()
 
-
 		$(root.hoveredBit).find('.front.face').load "/bits/#{ root.hoveredBit.attr('id').split('_')[1] }/edit"
 
 	else
 		console.log "got a command hit outside"
-
 
 	e.preventDefault()
 	
 
 
 
+Mousetrap.bind ["escape"], (e, combo) ->
+	m = showNotification "pressed : #{ combo } : remove forms ", "warning"
+	console.log "pressed escape"
+	$('#new_bit').remove()
+	e.preventDefault()
 
 
 
