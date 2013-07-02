@@ -82,8 +82,11 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
 
     respond_to do |format|
-      format.js
-      format.html 
+      #TODO: fix
+      # html causes load of layout file
+      # js gives me a bad form
+      # format.js
+      format.html
     end
   end
 

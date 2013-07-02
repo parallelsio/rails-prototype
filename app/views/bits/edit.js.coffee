@@ -1,1 +1,1 @@
-$('#bit_<%= @bit.id %> .front.face').html '<%= j(render :partial => "form" ) %>'
+$('#bit_<%= @bit.id %> .front.face').html "<%= j ( render :partial => 'form') %>"
