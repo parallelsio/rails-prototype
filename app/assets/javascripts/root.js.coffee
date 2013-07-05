@@ -1,4 +1,4 @@
-	
+
 root = global ? window
 
 # ############## SETUP  ***********************
@@ -109,6 +109,7 @@ Mousetrap.bind ["command"], (e, combo) ->
 		showMenu()
 
 		$(root.hoveredBit).find('.front.face').load "/bits/#{ root.hoveredBit.attr('id').split('_')[1] }/edit"
+		$(root.hoveredBit).addClass('editing')
 
 	else
 		console.log "got a command hit outside"
@@ -118,24 +119,27 @@ Mousetrap.bind ["command"], (e, combo) ->
 
 
 
-Mousetrap.bind ["escape"], (e, combo) ->
+# bound to global to allow escape to work inside of the form
+# requires extension: mousetrap-global-bind.min
+# and _save line at end
+Mousetrap.bindGlobal ["escape"], (e, combo) ->
+
 	m = showNotification "pressed : #{ combo } : remove forms ", "warning"
 	console.log "pressed escape"
-
 
 	$('#new_bit').remove()
 
 	# assuming only one at a time
 	# TODO: test
 
-	editing_bit_id = $('.edit_bit').parent().parent().parent().attr('id')
-	console.log "editing_bit_id: #{ editing_bit_id }"
-	$('.edit_bit').remove()
-	$("#" + editing_bit_id).find('.front.face').load "/bits/#{ editing_bit_id.split('_')[1] }"
 
+	editing_bit_id = $('.editing').attr('id').split('_')[1]
+	console.log "editing_bit_id: #{ editing_bit_id }"
+	$('.editing').remove()
+	$("#data .cluster").append( $('<div>').load("/bits/#{ editing_bit_id }") )
 
 	e.preventDefault()
-
+	_save() 
 
 
 

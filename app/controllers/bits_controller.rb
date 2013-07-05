@@ -7,14 +7,14 @@ class BitsController < ApplicationController
 
 
 
-  def index
-    @bits = Bit.all
+  # def index
+  #   @bits = Bit.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @bits }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # index.html.erb
+  #     format.json { render json: @bits }
+  #   end
+  # end
 
 
 
@@ -22,8 +22,7 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @bit }
+      format.html { render :layout => false }
     end
   end
 
