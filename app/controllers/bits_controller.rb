@@ -7,17 +7,6 @@ class BitsController < ApplicationController
 
 
 
-  # def index
-  #   @bits = Bit.all
-
-  #   respond_to do |format|
-  #     format.html # index.html.erb
-  #     format.json { render json: @bits }
-  #   end
-  # end
-
-
-
   def show
     @bit = Bit.find(params[:id])
 
@@ -25,15 +14,10 @@ class BitsController < ApplicationController
       format.html { render :layout => false }
     end
   end
-
-
-
-
-
+  
 
 
   def new
-
     @bit = Bit.new
 
     # set position, if available
@@ -43,13 +27,12 @@ class BitsController < ApplicationController
     end    
 
     respond_to do |format|
-      format.html
+      format.html { render :layout => false }
     end
   end
 
 
   def create
-
     if params[:image]
       @bit = Image.new(params[:bit])
     else
@@ -84,7 +67,6 @@ class BitsController < ApplicationController
 
 
   def update
-    
     @bit = Bit.find(params[:id])
     
     # what are we updating?
@@ -100,11 +82,7 @@ class BitsController < ApplicationController
 
     respond_to do |format|
       if @bit.update_attributes(update_hash)
-        format.json { render json: @bit }
         format.js
-
-      else
-        format.json { render json: @bit.errors, status: :unprocessable_entity }
       end
     end
   end
