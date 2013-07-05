@@ -121,7 +121,19 @@ Mousetrap.bind ["command"], (e, combo) ->
 Mousetrap.bind ["escape"], (e, combo) ->
 	m = showNotification "pressed : #{ combo } : remove forms ", "warning"
 	console.log "pressed escape"
+
+
 	$('#new_bit').remove()
+
+	# assuming only one at a time
+	# TODO: test
+
+	editing_bit_id = $('.edit_bit').parent().parent().parent().attr('id')
+	console.log "editing_bit_id: #{ editing_bit_id }"
+	$('.edit_bit').remove()
+	$("#" + editing_bit_id).find('.front.face').load "/bits/#{ editing_bit_id.split('_')[1] }"
+
+
 	e.preventDefault()
 
 

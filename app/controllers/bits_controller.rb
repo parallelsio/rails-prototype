@@ -43,11 +43,11 @@ class BitsController < ApplicationController
       @bit.position_y = params[:position_y]
     end    
 
-    
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
     end
   end
+
 
   def create
 
@@ -66,10 +66,7 @@ class BitsController < ApplicationController
 
     respond_to do |format|
       if @bit.save
-        # format.json { render json: @bit, status: :created, location: @bit }
         format.js
-      else
-        format.json { render json: @bit.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -81,19 +78,14 @@ class BitsController < ApplicationController
   def edit
     @bit = Bit.find(params[:id])
 
-    respond_to do |format|
-      #TODO: fix
-      # html causes load of layout file
-      # js gives me a bad form
-      # format.js
-      format.html
-    end
+      respond_to do |format|
+        format.html { render :layout => false }       
+      end
   end
 
 
   def update
     
-
     @bit = Bit.find(params[:id])
     
     # what are we updating?
@@ -128,8 +120,7 @@ class BitsController < ApplicationController
     @bit.destroy
 
     respond_to do |format|
-      format.html { redirect_to bits_url }
-      format.json { head :no_content }
+      format.js
     end
   end
 
