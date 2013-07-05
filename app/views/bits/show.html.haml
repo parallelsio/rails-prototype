@@ -6,7 +6,7 @@
       .content
       
         - if @bit.image.present?
-          = image_tag @bit.image
+          = image_tag @bit.image_url.to_s
         - else
           = @bit.content
 

@@ -14,7 +14,7 @@ class BitsController < ApplicationController
       format.html { render :layout => false }
     end
   end
-  
+
 
 
   def new
@@ -42,6 +42,7 @@ class BitsController < ApplicationController
 
     @bit.position_x = params[:bit][:position_x]
     @bit.position_y = params[:bit][:position_y]
+    @bit.image = params[:bit][:image]
 
     @p = @bit.parallels.build
     @p.bind_to_closest_cluster

@@ -8,6 +8,7 @@ class Bit < ActiveRecord::Base
 
 	attr_accessible :color, :position_x, :position_y, :type
 
+	mount_uploader :image, ImageUploader
 
 
 end
