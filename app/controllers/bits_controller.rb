@@ -34,10 +34,8 @@ class BitsController < ApplicationController
 
   def create
 
-    # debugger
-
     if params[:bit][:image]
-      @bit = Image.new(params[:bit])
+      @bit = Image.new
       @bit.image = params[:bit][:image]
     else
       @bit = Text.new
@@ -52,7 +50,13 @@ class BitsController < ApplicationController
 
     respond_to do |format|
       if @bit.save
+
+        #TODO: auto taking first cluster.
+        #TODO : better way to get map this bit is connected to?
+        @map = Map.find(@bit.clusters.first.map_id)
+        
         format.js
+        format.html { redirect_to map_path(@map) } 
       end
     end
   end

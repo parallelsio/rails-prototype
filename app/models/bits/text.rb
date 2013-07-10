@@ -4,7 +4,6 @@ class Text < Bit
 	before_save :defaults
 
 	def defaults
-	    self.type = "Text"
 	    self.color = "yellow"
 	end
 

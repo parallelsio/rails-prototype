@@ -5,7 +5,6 @@ class Image < Bit
 
 	def defaults
 		self.image = "stub.jpg"
-	    self.type = "Image"
 	    self.color = "white"
 	end
 
