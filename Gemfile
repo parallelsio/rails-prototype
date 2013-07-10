@@ -32,8 +32,7 @@ group :production do
   gem 'pg'
 end
 
-gem 'jquery-rails'
-
+gem 'jquery-rails', '2.3.0'   # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
 
 group :test do
   # Pretty printed test output

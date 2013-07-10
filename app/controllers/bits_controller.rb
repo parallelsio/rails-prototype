@@ -33,8 +33,12 @@ class BitsController < ApplicationController
 
 
   def create
-    if params[:image]
+
+    # debugger
+
+    if params[:bit][:image]
       @bit = Image.new(params[:bit])
+      @bit.image = params[:bit][:image]
     else
       @bit = Text.new
       @bit.content = params[:bit][:content]      
@@ -42,8 +46,7 @@ class BitsController < ApplicationController
 
     @bit.position_x = params[:bit][:position_x]
     @bit.position_y = params[:bit][:position_y]
-    @bit.image = params[:bit][:image]
-
+    
     @p = @bit.parallels.build
     @p.bind_to_closest_cluster
 
