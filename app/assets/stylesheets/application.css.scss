@@ -6,22 +6,22 @@
 
 @font-face {
       font-family: 'ChaparralPro-Light';
-      src: url('/typefaces/chaparralprolight.eot');
-      src: url('/typefaces/chaparralprolight.eot?#iefix') format('embedded-opentype'),
-           url('/typefaces/chaparralprolight.woff') format('woff'),
-           url('/typefaces/chaparralprolight.ttf') format('truetype'),
-           url('/typefaces/chaparralprolight.svg#chaparralprolight') format('svg');
+      src: font-url('chaparralprolight.eot');
+      src: font-url('chaparralprolight.eot?#iefix') format('embedded-opentype'),
+           font-url('chaparralprolight.woff') format('woff'),
+           font-url('chaparralprolight.ttf') format('truetype'),
+           font-url('chaparralprolight.svg#chaparralprolight') format('svg');
       font-weight: normal;
       font-style: normal;
   }
 
 @font-face {
       font-family: 'ChaparralPro-LightIt';
-      src: url('/typefaces/chaparralprolightit.eot');
-      src: url('/typefaces/chaparralprolightit.eot?#iefix') format('embedded-opentype'),
-           url('/typefaces/chaparralprolightit.woff') format('woff'),
-           url('/typefaces//typefaces/chaparralprolightit.ttf') format('truetype'),
-           url('/typefaces/chaparralprolightit.svg#chaparralprolightit') format('svg');
+      src: font-url('chaparralprolightit.eot');
+      src: font-url('chaparralprolightit.eot?#iefix') format('embedded-opentype'),
+           font-url('chaparralprolightit.woff') format('woff'),
+           font-url('chaparralprolightit.ttf') format('truetype'),
+           font-url('chaparralprolightit.svg#chaparralprolightit') format('svg');
       font-weight: normal;
       font-style: normal;
   }
@@ -29,22 +29,22 @@
 
   @font-face {
       font-family: 'ChaparralPro-Regular';
-      src: url('/typefaces/chaparralproregular.eot');
-      src: url('/typefaces/chaparralproregular.eot?#iefix') format('embedded-opentype'),
-           url('/typefaces/chaparralproregular.woff') format('woff'),
-           url('/typefaces/chaparralproregular.ttf') format('truetype'),
-           url('/typefaces/chaparralproregular.svg#chaparralproregular') format('svg');
+      src: font-url('chaparralproregular.eot');
+      src: font-url('chaparralproregular.eot?#iefix') format('embedded-opentype'),
+           font-url('chaparralproregular.woff') format('woff'),
+           font-url('chaparralproregular.ttf') format('truetype'),
+           font-url('chaparralproregular.svg#chaparralproregular') format('svg');
       font-weight: normal;
       font-style: normal;
   }
 
 @font-face {
         font-family: 'ChaparralPro-Semibold';
-        src: url('/typefaces/chaparralprosemibold.eot');
-        src: url('/typefaces/chaparralprosemibold.eot?#iefix') format('embedded-opentype'),
-             url('/typefaces/chaparralprosemibold.woff') format('woff'),
-             url('/typefaces/chaparralprosemibold.ttf') format('truetype'),
-             url('/typefaces/chaparralprosemibold.svg#chaparralprosemibold') format('svg');
+        src: font-url('chaparralprosemibold.eot');
+        src: font-url('chaparralprosemibold.eot?#iefix') format('embedded-opentype'),
+             font-url('chaparralprosemibold.woff') format('woff'),
+             font-url('chaparralprosemibold.ttf') format('truetype'),
+             font-url('chaparralprosemibold.svg#chaparralprosemibold') format('svg');
         font-weight: normal;
         font-style: normal;
     }
