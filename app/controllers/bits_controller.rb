@@ -34,6 +34,8 @@ class BitsController < ApplicationController
 
   def create
 
+    debugger
+
     if params[:bit][:image]
       @bit = Image.new
       @bit.image = params[:bit][:image]

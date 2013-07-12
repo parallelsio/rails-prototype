@@ -3,13 +3,15 @@ source 'http://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '3.2.11'
+
+gem 'figaro'              # access env vars
+
 gem 'thin'                # local server, allows for hiding assets lines in log
 gem 'haml'
 gem 'haml-rails'					# auto generate haml templates instead of erb
 gem 'sass-rails',   '~> 3.2.4'
 gem 'carrierwave'         # file uploading glue between rails and cloud storage
-gem 'fog', '~> 1.12.1'    # cloud storage wrapper
-gem 'figaro'              # access env vars
+gem 'fog', '~> 1.3.1'    # cloud storage wrapper
 
 
 # Gems used only for assets and not required
