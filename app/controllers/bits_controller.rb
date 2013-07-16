@@ -34,8 +34,6 @@ class BitsController < ApplicationController
 
   def create
 
-    debugger
-
     if params[:bit][:image]
       @bit = Image.new
       @bit.image = params[:bit][:image]
@@ -57,8 +55,8 @@ class BitsController < ApplicationController
         #TODO : better way to get map this bit is connected to?
         @map = Map.find(@bit.clusters.first.map_id)
         
-        format.js
-        format.html { redirect_to map_path(@map) } 
+        format.js                                   
+        format.html { redirect_to map_path(@map) }  # for images
       end
     end
   end
@@ -70,9 +68,7 @@ class BitsController < ApplicationController
   def edit
     @bit = Bit.find(params[:id])
 
-      respond_to do |format|
-        format.html { render :layout => false }       
-      end
+    render :layout => false 
   end
 
 
@@ -87,7 +83,7 @@ class BitsController < ApplicationController
 
     #  via bit:drag, so update the position
     elsif params[:position_x] && params[:position_y]
-      update_hash = { :position_x => params[:position_x], :position_y => params[:position_y] }
+      update_hash = { :position_x => params[:position_x], :position_y => params[:position_y], :content => nil }
     end    
 
     respond_to do |format|

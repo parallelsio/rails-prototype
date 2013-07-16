@@ -100,7 +100,7 @@ Mousetrap.bind ["n b", "c b"], (e, combo) ->
 
 
 
-
+# edit bit on hover
 Mousetrap.bind ["command"], (e, combo) ->
 	
 	if root.hoveredBit
@@ -112,7 +112,7 @@ Mousetrap.bind ["command"], (e, combo) ->
 		$(root.hoveredBit).addClass('editing')
 
 	else
-		console.log "got a command hit outside"
+		console.log "got a command hit outside of bit"
 
 	e.preventDefault()
 	
