@@ -62,12 +62,12 @@ root.deleteBit = ->
 
 	request = $.ajax( 
 		url: '/bits/' + root.hoveredBitIDNumber
-		type: 'DELETE'
+		type: 'DELETE' # DELETE doesnt actually work. wtf? http://humanwebdevelopment.com/rails-jquery-ajax-delete-and-put-methods/
 	)
 
 	request.done (data) -> 
-		m = showNotification "pressed #{ combo } while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
 		$(root.hoveredBit).remove()
+
  	
  	return this 
   
@@ -140,6 +140,8 @@ Mousetrap.bind ["d"], (e, combo) ->
 	
 	if root.hoveredBit
 		console.log "delete hit inside bit"
+		m = showNotification "pressed #{ combo } while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
+
 		deleteBit()
 
 

@@ -101,10 +101,11 @@ class BitsController < ApplicationController
 
 
   def destroy
+
     @bit = Bit.find(params[:id])
     @bit.destroy
 
-    format.js
+    render :nothing => true
   end
 
 
