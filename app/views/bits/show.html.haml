@@ -1,5 +1,7 @@
 -# TODO: refactor CSS assignment out of view
-= content_tag_for(:div, @bit, { :style => "left: #{ @bit.position_x}px; top: #{ @bit.position_y}px;", :"data-bit-id" => @bit.id} ) do
+
+
+= content_tag_for(:div, @bit, { :class => @bit.type.downcase,  :style => "left: #{ @bit.position_x}px; top: #{ @bit.position_y}px;", :"data-bit-id" => @bit.id} ) do 
   .container 
 
     .face.front

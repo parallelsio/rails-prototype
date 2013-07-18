@@ -36,11 +36,19 @@
 
 .bit .face {
     display: block;
-    padding: 15px;
+
     -webkit-backface-visibility: hidden;
 }
 
-.bit .container .face.front { background-color: #fff }
+.bit.image .container .face.front { 
+        padding: 0;
+        }
+
+.bit.text .container .face.front { 
+ background-color: #fff;
+ padding:15px;
+}
+
 
 /* for flip 
   http://24ways.org/2010/intro-to-css-3d-transforms/
