@@ -62,7 +62,7 @@ root.deleteBit = ->
 
 	request = $.ajax( 
 		url: '/bits/' + root.hoveredBitIDNumber
-		type: 'DELETE' # DELETE doesnt actually work. wtf? http://humanwebdevelopment.com/rails-jquery-ajax-delete-and-put-methods/
+		type: 'DELETE'
 	)
 
 	request.done (data) -> 

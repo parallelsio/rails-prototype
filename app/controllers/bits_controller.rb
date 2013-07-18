@@ -75,6 +75,7 @@ class BitsController < ApplicationController
   def update
     @bit = Bit.find(params[:id])
     
+  
     # what are we updating?
     # from the form, update only the content param
     # TODO: refactor, better way to test for form submit?
@@ -83,7 +84,7 @@ class BitsController < ApplicationController
 
     #  via bit:drag, so update the position
     elsif params[:position_x] && params[:position_y]
-      update_hash = { :position_x => params[:position_x], :position_y => params[:position_y], :content => nil }
+      update_hash = { :position_x => params[:position_x], :position_y => params[:position_y] }
     end    
 
     respond_to do |format|
