@@ -56,10 +56,28 @@ root.createNewTextBit = ->
 
 
 
+root.deleteBit = ->
+
+	console.log "inside deleteBit"
+
+	request = $.ajax( 
+		url: '/bits/' + root.hoveredBitIDNumber
+		type: 'DELETE' # DELETE doesnt actually work. wtf? http://humanwebdevelopment.com/rails-jquery-ajax-delete-and-put-methods/
+	)
+
+	request.done (data) -> 
+		$(root.hoveredBit).remove()
+
+ 	
+ 	return this 
+  
+
+
+
 
 root.showMenu = ->
 	console.log "show menu"
-	console.log "#{ root.hoveredBit.attr('id') } : x: #{ root.x } y: #{ root.y }"
+	console.log "bit #{ root.hoveredBitIDNumber } : x: #{ root.x } y: #{ root.y }"
 
 
 	# TODO: 
@@ -105,10 +123,10 @@ Mousetrap.bind ["command"], (e, combo) ->
 	
 	if root.hoveredBit
 		console.log "got a command hit inside"
-		m = showNotification "pressed #{ combo } while hover on #{ root.hoveredBit.attr('id') } ", "warning"
+		m = showNotification "pressed #{ combo } while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
 		showMenu()
 
-		$(root.hoveredBit).find('.front.face').load "/bits/#{ root.hoveredBit.attr('id').split('_')[1] }/edit"
+		$(root.hoveredBit).find('.front.face').load "/bits/#{  root.hoveredBitIDNumber }/edit"
 		$(root.hoveredBit).addClass('editing')
 
 	else
@@ -116,6 +134,22 @@ Mousetrap.bind ["command"], (e, combo) ->
 
 	e.preventDefault()
 	
+
+
+Mousetrap.bind ["d"], (e, combo) ->
+	
+	if root.hoveredBit
+		console.log "delete hit inside bit"
+		m = showNotification "pressed #{ combo } while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
+
+		deleteBit()
+
+
+	else
+		console.log "delete hit outside bit"
+
+	e.preventDefault()
+
 
 
 

@@ -11,8 +11,6 @@ root.initBitBehaviors = ->
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
 
-
-
 	# BIT : DRAG + DROP
 	$(".bit").draggable
 	  handle: "p"		# wire drag to handle only
@@ -49,6 +47,8 @@ root.initBitBehaviors = ->
 	# TODO: refactor: global variable for hovered state is probably not a good way
 	$(".bit").mouseenter( (event) ->
 		root.hoveredBit = $(this)
+		root.hoveredBitIDNumber = $(this).attr('id').split('_')[1]
+
 		console.log root.hoveredBit
 
 		m = showNotification "hover in: #{ this.id } ", "warning"
@@ -57,6 +57,7 @@ root.initBitBehaviors = ->
 
 		).mouseleave ->
 			root.hoveredBit = undefined
+			root.hoveredBitIDNumber = undefined
 			
 
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
