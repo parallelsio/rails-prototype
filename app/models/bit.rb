@@ -4,7 +4,7 @@
 class Bit < ActiveRecord::Base
 
   	has_many :parallels
-  	has_many :clusters, :through => :parallels
+  	has_many :clusters, :through => :parallels, :dependent => :destroy
 
 	attr_accessible :color, :position_x, :position_y, :type
 

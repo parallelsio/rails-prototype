@@ -104,9 +104,7 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
     @bit.destroy
 
-    respond_to do |format|
-      format.js
-    end
+    format.js
   end
 
 
