@@ -40,10 +40,13 @@
     -webkit-backface-visibility: hidden;
 }
 
+
+
 .bit.image .container .face.front { 
     padding: 0;
 }
 
+.bit.editing .container .face.front,
 .bit.text .container .face.front { 
 
     background-color: #fff;
