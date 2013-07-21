@@ -45,6 +45,8 @@ class BitsController < ApplicationController
     @bit.position_x = params[:bit][:position_x]
     @bit.position_y = params[:bit][:position_y]
     
+    @bit.cascade_position
+    
     @p = @bit.parallels.build
     @p.bind_to_closest_cluster
 

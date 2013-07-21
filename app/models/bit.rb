@@ -10,4 +10,15 @@ class Bit < ActiveRecord::Base
 
 	mount_uploader :image, ImageUploader
 
+	def cascade_position
+		@last_bit = Bit.last
+
+		if self.type == "Image" && @last_bit.position_y == self.position_y && @last_bit.position_x == self.position_x
+			self.position_y += 10
+			self.position_x += 10
+		end
+	end
+
+
+
 end
