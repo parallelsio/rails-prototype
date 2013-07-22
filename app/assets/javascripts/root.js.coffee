@@ -51,7 +51,8 @@ root.createNewTextBit = ->
   	message = "showing new text bit form"
   	type = "warning"
   	$('#map').append($(data))
-  	$('#new_bit').fileupload()
+
+  	$('#new_image').fileupload()
   
   return this
 

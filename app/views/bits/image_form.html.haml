@@ -1,0 +1,19 @@
+#new_image.bit.image{ :"data-bit-id" => @bit.id, :class => 'bit image' }
+  .container 
+
+    .face.front
+      .content
+
+        = form_for @bit, :html => { :multipart => true }, remote: true do |f|
+
+         
+          .field
+            = f.file_field :image, :multiple => true, :name => 'bit[image]'
+
+
+
+          .actions
+
+            = f.hidden_field :position_x
+            = f.hidden_field :position_y
+            = f.submit 'Save'
