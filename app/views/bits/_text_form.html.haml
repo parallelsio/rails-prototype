@@ -1,17 +1,10 @@
-= form_for @bit, :html => { :multipart => true }, remote: true do |f|
+= form_for @bit, remote: true do |f|
 
   .field
-
     = f.text_area :content, :rows => 2, :col => 2
 
   
-  .field
-    = f.file_field :image, :multiple => true, :name => 'bit[image]'
-
-
-
   .actions
-
     = f.hidden_field :position_x
     = f.hidden_field :position_y
     = f.submit 'Save'

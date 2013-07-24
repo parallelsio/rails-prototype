@@ -36,6 +36,8 @@ root.httpCodes =
 
 
 
+# text bits require a form
+# images just get dragged and dropped (no form)
 root.createNewTextBit = ->
 
   request = $.ajax( 
@@ -51,11 +53,12 @@ root.createNewTextBit = ->
   	message = "showing new text bit form"
   	type = "warning"
   	$('#map').append($(data))
-
-  	$('#new_image').fileupload()
   
   return this
 
+
+
+  	# $('#new_image').fileupload()
 
 
 root.deleteBit = ->
@@ -126,10 +129,16 @@ Mousetrap.bind ["command"], (e, combo) ->
 	if root.hoveredBit
 		console.log "got a command hit inside"
 		m = showNotification "pressed #{ combo } while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
-		showMenu()
+		
+		# only edit if it's a text bit
+		if $(root.hoveredBit).hasClass('text')
+			showMenu()
 
-		$(root.hoveredBit).find('.front.face').load "/bits/#{  root.hoveredBitIDNumber }/edit"
-		$(root.hoveredBit).addClass('editing')
+			$(root.hoveredBit).find('.front.face').load "/bits/#{  root.hoveredBitIDNumber }/edit"
+			$(root.hoveredBit).addClass('editing')
+
+		else
+			m = showNotification "not a text bit - can't edit ", "warning"
 
 	else
 		console.log "got a command hit outside of bit"

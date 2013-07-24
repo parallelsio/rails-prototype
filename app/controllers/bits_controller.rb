@@ -45,7 +45,7 @@ class BitsController < ApplicationController
     @bit.position_x = params[:bit][:position_x]
     @bit.position_y = params[:bit][:position_y]
     
-    @bit.cascade_position
+    @bit.cascade_position if @bit.type == "Image" # offsets if multiple images are dragged at once
     
     @p = @bit.parallels.build
     @p.bind_to_closest_cluster

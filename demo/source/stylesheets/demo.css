@@ -14,6 +14,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', end
 }
 
 
+#center
+{
+  margin:0 0 0 300px;
+}
 
 
 .caps
