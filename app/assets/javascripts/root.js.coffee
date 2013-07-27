@@ -206,7 +206,7 @@ $(document).ready ->
 
 	$('#map').fileupload( {
 		url: '/bits'
-		dropZone: '#map'
+		dropZone: '#new_image'
 		limitMultiFileUploads: 10
 
     	# TODO: how to send as params[:bit][:position_y]?
