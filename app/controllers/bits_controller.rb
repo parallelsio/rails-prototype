@@ -43,16 +43,6 @@ class BitsController < ApplicationController
     else
       @bit = Image.new
 
-       # 2 methods images can get added, during testing:
-      # via form, in which everything is contained in the [:bit][:image] hash
-
-      # prepare in case it comes outs
-      if params[:bit] && params[:bit][:content]
-
-      # TODO: why can't I set this?
-      # @bit.content = params[:files].first.original_filename
-      # @bit.position_x = params[:position_x]
-      # @bit.position_y = params[:position_y]
       @bit.position_x = params[:bit][:position_x]
       @bit.position_y = params[:bit][:position_y]
       @bit.image = params[:bit][:image]
