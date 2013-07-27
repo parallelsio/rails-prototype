@@ -1,39 +1,9 @@
-
 root = global ? window
-
-# ############## SETUP  ***********************
-# soundManager.setup
-#   url: "/swf/"
-#   flashVersion: 8 # optional: shiny features (default = 8)
-#   useFlashBlock: false
-
-
-# # UI config for sound bit 
-# threeSixtyPlayer.config =
-#   playNext: false # stop after one sound, or play through list until end
-#   autoPlay: false # start playing the first sound right away
-#   allowMultiple: true # let many sounds play at once (false = one at a time)
-#   loadRingColor: "#ccc" # amount of sound which has loaded
-#   playRingColor: "#000" # amount of sound which has played
-#   showHMSTime: true
-#   useEQData: true
-#   useWaveformData: true
-#   backgroundRingColor: "#eee" # "default" color shown underneath everything else
-#   animDuration: 500
-#   animTransition: Animator.tx.bouncy # http://www.berniecode.com/writing/animator.html
-
 
 
 # keep track of current mouse position
 root.x = 0
 root.y = 0
-
-
-root.httpCodes =
-	movedPermanently: 301
-	pageNotFound: 404
-	serverError: 500
-
 
 
 # text bits require a form
@@ -206,20 +176,16 @@ $(document).ready ->
 
 	$('#map').fileupload( {
 		url: '/bits'
-		dropZone: '#new_image'
+		dropZone: '#map'
 		limitMultiFileUploads: 10
 
-    	# TODO: how to send as params[:bit][:position_y]?
-    	# TODO: set up as callback
+		# TODO: how to send as params[:bit][:position_y]?
+		# TODO: set up as callback
 		formData: {
 			position_x: root.x
 			position_y: root.y
 		}
 	})
-
-
-
-
 
 
 

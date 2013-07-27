@@ -33,7 +33,6 @@ class BitsController < ApplicationController
 
   def create
 
-
     if params[:bit] && params[:bit][:content]
       @bit = Text.new
       @bit.content = params[:bit][:content]   
@@ -43,9 +42,16 @@ class BitsController < ApplicationController
     else
       @bit = Image.new
 
-      @bit.position_x = params[:bit][:position_x]
-      @bit.position_y = params[:bit][:position_y]
-      @bit.image = params[:bit][:image]
+      if params[:commit]  # via form (manual click Choose Files, Save)
+        @bit.position_x = params[:bit][:position_x]
+        @bit.position_y = params[:bit][:position_y]
+        @bit.image = params[:bit][:image]
+
+      else   # via drag and drop, auto Save + upload
+        @bit.image = params[:files].first
+        @bit.position_x = params[:position_x]
+        @bit.position_y = params[:position_y]
+      end
 
       @bit.cascade_position # calc offsets if multiple images are dragged at once
     end
