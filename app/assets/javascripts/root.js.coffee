@@ -58,7 +58,6 @@ root.createNewTextBit = ->
 
 
 
-  	# $('#new_image').fileupload()
 
 
 root.deleteBit = ->
@@ -190,6 +189,18 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 
 
 $(document).ready ->
+
+	$('#map').fileupload( {
+		url: '/bits'
+		# dropZone: '#map'
+		limitMultiFileUploads: 10
+
+    	# TODO: how to send params[:bit][:position_y]?
+		formData: {
+			position_x: root.x
+			position_y: root.y
+		}
+	})
 
 	# TODO: find a better way of keeping track of X/Y, without binding to mouse
 	# keep track of mouse position,

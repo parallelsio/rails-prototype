@@ -6,7 +6,6 @@ class BitsController < ApplicationController
   protect_from_forgery
 
 
-
   def show
     @bit = Bit.find(params[:id])
 
@@ -34,19 +33,20 @@ class BitsController < ApplicationController
 
   def create
 
-    if params[:bit][:image]
-      @bit = Image.new
-      @bit.image = params[:bit][:image]
-    else
+    if params[:bit] && params[:bit][:text]
       @bit = Text.new
-      @bit.content = params[:bit][:content]      
+      @bit.content = params[:bit][:content]   
+      @bit.position_x = params[:bit][:position_x]
+      @bit.position_y = params[:bit][:position_y]
+    
+    else
+      @bit = Image.new
+      @bit.image = params[:files].first.original_filename
+      @bit.position_x = params[:position_x]
+      @bit.position_y = params[:position_y]
+      @bit.cascade_position # offsets if multiple images are dragged at once
     end
 
-    @bit.position_x = params[:bit][:position_x]
-    @bit.position_y = params[:bit][:position_y]
-    
-    @bit.cascade_position if @bit.type == "Image" # offsets if multiple images are dragged at once
-    
     @p = @bit.parallels.build
     @p.bind_to_closest_cluster
 
