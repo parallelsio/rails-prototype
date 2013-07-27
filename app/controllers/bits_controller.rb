@@ -41,10 +41,13 @@ class BitsController < ApplicationController
     
     else
       @bit = Image.new
-      @bit.image = params[:files].first.original_filename
+      
+      # TODO: why can't I set this?
+      # @bit.content = params[:files].first.original_filename
       @bit.position_x = params[:position_x]
       @bit.position_y = params[:position_y]
-      @bit.cascade_position # offsets if multiple images are dragged at once
+
+      @bit.cascade_position # calc offsets if multiple images are dragged at once
     end
 
     @p = @bit.parallels.build

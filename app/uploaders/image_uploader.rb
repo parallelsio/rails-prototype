@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  storage :fog
+  storage :file
 
   include CarrierWave::MimeTypes
   process :set_content_type
