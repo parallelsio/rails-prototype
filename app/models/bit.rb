@@ -9,7 +9,7 @@ class Bit < ActiveRecord::Base
 	attr_accessible :color, :position_x, :position_y, :type
 
 	# already in image.rb?
-	# mount_uploader :image, ImageUploader
+	mount_uploader :image, ImageUploader
 
 	def cascade_position
 

@@ -33,7 +33,8 @@ class BitsController < ApplicationController
 
   def create
 
-    if params[:bit] && params[:bit][:text]
+
+    if params[:bit] && params[:bit][:content]
       @bit = Text.new
       @bit.content = params[:bit][:content]   
       @bit.position_x = params[:bit][:position_x]
