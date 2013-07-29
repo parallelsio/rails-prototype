@@ -40,7 +40,6 @@ class BitsController < ApplicationController
       @bit.position_y = params[:bit][:position_y]
     
     else
-
       @bit = Image.new
 
       if params[:commit]  # via form (manual click Choose Files, Save)
@@ -60,17 +59,15 @@ class BitsController < ApplicationController
     @p = @bit.parallels.build
     @p.bind_to_closest_cluster
 
-    respond_to do |format|
-      if @bit.save
-
+    if @bit.save
         #TODO: auto taking first cluster.
         #TODO : better way to get map this bit is connected to?
         @map = Map.find(@bit.clusters.first.map_id)
-        
-        format.js                                   
-        format.html { redirect_to map_path(@map) }  # for images
-      end
+
+        # render json: @bit
+        head :created, location: bit_path(@bit)
     end
+
   end
 
 

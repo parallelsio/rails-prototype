@@ -1,13 +1,14 @@
 root = global ? window
 
 
+
 # keep track of current mouse position
+# used when bit:new/create, use mouse position to create bit at that location
 root.x = 0
 root.y = 0
 
 
 # text bits require a form
-# images just get dragged and dropped (no form)
 root.createNewTextBit = ->
 
   request = $.ajax( 
@@ -83,7 +84,6 @@ root.showNotification = (message, type) ->
 
 # TODO: refactor into function that handles shortcuts
 # TODO: figure out key commands to prevent overlap with OS + browser keys
-
 Mousetrap.bind ["n b", "c b"], (e, combo) ->
 	m = showNotification "pressed : #{ combo } : new bit at x: #{ root.x } y: #{ root.y }", "warning"
 	# console.log "root: x: #{ root.x } y: #{ root.y }"
@@ -115,7 +115,7 @@ Mousetrap.bind ["command"], (e, combo) ->
 	e.preventDefault()
 	
 
-
+# TODO: too many deletes, too fast leads to 404's
 Mousetrap.bind ["d"], (e, combo) ->
 	
 	if root.hoveredBit
@@ -162,8 +162,6 @@ $(document).ready ->
 
 
 	# TODO: find a better way of keeping track of X/Y, without binding to mouse
-	# keep track of mouse position,
-	# when bit:new/create, use mouse position to create bit
 	map = $('body').on "mousemove", (e) -> 
 
 		root.x = e.pageX - this.offsetLeft
@@ -176,23 +174,54 @@ $(document).ready ->
 
 
 
-	$("div#map").dropzone( { 
+
+
+
+
+
+	# TODO: resize thumbs, params above arent doing anything
+	# TODO: multiple files kinda working, freezes a bit with no indication of what's happening
+
+	map_dropzone = $("div#map").dropzone( { 
 		url: "/bits" 
 		uploadMultiple: true
 		clickable: false
 		parallelUploads: 3
-		thumbnailWidth:250
-		thumbnailHeight:150
-		maxFilesize: 50 # in megs
+		# thumbnailWidth: 250
+		# thumbnailHeight: 150
+		maxFilesize: 10 # in megs
 		previewsContainer: '#image_upload'
 		addRemoveLinks: true
+		acceptedFiles: "image/*"
+		headers: {
+			# TODO: technically the Rails UJS driver is supposed to do this
+			# rails is complaining about the token, so this quiets it
+    		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    	}
+
+
+		error: (file, response) ->
+			console.log "error: " + response
+
+		success: (file, response, event) ->
+			console.log "success: " + file.name
+			this.removeFile(file)
+
+			#TODO: get header location, get bit id, and show new bit
+			# $("#data .cluster").append( $('<div>').load("/bits/#{ Header['location'] }") )
+
+		sending: (file, xhr, formData) ->
+			console.log "sending: attaching formData ... "
+			formData.append "position_x", root.x
+			formData.append "position_y", root.y
+
+		# drop: (file) ->
+			# console.log "drop: processing ... "
 
 	})
 
 
-	# 	formData: {
-	# 		position_x: root.x
-	# 		position_y: root.y
+
 
 
 

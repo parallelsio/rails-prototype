@@ -21,9 +21,6 @@ class Image < Bit
   	end
 
 	def cascade_position
-
-		debugger
-
 		@last_bit = Bit.last
 
       # TODO : can I use a parameter from the JS UI?
