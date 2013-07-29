@@ -180,7 +180,9 @@ $(document).ready ->
 		url: "/bits" 
 		uploadMultiple: true
 		clickable: false
-		parallelUploads: true
+		parallelUploads: 3
+		thumbnailWidth:250
+		thumbnailHeight:150
 		maxFilesize: 50 # in megs
 		previewsContainer: '#image_upload'
 		addRemoveLinks: true
