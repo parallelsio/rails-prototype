@@ -174,18 +174,24 @@ $(document).ready ->
 
 
 
-	$('#map').fileupload( {
-		url: '/bits'
-		dropZone: '#map'
-		limitMultiFileUploads: 10
 
-		# TODO: how to send as params[:bit][:position_y]?
-		# TODO: set up as callback
-		formData: {
-			position_x: root.x
-			position_y: root.y
-		}
+
+	$("div#map").dropzone( { 
+		url: "/bits" 
+		uploadMultiple: true
+		clickable: false
+		parallelUploads: true
+		maxFilesize: 50 # in megs
+		previewsContainer: '#image_upload'
+		addRemoveLinks: true
+
 	})
+
+
+	# 	formData: {
+	# 		position_x: root.x
+	# 		position_y: root.y
+
 
 
 

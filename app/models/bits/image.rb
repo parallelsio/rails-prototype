@@ -8,6 +8,8 @@ class Image < Bit
 	    self.color = "white"
 	end
 
+	
+
 	# to enable route helpers to work with subclasses
 	# via http://stackoverflow.com/questions/4507149/best-practices-to-handle-routes-for-sti-subclasses-in-rails
 	# via railscasts #394: STI

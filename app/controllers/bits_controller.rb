@@ -40,6 +40,7 @@ class BitsController < ApplicationController
       @bit.position_y = params[:bit][:position_y]
     
     else
+
       @bit = Image.new
 
       if params[:commit]  # via form (manual click Choose Files, Save)
@@ -48,7 +49,7 @@ class BitsController < ApplicationController
         @bit.image = params[:bit][:image]
 
       else   # via drag and drop, auto Save + upload
-        @bit.image = params[:files].first
+        @bit.image = params[:file].first
         @bit.position_x = params[:position_x]
         @bit.position_y = params[:position_y]
       end
@@ -67,7 +68,7 @@ class BitsController < ApplicationController
         @map = Map.find(@bit.clusters.first.map_id)
         
         format.js                                   
-        format.html { redirect_to map_path(@map) }  # for images
+        # format.html { redirect_to map_path(@map) }  # for images
       end
     end
   end

@@ -8,11 +8,16 @@ class Bit < ActiveRecord::Base
 
 	attr_accessible :color, :position_x, :position_y, :type
 
-	# already in image.rb?
-	mount_uploader :image, ImageUploader
+	after_initialize :defaults
+
+
+	def defaults
+		self.position_y = 100
+		self.position_x = 100
+	end
+
 
 	def cascade_position
-
 		@last_bit = Bit.last
 
       # TODO : can I use a parameter from the JS UI?
