@@ -64,8 +64,12 @@ class BitsController < ApplicationController
         #TODO : better way to get map this bit is connected to?
         @map = Map.find(@bit.clusters.first.map_id)
 
-        # render json: @bit
-        head :created, location: bit_path(@bit)
+        if @bit.type == "Image"
+          render json: @bit
+        elsif @bit.type == "Text"
+          render :create  
+        end
+        
     end
 
   end
