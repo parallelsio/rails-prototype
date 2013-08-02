@@ -206,7 +206,10 @@ $(document).ready ->
 
 
 		error: (file, response) ->
-			console.log "error: " + response
+			console.log "error: " + response.image
+			this.removeFile(file)
+			m = showNotification "tried uploading #{ file.name } : #{ response.image } ", "warning"
+
 
 		success: (file, response) ->
 			console.log "success: " + file.name + " created bit with id: " +  response.id

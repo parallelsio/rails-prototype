@@ -70,6 +70,8 @@ class BitsController < ApplicationController
           render :create  
         end
     
+    else
+      render json: @bit.errors, status: :unprocessable_entity 
     end
 
   end
