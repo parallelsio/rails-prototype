@@ -29,6 +29,11 @@ root.createNewTextBit = ->
 
 
 
+root.remove = (thingToDelete) ->
+	$(thingToDelete).fadeOut 300, ->
+
+		root.remove(this)
+
 
 
 root.deleteBit = ->
@@ -41,9 +46,9 @@ root.deleteBit = ->
 	)
 
 	request.done (data) -> 
-		$(root.hoveredBit).remove()
+		root.remove(root.hoveredBit)
 
- 	
+
  	return this 
   
 
@@ -141,7 +146,8 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 	m = showNotification "pressed : #{ combo } : remove forms ", "warning"
 	console.log "pressed escape"
 
-	$('#new_bit').remove()
+	root.remove("#new_bit")
+	
 
 	# assuming only one at a time
 	# TODO: test
@@ -149,7 +155,8 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 
 	editing_bit_id = $('.editing').attr('id').split('_')[1]
 	console.log "editing_bit_id: #{ editing_bit_id }"
-	$('.editing').remove()
+	
+	root.remove('.editing')
 	$("#data .cluster").append( $('<div>').load("/bits/#{ editing_bit_id }") )
 
 	e.preventDefault()
