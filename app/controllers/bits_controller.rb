@@ -48,7 +48,7 @@ class BitsController < ApplicationController
         @bit.image = params[:bit][:image]
 
       else   # via drag and drop, auto Save + upload        
-        @bit.image = params[:file].first
+        @bit.image = params[:file]
         @bit.position_x = params[:position_x]
         @bit.position_y = params[:position_y]
       end
@@ -69,7 +69,7 @@ class BitsController < ApplicationController
         elsif @bit.type == "Text"
           render :create  
         end
-        
+    
     end
 
   end

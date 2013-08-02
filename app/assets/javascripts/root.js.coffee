@@ -184,9 +184,9 @@ $(document).ready ->
 
 	map_dropzone = $("div#map").dropzone( { 
 		url: "/bits" 
-		uploadMultiple: true
+		# uploadMultiple: true
 		clickable: false
-		parallelUploads: 3
+		parallelUploads: 6
 		# thumbnailWidth: 250
 		# thumbnailHeight: 150
 		maxFilesize: 10 # in megs
