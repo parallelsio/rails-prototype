@@ -207,11 +207,6 @@ $(document).ready ->
     	}
 
 
-    	# complete: (file) ->
-    	# 	alert("Added file.")
-
-
-
 		error: (file, response) ->
 			console.log "error: " + response.image
 			this.removeFile(file)
@@ -225,13 +220,13 @@ $(document).ready ->
 			#TODO: get header location, get bit id, and show new bit
 			$("#data .cluster").append( $('<div>').load("/bits/#{   response.id  }") )
 
+			m = showNotification "success: " + file.name + " created bit with id: " +  response.id
+
 		sending: (file, xhr, formData) ->
 			console.log "sending: attaching formData ... "
 			formData.append "position_x", root.x
 			formData.append "position_y", root.y
 
-		# drop: (file) ->
-			# console.log "drop: processing ... "
 
 	})
 
