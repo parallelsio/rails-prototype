@@ -197,6 +197,7 @@ $(document).ready ->
 		success: (file, response) ->
 			console.log "success: " + file.name + " created bit with id: " +  response.id
 			this.removeFile(file)
+			$("#data .cluster").append( $('<div>').load("/bits/#{   response.id  }") )
 			m = showNotification "success: " + file.name + " created bit with id: " +  response.id
 
 		sending: (file, xhr, formData) ->
