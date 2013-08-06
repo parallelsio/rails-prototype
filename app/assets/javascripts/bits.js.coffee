@@ -9,7 +9,7 @@ root = global ? window
 root.initBitBehaviors = ->
 
 
-	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##############################################################
 	# BIT : DRAG + DROP
 	$(".bit").draggable
 	  handle: "p"		# wire drag to handle only
@@ -36,7 +36,7 @@ root.initBitBehaviors = ->
 
 	    true
 
-	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##############################################################
 
 	# BIT : HOVER
 	# used to set context of which bit is moused over
@@ -45,10 +45,8 @@ root.initBitBehaviors = ->
 	$(".bit").mouseenter( (event) ->
 		root.hoveredBit = $(this)
 		root.hoveredBitIDNumber = $(this).attr('id').split('_')[1]
-
 		console.log root.hoveredBit
 		m = showNotification "hover in: #{ this.id } ", "warning"
-		
 		event.preventDefault()
 
 		).mouseleave ->
@@ -60,13 +58,15 @@ root.initBitBehaviors = ->
 
 
 
-
-
-
-
 $(document).ready ->
 
 	root.initBitBehaviors()
+
+
+
+
+
+
 
 	##############################################################
 
