@@ -101,11 +101,11 @@ Mousetrap.bind ["command"], (e, combo) ->
 		
 		# only edit if it's a text bit
 		if $(root.hoveredBit).hasClass('text')
-			showMenu()
+			# showMenu()
 
 			$(root.hoveredBit).find('.front.face').load "/bits/#{  root.hoveredBitIDNumber }/edit"
 			$(root.hoveredBit).addClass('editing')
-			$('#bit_content').focus()
+			$("#bit_content textarea").focus() # TODO: not working ?
 
 		else
 			m = showNotification "not a text bit - can't edit ", "warning"
