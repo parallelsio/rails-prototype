@@ -5,8 +5,11 @@
 #map {	  
 
 	// required to get jquery x/y coordinates to return non 0 values
-	height:1000px;
-  	width:1000px;
+	min-height:2000px;
+	min-width:2000px;
+	
+	height:100%;
+  	width:1000%;
   	
   }
 

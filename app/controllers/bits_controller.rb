@@ -54,6 +54,7 @@ class BitsController < ApplicationController
         @bit.position_y = params[:position_y]
       end
 
+      @bit.cascade_position # calc offsets if multiple images are dragged at once
     end
 
     @p = @bit.parallels.build

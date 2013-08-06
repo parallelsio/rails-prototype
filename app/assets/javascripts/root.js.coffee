@@ -31,7 +31,7 @@ root.createNewTextBit = ->
 
 ##########################################################################################
 root.remove = (thingToDelete) ->
-	$(thingToDelete).fadeOut 300, ->
+	$(thingToDelete).fadeOut 100, ->
 
 		root.remove(this)
 
@@ -195,6 +195,7 @@ $(document).ready ->
 			m = showNotification "tried uploading #{ file.name } : #{ response.image } ", "warning"
 
 		success: (file, response) ->
+		
 			console.log "success: " + file.name + " created bit with id: " +  response.id
 			this.removeFile(file)
 			$("#data .cluster").append( $('<div>').load("/bits/#{   response.id  }") )
@@ -202,17 +203,10 @@ $(document).ready ->
 
 		sending: (file, xhr, formData) ->
 
+			formData.append "position_x", root.x
+			formData.append "position_y", root.y
 
-			# stagger image position if multiple images are dragged at once
-			offset_pixels = 20
-			position_x = root.x + (this.getUploadingFiles().length * offset_pixels)
-			position_y = root.y + (this.getUploadingFiles().length * offset_pixels)
-
-			formData.append "position_x", position_x
-			formData.append "position_y", position_y
-
-			console.log "sending: attaching formData for image # : #{ this.getUploadingFiles().length } at [x][y]: [ #{position_x}] [ #{position_y}] : #{ file.name }"  
-
+			console.log "sending: attaching formData for image # : [ #{ this.getQueuedFiles().length } / #{ this.getUploadingFiles().length } ] at [x][y]: [ #{ root.x }] [ #{ root.y }] : #{ file.name }"  
 	})
 
 ##########################################################################################
