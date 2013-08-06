@@ -40,6 +40,7 @@ class BitsController < ApplicationController
       @bit.position_y = params[:bit][:position_y]
     
     else
+
       @bit = Image.new
 
       if params[:commit]  # via form (manual click Choose Files, Save)
@@ -53,7 +54,6 @@ class BitsController < ApplicationController
         @bit.position_y = params[:position_y]
       end
 
-      @bit.cascade_position # calc offsets if multiple images are dragged at once
     end
 
     @p = @bit.parallels.build
