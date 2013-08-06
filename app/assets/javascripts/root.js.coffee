@@ -202,12 +202,17 @@ $(document).ready ->
 
 		sending: (file, xhr, formData) ->
 
-			console.log "sending: attaching formData for image # : " + this.getUploadingFiles().length
 
 			# stagger image position if multiple images are dragged at once
 			offset_pixels = 20
-			formData.append "position_x", root.x + (this.getUploadingFiles().length * offset_pixels)
-			formData.append "position_y", root.y + (this.getUploadingFiles().length * offset_pixels)
+			position_x = root.x + (this.getUploadingFiles().length * offset_pixels)
+			position_y = root.y + (this.getUploadingFiles().length * offset_pixels)
+
+			formData.append "position_x", position_x
+			formData.append "position_y", position_y
+
+			console.log "sending: attaching formData for image # : #{ this.getUploadingFiles().length } at [x][y]: [ #{position_x}] [ #{position_y}] : #{ file.name }"  
+
 	})
 
 ##########################################################################################
