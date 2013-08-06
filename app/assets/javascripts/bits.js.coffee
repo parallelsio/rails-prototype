@@ -2,14 +2,10 @@
 root = global ? window
 ##############################################################
 
-
-# TODO: set up a way to pass a bit a parameter
-# versus updating all, for performance when needed
-# ie, updating a bit via AJAX
 root.initBitBehaviors = ->
 
 
-##############################################################
+	##############################################################
 	# BIT : DRAG + DROP
 	$(".bit").draggable
 	  handle: "p"		# wire drag to handle only
@@ -36,7 +32,7 @@ root.initBitBehaviors = ->
 
 	    true
 
-##############################################################
+	#############################################################
 
 	# BIT : HOVER
 	# used to set context of which bit is moused over
