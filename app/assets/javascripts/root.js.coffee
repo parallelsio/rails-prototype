@@ -25,6 +25,7 @@ root.createNewTextBit = ->
   	message = "showing new text bit form"
   	type = "warning"
   	$('#map').append($(data))
+  	$('#new_bit textarea').focus()
   
   return this
 
@@ -104,6 +105,7 @@ Mousetrap.bind ["command"], (e, combo) ->
 
 			$(root.hoveredBit).find('.front.face').load "/bits/#{  root.hoveredBitIDNumber }/edit"
 			$(root.hoveredBit).addClass('editing')
+			$('#bit_content').focus()
 
 		else
 			m = showNotification "not a text bit - can't edit ", "warning"
@@ -154,6 +156,9 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 ##########################################################################################
 
 $(document).ready ->
+
+	$('#map').focus()
+
 
 	# TODO: find a better way of keeping track of X/Y, without binding to mouse
 	map = $('body').on "mousemove", (e) -> 
