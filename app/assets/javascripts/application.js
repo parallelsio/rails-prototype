@@ -16,6 +16,7 @@
 //= require jquery.pnotify.min
 //= require mousetrap.min
 //= require dropzone
+//= require magiczoom.cstreams.registered
 //= require mousetrap-global-bind.min
 //= require root
 //= require maps

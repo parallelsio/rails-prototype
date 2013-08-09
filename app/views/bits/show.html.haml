@@ -5,9 +5,11 @@
 
     .face.front
       .content
-      
+
         - if @bit.image.present?
-          = image_tag @bit.image_url.to_s
+          %a{ :href => @bit.image_url, :rel => "zoom-width:550px;zoom-height:550px;", :class => "MagicZoom" }
+            = image_tag @bit.image_url(:thumb)
+
         - else
           = @bit.content
 

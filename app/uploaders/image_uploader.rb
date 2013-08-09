@@ -29,4 +29,30 @@ class ImageUploader < CarrierWave::Uploader::Base
      %w(jpg jpeg gif png)
   end
 
+
+  # Create different versions of your uploaded files:
+  version :thumb do
+    process :resize_to_fit => [250, 250]
+    process :get_meta_information
+
+    def meta
+      @meta
+    end
+  end
+
+  def get_meta_information
+
+    debugger
+
+    if (@file)
+      img = ::MiniMagick::Image::read(@file)
+
+      @meta = Hash.new
+
+      # TODO: properties instead of array
+      @meta = { :height => img[:height], :width => img[:width], :format => img[:format] }
+    end
+  end
+
+
 end

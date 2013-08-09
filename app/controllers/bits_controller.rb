@@ -8,7 +8,7 @@ class BitsController < ApplicationController
 
   def show
     @bit = Bit.find(params[:id])
-
+    
     respond_to do |format|
       format.html { render :layout => false }
     end
