@@ -1,9 +1,20 @@
 class Image < Bit
 	
-	attr_accessible :image
-	before_create :set_defaults
+	attr_accessible :image, :height, :width, :format
+	before_create :set_defaults, :set_meta_info
 
 	mount_uploader :image, ImageUploader		# managed through CarrierWave
+
+	def set_meta_info
+		meta_info = self.image.full.get_meta_info
+
+	    if (! meta_info.nil?)
+	     	self.height = meta_info[:height]
+	     	self.width = meta_info[:width]
+	     	self.format = meta_info[:format]
+	    end
+	end  
+	 
 
 	def set_defaults
 		return unless position_y.nil? and position_x.nil?
@@ -66,6 +77,8 @@ class Image < Bit
 			end
 		end
 	end
+
+
 
 
 end

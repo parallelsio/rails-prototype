@@ -37,24 +37,24 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :full do
-    process :get_meta_information
+    process :get_meta_info
     # process :convert => 'jpg'
 
-    def meta
-      @meta
+    def meta_info
+      @meta_info
     end
   end
 
 
 
-  def get_meta_information
+  def get_meta_info
+
     if (@file)
       img = ::MiniMagick::Image::read(@file)
-
-      @meta = Hash.new
+      @meta_info = Hash.new
 
       # TODO: properties instead of array
-      @meta = { :height => img[:height], :width => img[:width], :format => img[:format] }
+      @meta_info = { :height => img[:height], :width => img[:width], :format => img[:format] }
     end
   end
 
