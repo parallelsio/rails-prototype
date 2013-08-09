@@ -159,7 +159,6 @@ $(document).ready ->
 
 	$('#map').focus()
 
-
 	# TODO: find a better way of keeping track of X/Y, without binding to mouse
 	map = $('body').on "mousemove", (e) -> 
 
@@ -209,12 +208,11 @@ $(document).ready ->
 
 ##########################################################################################
 
+	MagicZoom.options = {
+		"right-click": true
+		"zoom-width": "550"
+		"zoom-height": "550"
+	}
 
 
-
-
-
-
-
-
-
+##########################################################################################

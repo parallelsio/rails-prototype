@@ -30,20 +30,24 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
 
-  # Create different versions of your uploaded files:
+  # Create different versions
   version :thumb do
+    process :convert => 'jpg'
     process :resize_to_fit => [250, 250]
+  end
+
+  version :full do
     process :get_meta_information
+    # process :convert => 'jpg'
 
     def meta
       @meta
     end
   end
 
+
+
   def get_meta_information
-
-    debugger
-
     if (@file)
       img = ::MiniMagick::Image::read(@file)
 
