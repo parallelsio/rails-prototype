@@ -3,7 +3,7 @@ What is this?
 
 
 Parallels is an open source project designed of two *interdependent* parts: 
-* A : an open source, cloud-based OS 
+* A : an open source OS 
 * B : an open data knowledge base
 
 As one, it allows people to seamlessly create, connect, and explore the evolution of their ideas, in connection with others.
