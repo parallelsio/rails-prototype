@@ -1,10 +1,10 @@
 class Text < Bit
 	
 	attr_accessible :content
-	before_save :defaults
+	before_create :defaults
 
 	def defaults
-	    self.color = "yellow"
+	    self.color = "white"
 	end
 
 	# to enable routes to work with subclasses
