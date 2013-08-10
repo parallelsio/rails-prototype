@@ -9,6 +9,12 @@
 
 */
 
+.MagicZoom {
+z-index: 1000002;
+display:block;
+}
+
+
 .MagicZoom img {
 border: none !important;
 }

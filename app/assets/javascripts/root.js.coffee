@@ -164,7 +164,7 @@ $(document).ready ->
 
 		root.x = e.pageX - this.offsetLeft
 		root.y = e.pageY - this.offsetTop
-		# console.log " #{root.x} #{root.y}"
+		console.log " #{root.x} #{root.y}"
 		e.preventDefault
 
 
