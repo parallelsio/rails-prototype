@@ -57,8 +57,6 @@ root.initBitBehaviors = ->
 $(document).ready ->
 
 	root.initBitBehaviors()
-
-	MagicZoomPlus.stop()
 	
 
 	# adapted from :

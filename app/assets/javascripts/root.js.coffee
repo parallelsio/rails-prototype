@@ -109,7 +109,8 @@ Mousetrap.bind ["command"], (e, combo) ->
 
 		else if $(root.hoveredBit).hasClass('image')
 			m = showNotification "image bit - enabling zooming ", "warning"
-			MagicZoomPlus.start( $(root.hoveredBit + " .front.face a"))
+			# TODO: still broken
+			# MagicZoomPlus.start( $(root.hoveredBit + " .front.face a"))
 		else
 			m = showNotification "unknown bit type - can't edit ", "warning"
 
@@ -213,10 +214,17 @@ $(document).ready ->
 ##########################################################################################
 
 	MagicZoomPlus.options = {
-		"right-click": true
-		"zoom-width": "550"
-		"zoom-height": "550"
-		"hint-text": ""
+		"right-click": 			true
+		"zoom-width": 			"550"
+		"zoom-height": 			"550"
+		"hint-text": 			""
+		"expand-speed": 		250
+		"restore-speed":		250
+		"initialize-on": 		"mouseover"
+		"keyboard":				false
+		"loading-msg":			""
+		# "disable-zoom":		true
+		# "click-to-activate": 	true	# causing delete bit on hover to break
 	}
 
 
