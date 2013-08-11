@@ -23,12 +23,10 @@ root.initBitBehaviors = ->
 	    )
 
 	    request.done (data) -> 
-	    	message = "bit #{ data.id } position saved: x: #{ data.position_x } y: #{ data.position_y }"
-	    	type = "warning"
-	    	showNotification(message, type)
+	    	showNotification("bit #{ data.id } position saved: x: #{ data.position_x } y: #{ data.position_y }")
 	    	true
 
-	    request.fail (data) -> $('#notice').text "bit #{ data.id } position save failed "
+	    request.fail (data) -> $('#notice').text "bit #{ data.id } position save failed ", "error"
 
 	    true
 
@@ -41,11 +39,11 @@ root.initBitBehaviors = ->
 	$(".bit").mouseenter( (event) ->
 		root.hoveredBit = $(this)
 		root.hoveredBitIDNumber = $(this).attr('id').split('_')[1]
-		console.log root.hoveredBit
-		m = showNotification "hover in: #{ this.id } ", "warning"
+		m = showNotification "hover in: #{ this.id } "
 		event.preventDefault()
 
 		).mouseleave ->
+			m = showNotification "hover out: #{ this.id } "
 			root.hoveredBit = undefined
 			root.hoveredBitIDNumber = undefined
 			
