@@ -48,7 +48,6 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
   def get_meta_info
-
     if (@file)
       img = ::MiniMagick::Image::read(@file)
       @meta_info = Hash.new

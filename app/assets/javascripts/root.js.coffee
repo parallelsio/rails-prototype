@@ -107,8 +107,11 @@ Mousetrap.bind ["command"], (e, combo) ->
 			$(root.hoveredBit).addClass('editing')
 			$("#bit_content textarea").focus() # TODO: not working ?
 
+		else if $(root.hoveredBit).hasClass('image')
+			m = showNotification "image bit - enabling zooming ", "warning"
+			MagicZoomPlus.start( $(root.hoveredBit + " .front.face a"))
 		else
-			m = showNotification "not a text bit - can't edit ", "warning"
+			m = showNotification "unknown bit type - can't edit ", "warning"
 
 	else
 		console.log "got a command hit outside of bit"
@@ -153,9 +156,11 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 
 
 
+
 ##########################################################################################
 
 $(document).ready ->
+
 
 	$('#map').focus()
 
@@ -164,7 +169,6 @@ $(document).ready ->
 
 		root.x = e.pageX - this.offsetLeft
 		root.y = e.pageY - this.offsetTop
-		console.log " #{root.x} #{root.y}"
 		e.preventDefault
 
 
@@ -208,11 +212,13 @@ $(document).ready ->
 
 ##########################################################################################
 
-	MagicZoom.options = {
+	MagicZoomPlus.options = {
 		"right-click": true
 		"zoom-width": "550"
 		"zoom-height": "550"
+		"hint-text": ""
 	}
+
 
 
 ##########################################################################################

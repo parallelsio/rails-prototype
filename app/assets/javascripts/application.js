@@ -15,9 +15,9 @@
 //= require jquery_ujs
 //= require jquery.pnotify.min
 //= require mousetrap.min
-//= require dropzone
-//= require magiczoom.cstreams.registered
 //= require mousetrap-global-bind.min
+//= require dropzone
+//= require magiczoomplus
 //= require root
 //= require maps
 //= require bits

@@ -1,9 +1,14 @@
+
+
+
 # TODO: by using STI, should I break apart BitsController into sublass controllers?
 class BitsController < ApplicationController
 
   #TODO: prevent save of bit position below 0/0 until ZUI is implemented
 
   protect_from_forgery
+
+################################################################
 
 
   def show
@@ -15,6 +20,7 @@ class BitsController < ApplicationController
   end
 
 
+################################################################
 
   def new
     @bit = Bit.new
@@ -30,6 +36,8 @@ class BitsController < ApplicationController
     end
   end
 
+
+################################################################
 
   def create
 
@@ -79,7 +87,7 @@ class BitsController < ApplicationController
 
 
 
-
+################################################################
 
   def edit
     @bit = Bit.find(params[:id])
@@ -87,6 +95,8 @@ class BitsController < ApplicationController
     render :layout => false 
   end
 
+
+################################################################
 
   def update
     @bit = Bit.find(params[:id])
@@ -111,18 +121,21 @@ class BitsController < ApplicationController
   end
 
 
-
-
-
-
+################################################################
   def destroy
-
     @bit = Bit.find(params[:id])
     @bit.destroy
 
     render :nothing => true
   end
 
+
+################################################################
+  def shatter
+    @source_bit = Bit.find(params[:id])
+
+
+  end
 
 
 
