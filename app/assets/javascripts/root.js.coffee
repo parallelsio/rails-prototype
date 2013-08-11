@@ -92,12 +92,14 @@ Mousetrap.bind ["n b", "c b"], (e, combo) ->
 
 ##########################################################################################
 
-# edit bit on hover
-Mousetrap.bind ["command"], (e, combo) ->
-	
+# Command key triggers editing of a text, and enables zoom for an image bit 
+# acts as a momentary push button for image, meaning only works while holding command
+# thus, requires two bindings, on key down + key up
+Mousetrap.bind "command", ( (e, combo)->
+
 	if root.hoveredBit
-		console.log "got a command hit inside"
-		m = showNotification "pressed #{ combo } while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
+		console.log "got a command hit down inside bit_#{ root.hoveredBitIDNumber }"
+		m = showNotification "#{ combo } down while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
 		
 		# only edit if it's a text bit
 		if $(root.hoveredBit).hasClass('text')
@@ -115,9 +117,37 @@ Mousetrap.bind ["command"], (e, combo) ->
 			m = showNotification "unknown bit type - can't edit ", "warning"
 
 	else
-		console.log "got a command hit outside of bit"
+		console.log "got a command hit down outside of bit"
 
 	e.preventDefault()
+
+
+), "keyup"
+
+
+
+Mousetrap.bind "command", ( (e,combo) ->
+
+	if root.hoveredBit
+		console.log "got a command up hit inside bit_#{ root.hoveredBitIDNumber }"
+		m = showNotification " #{ combo } up while hover on bit #{ root.hoveredBitIDNumber } ", "warning"
+		
+		# disable MagicZoom only if it's an image bit
+		if $(root.hoveredBit).hasClass('image')
+			m = showNotification "image bit - disabling zooming ", "warning"
+			# TODO: still broken
+			# MagicZoomPlus.start( $(root.hoveredBit + " .front.face a"))
+		else
+			m = showNotification "unknown bit type - can't do anything ", "warning"
+
+	else
+		console.log "got a command hit up outside of bit"
+
+	e.preventDefault()
+
+
+), "keydown"
+
 	
 ##########################################################################################
 
@@ -154,6 +184,8 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 
 	e.preventDefault()
 	_save() 
+
+
 
 
 
@@ -214,7 +246,7 @@ $(document).ready ->
 ##########################################################################################
 
 	MagicZoomPlus.options = {
-		"right-click": 			true
+		"right-click": 			"original"
 		"zoom-width": 			"550"
 		"zoom-height": 			"550"
 		"hint-text": 			""
@@ -223,8 +255,7 @@ $(document).ready ->
 		"initialize-on": 		"mouseover"
 		"keyboard":				false
 		"loading-msg":			""
-		# "disable-zoom":		true
-		# "click-to-activate": 	true	# causing delete bit on hover to break
+		"disable-expand":		true
 	}
 
 
