@@ -74,12 +74,12 @@ root.showNotification = (message, type) ->
 	# default to info. other options: success, error, notice
 	type = "info" if typeof (type) is "undefined"
 
-	$.pnotify
-	  text: message
-	  shadow: false
-	  animation: 'fade'
-	  type: type
-	  delay: 1500
+	# $.pnotify
+	#   text: message
+	#   shadow: false
+	#   animation: 'fade'
+	#   type: type
+	#   delay: 1500
 
 	console.log message
 
@@ -118,6 +118,7 @@ Mousetrap.bind "command", ( (e,combo) ->
 		else if $(root.hoveredBit).hasClass('image')
 			m = showNotification "image bit - enabling zooming "
 			MagicZoomPlus.start($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
+			MagicZoomPlus.zoomIn($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
 		else
 			m = showNotification "unknown bit type - can't edit "
 
@@ -142,8 +143,6 @@ Mousetrap.bind "command", ( (e, combo)->
 		if $(root.hoveredBit).hasClass('image')
 			m = showNotification "image bit - disabling zooming "
 			MagicZoomPlus.stop($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
-		else
-			m = showNotification "unknown bit type - can't do anything "
 
 	else
 		m = showNotification "got a command hit up outside of bit"
