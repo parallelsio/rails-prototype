@@ -6,7 +6,7 @@
     .face.front{ :class => (@bit.color if @bit.color.present?) }
       .content
         - if @bit.image.present?
-          %a{ :href => @bit.image_url(:full), :class => "MagicZoomPlus", :id => "MagicZoomPlus_bit_" +  @bit.id.to_s}
+          %a{ :href => @bit.image_url(), :class => "MagicZoomPlus", :id => "MagicZoomPlus_bit_" +  @bit.id.to_s}
             = image_tag @bit.image_url(:thumb)
 
         - else

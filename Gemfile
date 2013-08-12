@@ -12,7 +12,7 @@ gem 'haml-rails'					# auto generate haml templates instead of erb
 gem 'sass-rails',   '~> 3.2.4'
 gem 'carrierwave'         # file uploading glue between rails and cloud storage
 gem 'fog', '~> 1.3.1'    # cloud storage wrapper
-gem 'mini_magick'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,11 +27,13 @@ group :development, :test  do
   gem 'foreman'
   gem 'debugger'
   gem 'quiet_assets'    # hiding assets lines in log 
-
+  gem 'rmagick'
 end
 
 group :production do
   gem 'pg'
+  # gem 'rmagick', '2.12.0', :require => 'RMagick'
+  gem 'rmagick', :require => 'RMagick'
 end
 
 gem 'jquery-rails', '2.3.0'   # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound

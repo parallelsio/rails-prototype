@@ -1,10 +1,12 @@
 # encoding: utf-8
+require 'RMagick'
 
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
+  # include CarrierWave::MiniMagick
+
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
   include Sprockets::Helpers::RailsHelper
@@ -22,6 +24,13 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  # for heroku
+  # https://github.com/carrierwaveuploader/carrierwave/wiki/How-to%3A-Make-Carrierwave-work-on-Heroku
+  if Rails.env == "production"
+    def cache_dir
+      "#{Rails.root}/tmp/uploads"
+    end
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -36,24 +45,29 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [250, 250]
   end
 
-  version :full do
-    process :get_meta_info
-    # process :convert => 'jpg'
 
-    def meta_info
-      @meta_info
-    end
+  # full size
+  process :get_meta_info
+  # process :convert => 'jpg'
+
+  def meta_info
+    @meta_info
   end
 
 
 
   def get_meta_info
     if (@file)
-      img = ::MiniMagick::Image::read(@file)
+
+      # chop off all chars off the path
+      file_path = @file.file.partition(Rails.root.to_s)[2]
+
+      # remove leading slash
+      img = Magick::Image::read(file_path.slice(1..file_path.size)).first
       @meta_info = Hash.new
 
       # TODO: properties instead of array
-      @meta_info = { :height => img[:height], :width => img[:width], :format => img[:format] }
+      @meta_info = { :height => img.rows, :width => img.columns, :format => img.format }
     end
   end
 

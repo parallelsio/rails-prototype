@@ -74,12 +74,12 @@ root.showNotification = (message, type) ->
 	# default to info. other options: success, error, notice
 	type = "info" if typeof (type) is "undefined"
 
-	# $.pnotify
-	#   text: message
-	#   shadow: false
-	#   animation: 'fade'
-	#   type: type
-	#   delay: 1500
+	$.pnotify
+	  text: message
+	  shadow: false
+	  animation: 'fade'
+	  type: type
+	  delay: 1500
 
 	console.log message
 

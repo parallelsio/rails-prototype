@@ -6,9 +6,9 @@ class Image < Bit
 	mount_uploader :image, ImageUploader		# managed through CarrierWave
 
 	def set_meta_info
-		meta_info = self.image.full.get_meta_info
+		meta_info = self.image.get_meta_info
 
-	    if (! meta_info.nil?)
+	    if (!meta_info.nil?)
 	     	self.height = meta_info[:height]
 	     	self.width = meta_info[:width]
 	     	self.format = meta_info[:format]
