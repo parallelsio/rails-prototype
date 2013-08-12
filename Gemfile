@@ -32,7 +32,6 @@ end
 
 group :production do
   gem 'pg'
-  # gem 'rmagick', '2.12.0', :require => 'RMagick'
   gem 'rmagick', :require => 'RMagick'
 end
 

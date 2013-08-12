@@ -132,8 +132,12 @@ class BitsController < ApplicationController
 
 ################################################################
   def shatter
-    @source_bit = Bit.find(params[:id])
+    
+    require 'RMagick'
 
+    @source_bit = Bit.find(params[:id])
+    
+    debugger
 
   end
 

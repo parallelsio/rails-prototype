@@ -1,6 +1,11 @@
 Parallels::Application.routes.draw do
   
-  resources :bits
+  resources :bits do
+    member do
+      post :shatter
+    end
+  end
+
   resources :maps
   resources :clusters
 

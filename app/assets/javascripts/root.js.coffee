@@ -120,7 +120,7 @@ Mousetrap.bind "command", ( (e,combo) ->
 			MagicZoomPlus.start($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
 			MagicZoomPlus.zoomIn($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
 		else
-			m = showNotification "unknown bit type - can't edit "
+			m = showNotification "unknown bit type - can't edit ", "warning"
 
 	else
 		console.log "got a command hit down outside of bit"
@@ -156,7 +156,6 @@ Mousetrap.bind "command", ( (e, combo)->
 	
 ##########################################################################################
 
-
 Mousetrap.bind ["d"], (e, combo) ->
 	
 	if root.hoveredBit	
@@ -165,6 +164,20 @@ Mousetrap.bind ["d"], (e, combo) ->
 	else
 		m = showNotification "delete hit outside bit"
 	e.preventDefault()
+
+##########################################################################################
+
+Mousetrap.bind ["s"], (e, combo) ->
+
+
+	if $(root.hoveredBit).hasClass('text')
+		m = showNotification "pressed #{ combo } for shatter, text #{ root.hoveredBitIDNumber } "
+
+	else if $(root.hoveredBit).hasClass('image')
+		m = showNotification "pressed #{ combo } for shatter, text #{ root.hoveredBitIDNumber } "
+
+	else
+		m = showNotification "pressed #{ combo } for shatter, unknown bit type", "warning"
 
 
 ##########################################################################################
