@@ -8,7 +8,7 @@
         - if @bit.image.present?
           .zoom
             %a{ :href => @bit.image_url() } 
-              / = image_tag @bit.image_url(:thumb)
+              = image_tag @bit.image_url(:thumb)
 
         - else
           = @bit.content

@@ -54,7 +54,7 @@ root.initBitBehaviors = ->
 	# since zoom functionality is only enabled by clicking a button while
 	# hovering, disable default a tag functionality, so
 	# if user clicks an image bit, it won't mess up the app
-	$(".bit .front.face .content a.MagicZoomPlus").click (e) ->
+	$(".bit .front.face .content .zoom a").click (e) ->
 	  e.preventDefault()			
 
 	##############################################################

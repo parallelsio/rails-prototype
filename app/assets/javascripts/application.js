@@ -16,7 +16,7 @@
 //= require jquery.pnotify.min
 //= require mousetrap.min
 //= require mousetrap-global-bind.min
-//= require dropzone.min
+//= require dropzone
 //= require root
 //= require maps
 //= require bits
