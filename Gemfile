@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 
 gem 'figaro'              # access env vars
 
@@ -28,6 +28,7 @@ group :development, :test  do
   gem 'debugger'
   gem 'quiet_assets'    # hiding assets lines in log 
   gem 'rmagick'
+  gem 'rspec-rails'
 end
 
 group :production do
@@ -38,6 +39,9 @@ end
 gem 'jquery-rails', '2.3.0'   # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
 
 group :test do
+  gem 'rspec'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
 end
