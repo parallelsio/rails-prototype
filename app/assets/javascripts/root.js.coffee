@@ -117,8 +117,6 @@ Mousetrap.bind "command", ( (e,combo) ->
 
 		else if $(root.hoveredBit).hasClass('image')
 			m = showNotification "image bit - enabling zooming "
-			MagicZoomPlus.start($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
-			MagicZoomPlus.zoomIn($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
 		else
 			m = showNotification "unknown bit type - can't edit ", "warning"
 
@@ -139,11 +137,8 @@ Mousetrap.bind "command", ( (e, combo)->
 	if root.hoveredBit
 		m = showNotification " #{ combo } up while hover on bit #{ root.hoveredBitIDNumber } "
 		
-		# disable MagicZoom only if it's an image bit
 		if $(root.hoveredBit).hasClass('image')
 			m = showNotification "image bit - disabling zooming "
-			MagicZoomPlus.stop($("#MagicZoomPlus_bit_#{ root.hoveredBitIDNumber }"))
-
 	else
 		m = showNotification "got a command hit up outside of bit"
 
@@ -258,20 +253,3 @@ $(document).ready ->
 
 ##########################################################################################
 
-	MagicZoomPlus.options = {
-		"right-click": 			"original"
-		"zoom-width": 			"550"
-		"zoom-height": 			"550"
-		"hint-text": 			""
-		"expand-speed": 		250
-		"restore-speed":		250
-		"initialize-on": 		"mouseover"
-		"keyboard":				false
-		"loading-msg":			""
-		"disable-expand":		true
-		"disable-zoom":			true
-	}
-
-
-
-##########################################################################################

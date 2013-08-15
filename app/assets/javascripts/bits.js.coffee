@@ -50,8 +50,8 @@ root.initBitBehaviors = ->
 
 	#############################################################
 
-	# magiczoom requires an a tag element
-	# since magiczoom functionality is only enabled by clicking a button while
+	# zoom will require an a tag element
+	# since zoom functionality is only enabled by clicking a button while
 	# hovering, disable default a tag functionality, so
 	# if user clicks an image bit, it won't mess up the app
 	$(".bit .front.face .content a.MagicZoomPlus").click (e) ->
