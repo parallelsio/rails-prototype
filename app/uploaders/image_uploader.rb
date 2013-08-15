@@ -1,5 +1,4 @@
 # encoding: utf-8
-require 'RMagick'
 
 class ImageUploader < CarrierWave::Uploader::Base
 
