@@ -5,6 +5,7 @@ require 'rspec/rails'
 
 require 'capybara/rspec'
 require 'capybara-webkit'
+
 Capybara.javascript_driver = :webkit
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -21,9 +22,6 @@ RSpec.configure do |config|
   # config.mock_with :rr
 
   config.include Capybara::DSL, :type => :request
-
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

@@ -2,10 +2,10 @@ require 'spec_helper'
 require 'ruby-debug'
 
 
-describe "bits" do
+describe "ShowBits" do
 
 	it "show bits" do
+		map = FactoryGirl.create(:map)
 		visit "/maps/1"
 	end
-
 end
