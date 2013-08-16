@@ -13,6 +13,10 @@ gem 'sass-rails',   '~> 3.2.4'
 gem 'carrierwave'         # file uploading glue between rails and cloud storage
 gem 'fog', '~> 1.3.1'    # cloud storage wrapper
 
+gem 'jquery-rails', '2.3.0'   # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
+
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,26 +26,32 @@ group :assets do
 end
 
 
+
+
 group :development, :test  do
   gem 'mysql2'
   gem 'foreman'
   gem 'debugger'
   gem 'quiet_assets'    # hiding assets lines in log 
   gem 'rmagick'
+
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
+
+group :test do
+  gem 'faker'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem 'turn', '~> 0.8.3', :require => false
+end
+
+
+
+
 
 group :production do
   gem 'pg'
   gem 'rmagick', :require => 'RMagick'
-end
-
-gem 'jquery-rails', '2.3.0'   # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
-
-group :test do
-  gem 'rspec'
-  gem 'capybara-webkit'
-  gem 'database_cleaner'
-  # Pretty printed test output
-  gem 'turn', '~> 0.8.3', :require => false
 end
