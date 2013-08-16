@@ -1,7 +1,7 @@
 *.log
 *.pid
 *.tar.gz
-.DS_Store
+.DS_Store				# mac ox directory / thumbnail files
 .idea
 .project
 .sass-cache
@@ -14,6 +14,6 @@ doc/api
 doc/app
 log/*.log
 public/system
-public/uploads/*
+public/uploads/*		# from s3
 tmp/
 tmp/restart.txt
