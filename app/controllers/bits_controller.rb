@@ -1,7 +1,3 @@
-
-
-
-# TODO: by using STI, should I break apart BitsController into sublass controllers?
 class BitsController < ApplicationController
 
   #TODO: prevent save of bit position below 0/0 until ZUI is implemented
@@ -23,6 +19,7 @@ class BitsController < ApplicationController
 ################################################################
 
   def new
+
     @bit = Bit.new
 
     # set position, if available
@@ -48,7 +45,6 @@ class BitsController < ApplicationController
       @bit.position_y = params[:bit][:position_y]
     
     else
-
       @bit = Image.new
 
       if params[:commit]  # via form (manual click Choose Files, Save)
@@ -62,17 +58,20 @@ class BitsController < ApplicationController
         @bit.position_y = params[:position_y]
       end
 
-      @bit.cascade_position # calc offsets if multiple images are dragged at once
+      # calc offsets if multiple images are dragged at once
+      @bit.cascade_position 
     end
 
-    @p = @bit.parallels.build
-    @p.bind_to_closest_cluster
+    # TODO: this is probably not secure. 
+    # tie map retrieval to session/user
+    map_id = request.env["HTTP_REFERER"].split('/').last
+    @map = Map.find(map_id)
+
+    @p = @map.parallels.build
+    @p.bit = @bit
+    @p.save
 
     if @bit.save
-        #TODO: auto taking first cluster.
-        #TODO : better way to get map this bit is connected to?
-        @map = Map.find(@bit.clusters.first.map_id)
-
         if @bit.type == "Image"
           render json: @bit
         elsif @bit.type == "Text"
@@ -135,8 +134,6 @@ class BitsController < ApplicationController
     
     @source_bit = Bit.find(params[:id])
     
-    debugger
-
   end
 
 

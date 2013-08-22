@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809211924) do
+ActiveRecord::Schema.define(:version => 20130826175615) do
 
   create_table "bits", :force => true do |t|
     t.text     "content"
@@ -22,18 +22,9 @@ ActiveRecord::Schema.define(:version => 20130809211924) do
     t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "map_id"
     t.integer  "height"
     t.integer  "width"
     t.string   "format"
-  end
-
-  create_table "clusters", :force => true do |t|
-    t.integer  "position_x"
-    t.integer  "position_y"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "map_id"
   end
 
   create_table "maps", :force => true do |t|
@@ -46,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130809211924) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "bit_id"
-    t.integer  "cluster_id"
+    t.integer  "map_id"
   end
 
 end

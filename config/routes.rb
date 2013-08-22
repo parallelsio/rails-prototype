@@ -7,7 +7,6 @@ Parallels::Application.routes.draw do
   end
 
   resources :maps
-  resources :clusters
 
   root to: "maps#index"
 

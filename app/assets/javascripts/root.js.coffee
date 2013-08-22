@@ -18,6 +18,7 @@ root.createNewTextBit = ->
   	data: {
 	    		position_x: root.x
 	    		position_y: root.y
+	    		map_id: window.location.hash.split('/')[2]
 	    	}
   )
 
@@ -190,7 +191,7 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 	m = showNotification "editing_bit_id: #{ editing_bit_id }"
 
 	$('.editing').remove()
-	$("#data .cluster").append( $('<div>').load("/bits/#{ editing_bit_id }") )
+	$("#map").append( $('<div>').load("/bits/#{ editing_bit_id }") )
 
 	e.preventDefault()
 	_save() 
@@ -240,7 +241,7 @@ $(document).ready ->
 		success: (file, response) ->
 		
 			this.removeFile(file)
-			$("#data .cluster").append( $('<div>').load("/bits/#{   response.id  }") )
+			$("#map").append( $('<div>').load("/bits/#{   response.id  }") )
 			m = showNotification "success: " + file.name + " created bit with id: " +  response.id
 
 		sending: (file, xhr, formData) ->

@@ -1,34 +1,23 @@
 require 'spec_helper'
 require 'ruby-debug'
 
-
 describe "ShowBits" do
 
-
-	# set up one cluster in a map
-	map = Map.create(name: 'test' )
-	cluster = map.clusters.build()
-	map.save
-	
-	bit = Bit.new(
-			position_y: 120,
-			position_x: 120,
-			type: 'Text'
-			)
-
-	parallel = bit.parallels.build
-    parallel.bind_to_closest_cluster
-
-    bit.save
-
-
-
-
-	it "show bits" do
-		map = FactoryGirl.create(:map)
-		# bit = FactoryGirl.create(:bit)
+	it "show bits", js: true do
+		map = create(:map)
+		
+		10.times do |count|
+			bit = FactoryGirl.create(:text, :content => "yo: " + count.to_s)
+		end
+		
 		visit root_url
-	end
+		visit map_path(map)
 
+		# TODO: fix/remove slash, refactor, -> helper
+		clean_filename = "#{ Time.now.to_s.sub(/[ \:]/, '_').tr(' ', '') }_#{ map.id }.png"
+		save_screenshot("#{ Rails.root }/tmp/#{ clean_filename }") 
+
+		# expect(page).to have_content("yo:")
+	end
 
 end

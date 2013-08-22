@@ -5,6 +5,5 @@
 #image_upload.dropzone-previews
 
 #map
-  #data
-    - @clusters.each do |cluster| 
-      = render :template => 'clusters/show', :locals => { :cluster => @cluster = cluster}
+  - @bits.each do |bit| 
+    = render template: "bits/show", :locals => { :bit => @bit = bit}

@@ -39,7 +39,6 @@ group :development, :test  do
 
   gem 'rspec-rails'                               
   gem 'factory_girl_rails'                        # creates data objects for tests, replaces rails default test::unit
-  gem 'faker'
 end
 
 group :test do

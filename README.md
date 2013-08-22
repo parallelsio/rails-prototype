@@ -100,7 +100,8 @@ Plenty to do on 1001 levels:
 
 * clone repo
 * `rake db:migrate` set up database structure locally
-* `rake db:seed` set up a basic map with bits, images, clusters to get you started
+* `rake db:reset` set up an empty map to get you started
+
 * `rails server` launch, go to browser http://localhost:3000
 
 

@@ -4,30 +4,24 @@ class MapsController < ApplicationController
 
   def index
     @maps = Map.all
-
     respond_with(@maps)
   end
 
   def show
     @map = Map.find(params[:id])
-    @clusters = @map.clusters
-    @solo_bits = @map.bits
+    @bits = @map.bits
 
     # for form, drag and drop image functionality
     @bit = Image.new
     @bit.position_y = 30
     @bit.position_x = 100
-
   end
+
 
   def new
     @map = Map.new
-
   end
 
-  def edit
-    @map = Map.find(params[:id])
-  end
 
   def create
     @map = Map.new(params[:map])

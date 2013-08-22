@@ -2,13 +2,9 @@ require 'spec_helper'
 
 describe Bit do 
 
-
 	context "is valid" do
-		valid_bit = Bit.new(
-			position_y: 300,
-			position_x: 200,
-			type: 'Text'
-			)
+		valid_bit = FactoryGirl.create(:text, position_y: 300, position_x: 200)
+
 		it "with position_x, position_y, type" do
 			expect(valid_bit).to be_valid 
 		end
@@ -26,6 +22,7 @@ describe Bit do
 		# end
 
 
+		# TODO: refactor to use factorygirl, how to bypass AR validation? 
 		context "with a negative position" do
 			negative_position_bit = Bit.new(
 				position_y: -120,

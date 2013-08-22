@@ -3,8 +3,8 @@
 
 class Bit < ActiveRecord::Base
 
-  	has_many :parallels
-  	has_many :clusters, :through => :parallels, :dependent => :destroy
+  	has_many :parallels 
+  	has_many :map, :through => :parallels, :dependent => :destroy
 
 	attr_accessible :color, :position_x, :position_y, :type, :created_at
 
@@ -21,5 +21,4 @@ class Bit < ActiveRecord::Base
 		:greater_than_or_equal_to => 0, 
 		:allow_nil => false,
 		:message => 'position_y is negative (off the map)'
-
 end
