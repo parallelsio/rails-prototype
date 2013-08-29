@@ -7,6 +7,11 @@ root = global ? window
 root.x = 0
 root.y = 0
 
+
+root.show_notifications = false
+
+
+
 ##########################################################################################
 
 # text bits require a form
@@ -49,10 +54,37 @@ root.deleteBit = ->
   
 
 ##########################################################################################
+root.shatterBit = ->
+
+	console.log "inside shatterBit"
+
+	# pulse to indicate processing
+	# $(root.hoveredBit).find('.front.face').load "/bits/#{  root.hoveredBitIDNumber }/edit"
+	$(root.hoveredBit).addClass('pulse_load')
+
+	request = $.ajax( 
+		url: '/bits/' + root.hoveredBitIDNumber + '/shatter'
+		type: 'POST'
+		data: {
+	  		position_x: root.x
+	  		position_y: root.y
+	  		number_of_tiles_across: 4
+	  		number_of_tiles_tall: 4
+	  	}
+	)
+
+	request.done (data) -> 
+		m = showNotification "shattered bit_#{ root.hoveredBitIDNumber }"
+
+
+ 	return true 
+  
+  
+
+##########################################################################################
 root.showMenu = ->
 	console.log "show menu"
 	console.log "bit #{ root.hoveredBitIDNumber } : x: #{ root.x } y: #{ root.y }"
-
 
 	# TODO: 
 	# get size of the bit
@@ -75,12 +107,13 @@ root.showNotification = (message, type) ->
 	# default to info. other options: success, error, notice
 	type = "info" if typeof (type) is "undefined"
 
-	$.pnotify
-	  text: message
-	  shadow: false
-	  animation: 'fade'
-	  type: type
-	  delay: 1500
+	if root.show_notifications
+		$.pnotify
+		  text: message
+		  shadow: false
+		  animation: 'fade'
+		  type: type
+		  delay: 1500
 
 	console.log message
 
@@ -126,8 +159,6 @@ Mousetrap.bind "command", ( (e,combo) ->
 
 	e.preventDefault()
 
-
-
 ), "keydown"
 
 
@@ -170,7 +201,8 @@ Mousetrap.bind ["s"], (e, combo) ->
 		m = showNotification "pressed #{ combo } for shatter, text #{ root.hoveredBitIDNumber } "
 
 	else if $(root.hoveredBit).hasClass('image')
-		m = showNotification "pressed #{ combo } for shatter, text #{ root.hoveredBitIDNumber } "
+		m = showNotification "pressed #{ combo } for shatter, image #{ root.hoveredBitIDNumber } "
+		shatterBit()
 
 	else
 		m = showNotification "pressed #{ combo } for shatter, unknown bit type", "warning"

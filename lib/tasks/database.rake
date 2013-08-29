@@ -1,8 +1,8 @@
 
-namespace :database do
+namespace :db do
 
-	desc "reset local database to default: one map, no bits"
-	task :reset => :environment do
+	desc "clear local database, initialize with one map, no bits"
+	task :prep => :environment do
 
 		require 'database_cleaner'
 
@@ -17,6 +17,7 @@ namespace :database do
 	    @map = Map.new(:name => 'base')
 	    @map.save
 
+	    puts 'Note: Amazon S3 images not deleted through this process. Delete manually.'
 	end
 
 end

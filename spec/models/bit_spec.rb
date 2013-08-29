@@ -1,3 +1,10 @@
+###########################################
+
+			# MODEL
+
+###########################################
+
+
 require 'spec_helper' 
 
 describe Bit do 
@@ -55,7 +62,6 @@ describe Bit do
 				expect(no_position_bit).to have(2).errors_on(:position_x)
 			end
 		end
-
 
 	end
 

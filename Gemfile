@@ -16,7 +16,7 @@ gem 'fog', '~> 1.3.1'                               # cloud storage wrapper
 
 gem 'jquery-rails', '2.3.0'                         # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
 
-
+gem 'image_sorcery'                                 # light, wrapper around imagemagick
 
 
 # Gems used only for assets and not required
@@ -51,8 +51,6 @@ group :test do
   gem 'launchy'                                   # launches browser when capybara asks it to
   gem 'poltergeist',  :git => 'git://github.com/jonleighton/poltergeist.git'     # driver for Capybara. allows running Capybara tests on a headless WebKit browser, provided by PhantomJS
 end
-
-
 
 
 group :production do

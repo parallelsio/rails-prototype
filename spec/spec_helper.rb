@@ -18,6 +18,19 @@ Spork.prefork do
 
   Capybara.javascript_driver = :poltergeist
 
+  Capybara.register_driver :poltergeist do |app|
+    options = {
+
+        :js_errors => true,
+        :timeout => 120,
+        :debug => false,
+        # :phantomjs_options => ['--load-images=no', '--disk-cache=false'],
+        :inspector => 'open', # allows remote deubgging http://www.jonathanleighton.com/articles/2012/poltergeist-0-6-0/
+    }
+    
+    Capybara::Poltergeist::Driver.new(app, options)
+  end
+
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
