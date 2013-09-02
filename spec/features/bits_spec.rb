@@ -29,7 +29,7 @@ describe "bits" do
 		visit map_path(@map)
 
 		# TODO: fix/remove slash, refactor, -> helper
-		clean_filename = "#{ Time.now.to_s.sub(/[ \:]/, '_').tr(' ', '') }_#{ @map.id }.png"
+		clean_filename = "#{ Time.now.to_s.tr('-: ', '_') }_#{ @map.id }.png"
 		save_screenshot("#{ Rails.root }/tmp/rspec_screenshots/#{ clean_filename }") # calls phantom.js render method
 
 		expect(page).to have_content("yo:")
@@ -81,6 +81,8 @@ describe "bits" do
 	
 	pending "shattered, non-unicode characters in filename"
 
+	pending "crop, pressing c key", js: true
 
+	pending "crop, thumb image smaller than main", js: true
 
 end

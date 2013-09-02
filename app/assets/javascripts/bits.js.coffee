@@ -60,7 +60,6 @@ root.initBitBehaviors = ->
 	##############################################################
 
 
-
 $(document).ready ->
 
 	root.initBitBehaviors()

@@ -166,7 +166,7 @@ class BitsController < ApplicationController
     # path used is relative to Rails.root
     Dir.mkdir(tiles[:absolute_directory], 0700) unless Dir.exists?(tiles[:absolute_directory])
 
-    status = image.convert(tiles[:relative_filename], quality: 80, crop: "#{ vertical_percent }%x#{ horizontal_percent }", scene: 1)
+    status = image.convert(tiles[:relative_filename], quality: 80, crop: "#{ vertical_percent }%x#{ horizontal_percent }%", scene: 1)
     @bits = []
 
     if status
@@ -191,6 +191,8 @@ class BitsController < ApplicationController
               bit.position_y = @source_bit.position_y + (row.next * (image.dimensions[:y].to_i / number_of_tiles_tall))
 
               p = bit.parallels.build(map_id: @map.id)  
+              
+              # TODO: error catch
               bit.save
 
               @bits << bit
@@ -216,6 +218,64 @@ class BitsController < ApplicationController
   end
 
 
+################################################################
+  def crop
+
+    @source_bit = Bit.find(params[:id])
+    image = ImageSorcery.new(@source_bit.image_url)
+
+    crop = Hash.new  
+    
+    crop[:relative_directory]   = "tmp/image_sorcery/#{ @source_bit.id }"
+    crop[:absolute_directory]   = File.join(Rails.root, crop[:relative_directory])
+
+    string_time_stamp = "#{ Time.now.to_s.tr('-: ', '_') }"
+    crop[:base_file_name]      = "#{ File.basename(image.file, File.extname(image.file)) }_cropped_#{ string_time_stamp }"
+    crop[:extension_type]      = File.extname(image.file) 
+  
+    crop[:relative_filename]   = "#{ crop[:relative_directory] }/#{ crop[:base_file_name] }#{ crop[:extension_type] }"
+    crop[:absolute_filename]   = "#{ crop[:absolute_directory] }/#{ crop[:base_file_name] }#{ crop[:extension_type] }"
+
+    Dir.mkdir(crop[:absolute_directory], 0700) unless Dir.exists?(crop[:absolute_directory])
+
+    # transform crop selection sizes and offsets
+    selection_width_ratio   = params[:selection][:width].to_f / params[:thumb_image_width].to_f
+    selection_height_ratio  = params[:selection][:height].to_f / params[:thumb_image_height].to_f
+    crop[:actual_selection_width] =  (selection_width_ratio * @source_bit.width).ceil
+    crop[:actual_selection_height] = (selection_height_ratio * @source_bit.height).ceil
+
+    selection_offset_x_ratio  = params[:selection][:x1].to_f / params[:thumb_image_width].to_f
+    selection_offset_y_ratio  = params[:selection][:y1].to_f / params[:thumb_image_height].to_f
+
+    crop[:actual_offset_x] = (selection_offset_x_ratio * @source_bit.width).ceil
+    crop[:actual_offset_y] = (selection_offset_y_ratio * @source_bit.height).ceil
+
+    status = image.convert(crop[:relative_filename], quality: 80, crop: "#{ crop[:actual_selection_width] }x#{ crop[:actual_selection_height] }+#{ crop[:actual_offset_x] }+#{ crop[:actual_offset_y] }")
+
+    if status
+      @bit = Image.new(image: File.open(crop[:absolute_filename])) 
+                
+      @bit.position_x = @source_bit.position_x + params[:selection][:x1].to_i
+      @bit.position_y = @source_bit.position_y + params[:selection][:y1].to_i
+
+      p = @bit.parallels.build(map_id: @map.id)  
+      @bit.save
+
+      @source_bit.destroy
+      FileUtils.rm_rf(crop[:relative_directory])
+
+      respond_to do |format|
+        format.js { render :layout => false }
+      end
+    
+
+    else
+      # couldnt crop image. raise error? 
+      false
+    end
+
+
+  end
 
 
 

@@ -8,7 +8,7 @@ root.x = 0
 root.y = 0
 
 
-root.show_notifications = false
+root.show_notifications = true
 
 
 
@@ -59,7 +59,6 @@ root.shatterBit = ->
 	console.log "inside shatterBit"
 
 	# pulse to indicate processing
-	# $(root.hoveredBit).find('.front.face').load "/bits/#{  root.hoveredBitIDNumber }/edit"
 	$(root.hoveredBit).addClass('pulse_load')
 
 	request = $.ajax( 
@@ -76,10 +75,61 @@ root.shatterBit = ->
 	request.done (data) -> 
 		m = showNotification "shattered bit_#{ root.hoveredBitIDNumber }"
 
-
  	return true 
   
   
+##########################################################################################
+root.cropImageBit = ->
+
+	console.log "inside cropImageBit"
+
+	# attach crop handler
+	$("#bit_#{ root.hoveredBitIDNumber } .face.front .content .zoom a img").imgAreaSelect 
+    	handles: true
+    	movable: false
+    	keys: false
+    	parent: $("#bit_#{ root.hoveredBitIDNumber }")
+
+    	onInit: ->
+    		console.log "crop set up now for bit_id_number: #{  root.hoveredBitIDNumber }"
+    		$("#bit_#{ root.hoveredBitIDNumber }:hover").addClass('crop_cursor')
+    		true
+
+    	onSelectEnd: (img, selection) ->
+
+    		# TODO: how to access root.hoveredBitIDNumber here?
+    		bit_id_number = $(img).attr('id').split('_')[2]
+
+    		console.log "crop selection made: top left: [x: #{ selection.x1  } y: #{ selection.y1 }] bottom right: x: #{ selection.x2  } y: #{ selection.y2 }] bit_id_number: #{  bit_id_number }"
+
+    		# pulse to indicate processing
+    		$("#bit_#{ bit_id_number }").addClass('pulse_load')
+
+    		request = $.ajax( 
+    			url: '/bits/' + bit_id_number + '/crop'
+    			type: 'POST'
+    			data: {
+    				selection: selection
+
+    				# send the thumbnail size, as we never stored it in the model
+    				# only storing the full size dimensions
+    				# to call imagemagick identify is too expensive
+    				# it's already available here via browser as computed style
+    				thumb_image_height: document.getElementById("bit_image_#{ bit_id_number}").offsetHeight
+    				thumb_image_width: document.getElementById("bit_image_#{ bit_id_number }").offsetWidth
+    			}
+    		)
+
+    		request.done (data) -> 
+    			m = showNotification "crop bit_#{ bit_id_number }"
+
+    return true
+  
+  
+
+
+
+
 
 ##########################################################################################
 root.showMenu = ->
@@ -120,6 +170,8 @@ root.showNotification = (message, type) ->
 
 ##########################################################################################
 
+# 		BIT : NEW TEXT
+
 # TODO: refactor into function that handles shortcuts
 # TODO: figure out key commands to prevent overlap with OS + browser keys
 Mousetrap.bind ["n b", "c b"], (e, combo) ->
@@ -130,6 +182,9 @@ Mousetrap.bind ["n b", "c b"], (e, combo) ->
 
 
 ##########################################################################################
+
+# 		BIT : TEXT EDIT
+#		BIT : IMAGE ZOOM
 
 # Command key triggers editing of a text, and enables zoom for an image bit 
 # acts as a momentary push button for image, meaning only works while holding command
@@ -183,9 +238,12 @@ Mousetrap.bind "command", ( (e, combo)->
 	
 ##########################################################################################
 
+# 		BIT : DELETE
+
 Mousetrap.bind ["d"], (e, combo) ->
 	
 	if root.hoveredBit	
+		$(root.hoveredBit).addClass('pulse_load')
 		m = showNotification "pressed #{ combo } while hover on bit #{ root.hoveredBitIDNumber } "
 		deleteBit()
 	else
@@ -194,8 +252,9 @@ Mousetrap.bind ["d"], (e, combo) ->
 
 ##########################################################################################
 
-Mousetrap.bind ["s"], (e, combo) ->
+# 		BIT : SHATTER
 
+Mousetrap.bind ["s"], (e, combo) ->
 
 	if $(root.hoveredBit).hasClass('text')
 		m = showNotification "pressed #{ combo } for shatter, text #{ root.hoveredBitIDNumber } "
@@ -209,6 +268,8 @@ Mousetrap.bind ["s"], (e, combo) ->
 
 
 ##########################################################################################
+
+# 		HIDE BIT : TEXT : NEW FORM
 
 # bound to global to allow escape to work inside of the form
 # requires extension: mousetrap-global-bind.min
@@ -227,6 +288,29 @@ Mousetrap.bindGlobal ["escape"], (e, combo) ->
 
 	e.preventDefault()
 	_save() 
+
+
+
+
+##########################################################################################
+
+# 		BIT : IMAGE : CROPc
+
+Mousetrap.bind ["c"], (e, combo) ->
+
+	if $(root.hoveredBit).hasClass('text')
+		m = showNotification "pressed #{ combo } for crop, text #{ root.hoveredBitIDNumber } "
+
+	else if $(root.hoveredBit).hasClass('image')
+		m = showNotification "pressed #{ combo } for crop, image #{ root.hoveredBitIDNumber } "
+		cropImageBit()
+
+	else
+		m = showNotification "pressed #{ combo } for crop, unknown bit type", "warning"
+
+
+
+
 
 
 

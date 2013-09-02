@@ -2,7 +2,7 @@ Parallels::Application.routes.draw do
   
   resources :bits do
     member do
-      post :shatter
+      post :shatter, :crop
     end
   end
 
