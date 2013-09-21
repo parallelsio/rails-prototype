@@ -39,6 +39,8 @@ group :development, :test  do
 
   gem 'rspec-rails'                               
   gem 'factory_girl_rails'                        # creates data objects for tests, replaces rails default test::unit
+  gem 'better_errors'                             # only in this env! we dont want to show errors to users on production
+  gem 'binding_of_caller'                         # enable the REPL and local/instance variable inspection.
 end
 
 group :test do
