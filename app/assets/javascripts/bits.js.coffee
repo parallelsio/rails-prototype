@@ -4,10 +4,11 @@ root = global ? window
 
 root.initBitBehaviors = ->
 
-
+	console.log "init"
+	
 	##############################################################
 	# BIT : DRAG + DROP
-	$(".bit").draggable
+	$(".bit:not(.ui-draggable)").draggable
 	  handle: "p"		# wire drag to handle only
 	  stop: (event, ui) ->
 

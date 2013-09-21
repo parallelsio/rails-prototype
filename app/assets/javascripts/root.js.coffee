@@ -15,7 +15,7 @@ root.show_notifications = true
 ##########################################################################################
 
 # text bits require a form
-root.createNewTextBit = ->
+root.showNewTextBitForm = ->
 
   request = $.ajax( 
   	url: '/bits/new'
@@ -177,7 +177,7 @@ root.showNotification = (message, type) ->
 Mousetrap.bind ["n b", "c b"], (e, combo) ->
 	m = showNotification "pressed : #{ combo } : new bit at x: #{ root.x } y: #{ root.y }"
 	# console.log "root: x: #{ root.x } y: #{ root.y }"
-	newTextBit = createNewTextBit()
+	newTextBit = showNewTextBitForm()
 	e.preventDefault()
 
 
