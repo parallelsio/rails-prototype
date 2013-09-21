@@ -27,18 +27,8 @@ group :assets do
 end
 
 
-
-
-group :development, :test  do
-  gem 'mysql2'
-  gem 'foreman'
+group :development  do
   gem 'debugger'
-  gem 'quiet_assets'                              # hiding assets lines in log 
-  gem 'rmagick'                                   # ruby wrapper for imagemagick, an image manipulation lib
-  gem 'fuubar'                                    # progressbar and nice formatting for rspec output
-
-  gem 'rspec-rails'                               
-  gem 'factory_girl_rails'                        # creates data objects for tests, replaces rails default test::unit
   gem 'better_errors'                             # only in this env! we dont want to show errors to users on production
   gem 'binding_of_caller'                         # enable the REPL and local/instance variable inspection.
 end
@@ -53,6 +43,19 @@ group :test do
   gem 'launchy'                                   # launches browser when capybara asks it to
   gem 'poltergeist',  :git => 'git://github.com/jonleighton/poltergeist.git'     # driver for Capybara. allows running Capybara tests on a headless WebKit browser, provided by PhantomJS
 end
+
+group :development, :test  do
+  gem 'mysql2'
+  gem 'foreman'
+  gem 'quiet_assets'                              # hiding assets lines in log 
+  gem 'rmagick'                                   # ruby wrapper for imagemagick, an image manipulation lib
+  gem 'fuubar'                                    # progressbar and nice formatting for rspec output
+
+  gem 'rspec-rails'                               
+  gem 'factory_girl_rails'                        # creates data objects for tests, replaces rails default test::unit
+  gem 'jasminerice'                               # testing js
+end
+
 
 
 group :production do

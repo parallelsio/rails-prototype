@@ -135,6 +135,9 @@ GEM
     hike (1.2.3)
     i18n (0.6.1)
     image_sorcery (1.1.0)
+    jasminerice (0.0.10)
+      coffee-rails
+      haml
     journey (1.0.4)
     jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
@@ -267,6 +270,7 @@ DEPENDENCIES
   haml
   haml-rails
   image_sorcery
+  jasminerice
   jquery-rails (= 2.3.0)
   launchy
   mysql2
