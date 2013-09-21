@@ -13,6 +13,12 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require parallels
+Parallels = Ember.Application.create();
 //= require jquery.pnotify.min
 //= require mousetrap.min
 //= require mousetrap-global-bind.min

@@ -35,7 +35,7 @@ Parallels::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-
+  config.ember.variant = :development
 
 
   

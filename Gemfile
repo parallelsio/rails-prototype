@@ -17,7 +17,7 @@ gem 'fog', '~> 1.3.1'                               # cloud storage wrapper
 gem 'jquery-rails', '2.3.0'                         # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
 
 gem 'image_sorcery'                                 # light, wrapper around imagemagick
-
+gem 'ember-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -53,7 +53,7 @@ group :development, :test  do
 
   gem 'rspec-rails'                               
   gem 'factory_girl_rails'                        # creates data objects for tests, replaces rails default test::unit
-  gem 'jasminerice'                               # testing js
+  gem 'jasminerice'                               # testing js  
 end
 
 
