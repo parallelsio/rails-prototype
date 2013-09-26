@@ -16,7 +16,7 @@ gem 'fog', '~> 1.3.1'                               # cloud storage wrapper
 
 gem 'jquery-rails', '2.3.0'                         # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
 
-gem 'image_sorcery'                                 # light, wrapper around imagemagick
+gem 'image_sorcery'                                 # light, wrapper around imagemagick, create /tmp/image_sorcery manual first time
 
 
 # Gems used only for assets and not required
