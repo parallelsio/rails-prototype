@@ -1,27 +1,41 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 # http://docs.rubygems.org/read/chapter/16
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.1.0'
 
 gem 'figaro'                                        # access env vars in app
 
 gem 'thin'                                          # local server, allows for hiding assets lines in log
 gem 'haml'
 gem 'haml-rails'					                          # auto generate haml templates instead of erb
-gem 'sass-rails',   '~> 3.2.4'
+gem 'sass-rails',   '~> 4.0.0'
 gem 'carrierwave'                                   # file uploading glue between rails and cloud storage
-gem 'fog', '~> 1.3.1'                               # cloud storage wrapper
+gem 'fog'                                         # cloud storage wrapper
 
-gem 'jquery-rails', '2.3.0'                         # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
+gem 'jquery-rails'                                  # using version number to solve http://stackoverflow.com/questions/16905633/cant-install-active-admin-for-ruby-on-rails-sprocketsfilenotfound
+gem 'jquery-ui-rails'
 
 gem 'image_sorcery'                                 # light, wrapper around imagemagick, create /tmp/image_sorcery manual first time
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# for compability. TODO: refactor
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+gem 'activerecord-deprecated_finders'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails', '~> 3.2.2'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'uglifier', '>= 1.3.0'
 end
 
 
@@ -46,12 +60,12 @@ group :development, :test  do
   gem 'mysql2'
   gem 'foreman'
   gem 'quiet_assets'                              # hiding assets lines in log 
-  gem 'rmagick'                                   # ruby wrapper for imagemagick, an image manipulation lib
+  gem 'rmagick', '2.13.2', :require => 'RMagick'  # ruby wrapper for imagemagick, an image manipulation lib
   gem 'fuubar'                                    # progressbar and nice formatting for rspec output
 
   gem 'rspec-rails'                               
   gem 'factory_girl_rails'                        # creates data objects for tests, replaces rails default test::unit
-  gem 'jasminerice'                               # testing js
+  gem 'jasminerice', :git => 'https://github.com/bradphelan/jasminerice.git'
 end
 
 
