@@ -1,7 +1,5 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 # http://docs.rubygems.org/read/chapter/16
-
-ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 
@@ -57,8 +55,3 @@ group :development, :test  do
 end
 
 
-
-group :production do
-  gem 'pg'
-  gem 'rmagick', :require => 'RMagick'            # heroku already has it installed
-end

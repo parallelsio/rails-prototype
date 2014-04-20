@@ -2,6 +2,8 @@
 *.pid
 *.tar.gz
 .DS_Store				# mac ox directory / thumbnail files
+*/.DS_Store
+.DS_Store
 .idea
 .project
 .sass-cache
@@ -17,3 +19,4 @@ public/system
 public/uploads/*		# from s3
 tmp/
 tmp/restart.txt
+.rvmrc

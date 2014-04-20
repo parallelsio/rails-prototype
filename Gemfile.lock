@@ -9,7 +9,7 @@ GIT
       websocket-driver (>= 0.2.0)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
@@ -161,7 +161,6 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.6.8)
     nokogiri (1.5.10)
-    pg (0.16.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -274,7 +273,6 @@ DEPENDENCIES
   jquery-rails (= 2.3.0)
   launchy
   mysql2
-  pg
   poltergeist!
   quiet_assets
   rails (= 3.2.13)

@@ -13,30 +13,6 @@ As one, it allows people to seamlessly create, connect, and explore the evolutio
 
 ****************************************************************
 
-Inspiration + precedents
------------------
-
-In no order :
-
-* http://www.thepund.it/about-pundit
-* http://dropmark.com
-* http://hotglue.me
-* https://spacedeck.net
-* http://textusproject.org
-* http://liquidtext.net/demos
-* http://www.eastgate.com/Tinderbox
-* https://trello.com/tour
-* http://hypercard.org
-* https://rizzoma.com/zoom-docs-long-gif.html
-* http://www.youtube.com/watch?v=M0ODskdEPnQ
-* http:/www.clipboard.com
-* https://noteapp.com
-* http://www.thinglink.com
-* http://www.pinterest.com
-* http://journals.tdl.org/jodi/index.php/jodi/article/view/131/129
-
-****************************************************************
-
 
 #### Read
 more about the impetus for the project in this blog post:
@@ -44,7 +20,7 @@ http://www.cstreams.com/posts/061813_what_is_parallels
 
 
 #### Watch 
-a [very] early demo of some of the interaction / UI features at http://www.makeparallels.org
+a [very] early demo of some of the interaction / UI features at http://www.parallels.io
 
 
 #### Follow 
@@ -128,7 +104,7 @@ Create a new bit wherever mouse pointer is, use either
 
 ### Install + set up  [incomplete]
 
-
+create tmp/image_sorcery/
 
 
 
