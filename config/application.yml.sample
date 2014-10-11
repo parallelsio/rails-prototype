@@ -1,0 +1,15 @@
+# Variables here create ENV["xxxxxx"] for use in app
+# these will override environment variables set in the Unix shell.
+# more : http://railsapps.github.io/rails-environment-variables.html
+# to set on Heroku, do : rake figaro:heroku  
+
+development:
+  AWS_ACCESS_KEY_ID: 'AKIAIFEY2S2LQYZQ4T5AXX'
+  AWS_SECRET_ACCESS_KEY: 'cHSMbZZpuXe9A8XXXXXXXXXXXXXXXXXu'
+  AWS_S3_BUCKET_REGION: 'us-east-1'
+  AWS_S3_BUCKET: 'parallels-images'
+  EXCON_DEBUG: false
+
+production:
+
+
